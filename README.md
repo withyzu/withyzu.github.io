@@ -1,2 +1,2 @@
-# withyzu.io.github.io
+# withyzu.github.io
 withyzu's webpage
