@@ -2,7 +2,7 @@
   "cacheBootResources": true,
   "config": [ ],
   "debugBuild": false,
-  "entryAssembly": "OpenSilverApplication4.Browser",
+  "entryAssembly": "withyzu_note.Browser",
   "icuDataMode": 0,
   "linkerEnabled": true,
   "resources": {
@@ -38,8 +38,6 @@
       "OpenSilver.Expression.Interactions.dll": "sha256-Tf+2nq0NKoFCXb5wkZTulRfviWUnkUII9XkxSKwoxB4=",
       "OpenSilver.Interactivity.dll": "sha256-VoeHNBRBz6gOH8q5kuvIz7O82Hnfhpg899y4wANIZqk=",
       "OpenSilver.Xaml.dll": "sha256-gYt0FwMClWt\/8derLC3K45zuCocZtLnFqeexERuUV1Q=",
-      "OpenSilverApplication4.Browser.dll": "sha256-fbrLaI4M80YgpvBnZVXSCbNX0HGNhbwccsmwVY+O+\/c=",
-      "OpenSilverApplication4.dll": "sha256-yQWgfv89JBXzUsCfqJarK5XUw+WSx0uM8LBtGF4kCLg=",
       "System.Buffers.dll": "sha256-xXnacrijbZ9XzR8MmtyZiiQQHqNn+s0p3CJ6pgpW0rQ=",
       "System.Collections.Concurrent.dll": "sha256-ncF\/693EdxJyq9SIxtFZqPNKft\/j2ZEBbTJln49f4dI=",
       "System.Collections.dll": "sha256-xnpYwqGM06xpcBJ4rDEqoKzHcxwTloMAJLY4+nokkUw=",
@@ -122,7 +120,9 @@
       "System.Threading.Thread.dll": "sha256-yN10EZ1tFJiZqGW0a\/arTrRDX3QCUQNH4sLBjFB\/Otg=",
       "System.Web.HttpUtility.dll": "sha256-YFlluRNckst7qt1UrHP42Xka4x6m2EsNgnWs213ygZk=",
       "System.Windows.Extensions.dll": "sha256-BbG3Acl8iXmfE3LuNvbKYS6X2odUBKq\/rEdnj+dGEos=",
-      "System.Xml.Linq.dll": "sha256-i+23P3YL3+XxbBuDWH48irtnHz6GGNul+mDME2mYX+E="
+      "System.Xml.Linq.dll": "sha256-i+23P3YL3+XxbBuDWH48irtnHz6GGNul+mDME2mYX+E=",
+      "withyzu_note.Browser.dll": "sha256-hAqb97InFlIwi3sbR2009ttkZpwh3l4pTrJrgjPX8DU=",
+      "withyzu_note.dll": "sha256-+IZKHcljEtQ+0rlrKa5UhVixAuRuto8OfRICQc8pXR8="
     },
     "extensions": null,
     "lazyAssembly": null,
