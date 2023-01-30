@@ -1,60 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <meta
-      name="viewport"
-      content="width=device-width, 
-    initial-scale=1.0"
-    />
-    <link href="favicon.ico" rel="shortcut icon" />
-    <link href="./index.css" rel="stylesheet" type="text/css" />
-    <title>withyzu's note</title>
-    <!-- #region Style-->
-    <style>
-      .UserHeadBackgrd {
-        background-image: linear-gradient(to bottom, #165fbeae, #00000000);
-        border-radius: 16;
-        height: 500 px;
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-      }
-      .UserHead {
-        height: 100px;
-        width: 100px;
-        border-radius: 50px;
-        background-image: url(./img/UserHead.webp);
-        background-repeat: no-repeat;
-        background-size: cover;
-        border: 3px solid black;
-        margin: 0 auto;
-        position: relative;
-        margin-top: 20px;
-      }
-      .h1 {
-        color: #268e90;
-        font-size: 45px;
-        position: relative;
-        text-align: center;
-        margin-top: 20px;
-      }
-    </style>
-    <!-- #endregion -->
-  </head>
 
-  <body>
-    <div class="UserHeadBackgrd">
-      <div class="UserHead"></div>
-      <h1 class="h1">PLEASE SAY THANK !!!</h1>
+<head>
+  <!-- #region Meta -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0" />
+  <!-- #endregion -->
+
+  <!-- #region Link -->
+  <link href="favicon.ico" rel="shortcut icon" />
+  <link href="./index.css" rel="stylesheet" type="text/css" />
+  <!-- #endregion -->
+
+  <title>withyzu's note</title>
+
+  <!-- #region Style-->
+  <style>
+
+  </style>
+  <!-- #endregion -->
+
+  <!-- #region Script -->
+  <!-- #region  使用marked读取并显示markdown-->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    function loadMd() {
+      document.getElementById("showMd").innerHTML = marked.parse(
+        "# Marked in the browser\n\nRendered by **marked**."
+      );
+    }
+
+  </script>
+  <!-- #endregion -->
+  <!-- #region  使用ajax读取并显示txt文件-->
+  <script>
+    function loadTxt() {
+      var xmlhttp;
+      if (window.XMLHttpRequest) {
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          document.getElementById("showTxt").innerHTML = xmlhttp.responseText;
+        }
+      };
+      xmlhttp.open("GET", "./1.txt", true);
+      xmlhttp.send();
+    }
+  </script>
+  <!-- #endregion -->
+  <!-- #endregion -->
+</head>
+
+<body id="body">
+  <div>
+    <div></div>
+    <h1>PLEASE SAY THANK !!!</h1>
+    <div>
+      <input type="text" value="click">
+      <button type="button">
     </div>
-  </body>
+  </div>
+  <p id="showTxt">here is me</p>
+  <button type="button" onclick="loadTxt()">修改内容</button>
+  <p id="showMd">here is me</p>
+  <button type="button" onclick="loadMd()">修改内容</button>
+</body>
+
 </html>

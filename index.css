@@ -1,14 +1,92 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-body{
-    margin: 0px;
-    padding: 0px;
-    background-image:url(./img/PageBackgrd.jpg) ;
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    background-position: 50%;
+#body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url(./img/PageBackgrd.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50%;
+}
+
+#body>div {
+  background-image: linear-gradient(to bottom, #23579c48, #00000000);
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#body>div>div:nth-child(1) {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-image: url(./img/UserHead.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid black;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 20px;
+}
+
+#body>div>h1 {
+  color: #268e90;
+  font-size: 45px;
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#body>div>div:last-child {
+  height: 60px;
+  width: 60%;
+  border-radius: 16px;
+  background-color: #63d4d839;
+  border: 3px solid #00000099;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#body>div>div:last-child>input {
+  outline: none;
+  float: left;
+  border: 0;
+  background-color: transparent;
+  height: max-content;
+  font-size: 28px;
+  width: calc(100% - 90px);
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: #000000;
+  font-family: sans-serif;
+  margin-left: 20px;
+  caret-color: #e36944;
+  caret-shape: auto;
+}
+
+
+
+#body>div>div:last-child>button:last-child {
+  border: 0px;
+  float: left;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  background-image: url('./img/search.png');
+  background-size: 80%;
+  border-left: 3px solid #000000;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  opacity: 0.6;
 }
