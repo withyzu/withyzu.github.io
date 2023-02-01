@@ -28,72 +28,8 @@
     <!-- #endregion -->
 
     <!-- #region Script -->
-    <!-- #region  使用marked读取并显示markdown-->
+    <script type="text/javascript" src="./index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-      function loadMd() {
-        document.getElementById("showMd").innerHTML = marked.parse("# Marked in the browser\n\nRendered by **marked**.");
-      }
-    </script>
-    <!-- #endregion -->
-    <!-- #region  使用ajax读取并显示txt文件-->
-    <script>
-      function loadTxt() {
-        var xmlhttp;
-        if (window.XMLHttpRequest) {
-          //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-          xmlhttp = new XMLHttpRequest();
-        } else {
-          // IE6, IE5 浏览器执行代码
-          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function () {
-          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            document.getElementById("showTxt").innerHTML = xmlhttp.responseText;
-          }
-        };
-        xmlhttp.open("GET", "./1.txt", true);
-        xmlhttp.send();
-      }
-    </script>
-    <!-- #endregion -->
-    <script>
-      function onresize() {
-        document.getElementById("category").innerHTML = "";
-        categoryAddChild();
-      }
-      function categoryAddChild(params) {
-        var category_Width = document.getElementById("category").clientWidth;
-        var category_Heigh = document.getElementById("category").clientHeight;
-
-        var categoryNum = 12; //此Div中放多少个类目
-
-        perRowCellNum_Aspect_Ratio = 0.7; //单元格比例
-        var width_100px_CellNum = parseInt(category_Width / 100); //以100px为基础，计算此Div中可以放多少个宽100px的单元格
-        if (width_100px_CellNum < 0) width_100px_CellNum++; //端元个至少为1
-        var perRowCellNum = 0; //此Div中每行多少单元格
-        do {
-          width_100px_CellNum = width_100px_CellNum >> 1;
-          perRowCellNum++;
-        } while (width_100px_CellNum > 0); //当设备尺寸变化，以幂次方增加或减少单元格数量
-        console.log(perRowCellNum);
-
-        {
-          c_w = 100 / perRowCellNum + "%"; //单元格宽度
-          c_h = (1 / perRowCellNum) * category_Width * perRowCellNum_Aspect_Ratio + "px"; //单元格高度
-          i = 0;
-          while (i < categoryNum) {
-            var div = document.createElement("div");
-            var c_div = document.createElement("div");
-            div.appendChild(c_div);
-            div.style.width = c_w;
-            div.style.height = c_h;
-            document.getElementById("category").appendChild(div);
-            i++;
-          }
-        }
-      }
-    </script>
     <!-- #endregion -->
   </head>
 
@@ -103,17 +39,9 @@
       <h1>PLEASE SAY THANK !!!</h1>
       <div>
         <input type="text" placeholder="To search..." aria-placeholder="hello" />
-        <button type="button"></button>
+        <button type="button" title="search"></button>
       </div>
     </div>
-    <!-- <p id="showTxt">here is me</p>
-  <button type="button" onclick="loadTxt()">修改内容</button>
-  <p id="showMd">here is me</p>
-  <button type="button" onclick="loadMd()">修改内容</button> -->
-    <div id="category">
-      <script>
-        categoryAddChild();
-      </script>
-    </div>
+    <div id="category"></div>
   </body>
 </html>
