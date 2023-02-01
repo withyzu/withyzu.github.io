@@ -13,7 +13,7 @@
   background-position: 50%;
 }
 
-#body>div:first-child {
+#body > div:first-child {
   background-image: linear-gradient(to bottom, #23579c99, #00000000);
   width: 100%;
   position: relative;
@@ -22,7 +22,7 @@
   transform: translate(-50%, 0);
 }
 
-#body>div:first-child>div:first-child {
+#body > div:first-child > div:first-child {
   height: 100px;
   width: 100px;
   border-radius: 50px;
@@ -36,7 +36,7 @@
   box-shadow: 0px 10px 10px #00000054;
 }
 
-#body>div:first-child>h1 {
+#body > div:first-child > h1 {
   color: #268e90;
   font-size: 45px;
   position: relative;
@@ -45,7 +45,7 @@
   text-shadow: 0px 10px 10px #00000054;
 }
 
-#body>div:first-child>div:last-child {
+#body > div:first-child > div:last-child {
   height: 50px;
   width: 60%;
   border-radius: 16px;
@@ -54,11 +54,11 @@
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 10px 10px #00000054;
+  box-shadow: 0px 5px 5px #00000054;
   outline: none;
 }
 
-#body>div:first-child>div:last-child>input {
+#body > div:first-child > div:last-child > input {
   outline: none;
   float: left;
   border: 0;
@@ -76,7 +76,7 @@
   caret-shape: auto;
 }
 
-#body>div:first-child>div:last-child>button:last-child {
+#body > div:first-child > div:last-child > button:last-child {
   outline: none;
   border: 0px;
   float: left;
@@ -94,19 +94,18 @@
   opacity: 0.6;
 }
 
-#body>div:first-child>div:last-child>input::placeholder {
+#body > div:first-child > div:last-child > input::placeholder {
   color: #00000099;
   font-size: 24px;
   font-family: sans-serif;
 }
 
-#body>div:first-child>div:last-child>button:last-child:active {
+#body > div:first-child > div:last-child > button:last-child:active {
   background-size: 65%;
   background-image: url("./img/search_active.png");
 }
 
 #category {
-  background-color: #00000000;
   width: 95%;
   border-radius: 16px;
   display: flex;
@@ -116,68 +115,7 @@
   transform: translate(-50%, 0);
 }
 
-@media screen and (max-width: 600px) and (max-height: 600px) {
-  #category>div {
-    width: calc(100%/2);
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 400px) and (max-height: 400px) {
-  #category>div {
-    width: 100%;
-    height: 360px;
-  }
-}
-
-@media screen and (max-width: 400px) and (min-height: 400px) and (orientation :portrait) {
-  #category>div {
-    width: calc(100%/2);
-    height: 160px;
-  }
-}
-
-@media screen and (max-height: 400px) and (min-width: 400px) and (orientation :landscape) {
-  #category>div {
-    width: calc(100%/2);
-    height: 200px;
-  }
-}
-
-/* 当宽无最小时，height = (max-width / n) - n * 10 * 2 */
-/* 当宽有最小时，height= min-width / n */
-/* n ： 当前元素子类（div）的数量 */
-/* 10 ：margin 所占的宽度  */
-@media screen and (max-width: 600px) and (min-height: 600px) and (max-height: 900px) and (min-width: 400px) and (orientation :portrait) {
-  #category>div {
-    width: calc(100%/2);
-    height: 260px;
-  }
-}
-
-@media screen and (max-height: 600px) and (min-width: 600px) and (max-width: 900px) and (min-height: 400px) and (orientation :landscape) {
-  #category>div {
-    width: calc(100%/2);
-    height: 300px;
-  }
-}
-
-@media screen and (min-width: 600px) and (orientation :landscape) {
-  #category>div {
-    width: calc(100%/4);
-    height: 300px;
-  }
-}
-
-@media screen and (min-width: 900px) and (min-width: 900px) and (orientation :landscape) {
-  #category>div {
-    width: calc(100%/4);
-    height: 300px;
-  }
-}
-
-#category>div {
-  background-color: #03bf5400;
+#category > div {
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -185,7 +123,7 @@
   margin-top: 10px;
 }
 
-#category>div>div {
+#category > div > div {
   height: 90%;
   background-image: url("./img/loading.gif");
   background-size: cover;
