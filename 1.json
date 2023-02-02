@@ -1,10 +1,12 @@
 [
     {
-        "name": "note",
-        "url": "./category/note.html"
+        "name": "My Note",
+        "url": "./category/note.html",
+        "imgGrd": "./img/note.jpg"
     },
     {
-        "name": "web_cate",
-        "url": "./category/web_cate.html"
+        "name": "Web Cate",
+        "url": "./category/web_cate.html",
+        "imgGrd": "./img/cate.jpg"
     }
 ]
