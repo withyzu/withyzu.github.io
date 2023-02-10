@@ -1,0 +1,37 @@
+{
+  "id": "3888212",
+  "name": "cate",
+  "font_family": "iconfont",
+  "css_prefix_text": "",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "930376",
+      "name": "空气清新",
+      "font_class": "others",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "1445277",
+      "name": "shovel",
+      "font_class": "onlinetools",
+      "unicode": "e89d",
+      "unicode_decimal": 59549
+    },
+    {
+      "icon_id": "4765745",
+      "name": "up-circle",
+      "font_class": "up-circle",
+      "unicode": "e785",
+      "unicode_decimal": 59269
+    },
+    {
+      "icon_id": "10139853",
+      "name": "outdoors-tree-valley",
+      "font_class": "tofind",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    }
+  ]
+}
