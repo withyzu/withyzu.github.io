@@ -1,0 +1,12 @@
+[
+    {
+        "name": "My Note",
+        "url": "/note/home.html",
+        "imgGrd": "/Asset/img/note.jpg"
+    },
+    {
+        "name": "Web Cate",
+        "url": "/web_cate/home.html",
+        "imgGrd": "/Asset/img/cate.jpg"
+    }
+]

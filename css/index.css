@@ -5,16 +5,14 @@
 }
 
 #body {
-  margin: 0px;
-  padding: 0px;
-  background-image: url(./img/PageBackgrd.jpg);
+  background-image: url("/Asset/img/PageBackgrd.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: 50%;
 }
 
-#body > div:first-child {
+#body>div:first-child {
   background-image: linear-gradient(to bottom, #23579c99, #00000000);
   width: 100%;
   position: relative;
@@ -23,11 +21,11 @@
   transform: translate(-50%, 0);
 }
 
-#body > div:first-child > div:first-child {
+#body>div:first-child>div:first-child {
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  background-image: url(./img/UserHead.webp);
+  background-image: url("/Asset/img/UserHead.webp");
   background-repeat: no-repeat;
   background-size: cover;
   border: 3px solid black;
@@ -38,7 +36,7 @@
   overflow: hidden;
 }
 
-#body > div:first-child > h1 {
+#body>div:first-child>h1 {
   color: #268e90;
   font-size: 6vmin;
   position: relative;
@@ -48,7 +46,7 @@
   text-shadow: 0px 10px 10px #00000054;
 }
 
-#body > div:first-child > div:last-child {
+#body>div:first-child>div:last-child {
   height: 50px;
   width: 60%;
   border-radius: 16px;
@@ -62,7 +60,7 @@
   overflow: hidden;
 }
 
-#body > div:first-child > div:last-child > input {
+#body>div:first-child>div:last-child>input {
   outline: none;
   float: left;
   border: 0;
@@ -82,14 +80,14 @@
   overflow: hidden;
 }
 
-#body > div:first-child > div:last-child > button:last-child {
+#body>div:first-child>div:last-child>button:last-child {
   outline: none;
   border: 0px;
   float: left;
   width: 50px;
   height: 50px;
   background-color: #00000000;
-  background-image: url("./img/search.png");
+  background-image: url("/Asset/img/search.png");
   background-size: 60%;
   border-left: 3px solid #000000;
   background-repeat: no-repeat;
@@ -100,15 +98,15 @@
   opacity: 0.6;
 }
 
-#body > div:first-child > div:last-child > input::placeholder {
+#body>div:first-child>div:last-child>input::placeholder {
   color: #2d2d2da8;
   font-size: 3vmin;
   font-family: sans-serif;
 }
 
-#body > div:first-child > div:last-child > button:last-child:active {
+#body>div:first-child>div:last-child>button:last-child:active {
   background-size: 65%;
-  background-image: url("./img/search_active.png");
+  background-image: url("/Asset/img/search_active.png");
 }
 
 #category {
@@ -122,14 +120,14 @@
   overflow: hidden;
 }
 
-#category > div {
+#category>div {
   background-size: cover;
   background-position: center;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-#category > div > div {
+#category>div>div {
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -141,12 +139,12 @@
   transform: translate(0, -50%);
 }
 
-#category > div > div > a {
+#category>div>div>a {
   text-decoration: none;
   position: relative;
 }
 
-#category > div > div > a > div > h1 {
+#category>div>div>a>div>h1 {
   backdrop-filter: blur(2px);
   font-size: 5vmin;
   background-color: #63d4d839;
@@ -157,7 +155,7 @@
   color: #f4e0c5b9;
 }
 
-#category > div > div > a > div {
+#category>div>div>a>div {
   height: 100%;
   width: 100%;
   background-position: bottom;

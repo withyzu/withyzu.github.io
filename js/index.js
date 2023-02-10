@@ -7,7 +7,6 @@ function reRender() {
   document.getElementById("category").innerHTML = "";
   loadCategory();
   searchBoxVisibility();
-  console.log("loging");
 } //重新渲染Category
 function onresize() {}
 function displayTxt() {
@@ -28,7 +27,9 @@ function displayTxt() {
   xmlhttp.send();
 }
 function displayMd() {
-  document.getElementById("showMd").innerHTML = marked.parse("# Marked in the browser\n\nRendered by **marked**.");
+  document.getElementById("showMd").innerHTML = marked.parse(
+    "# Marked in the browser\n\nRendered by **marked**."
+  );
 }
 function divAddChild() {
   var category_Width = document.getElementById("category").clientWidth;
@@ -63,19 +64,19 @@ function divAddChild() {
 }
 function loadCategory() {
   perRowCellNum_Aspect_Ratio = 0.8; //单元格比例
-  var url = "1.json"; //json文件url
-  var j;
+  var url = "/Asset/category.json"; //json文件url
+  var json;
   var request = new XMLHttpRequest();
   request.open("GET", url, true);
   request.send();
   request.onload = function () {
     if (request.status == 200) {
-      j = JSON.parse(request.responseText); //JSON.parse与eval和能将一个字符串解析成一个JSON对象
-      console.log(j);
+      json = JSON.parse(request.responseText); //JSON.parse与eval和能将一个字符串解析成一个JSON对象
+      console.log(json);
     }
 
     var category_Width = document.getElementById("category").clientWidth;
-    var categoryNum = Object.keys(j).length; //此Div中放多少个类目
+    var categoryNum = Object.keys(json).length; //此Div中放多少个类目
     console.log(categoryNum);
 
     var width_100px_CellNum = parseInt(category_Width / 100); //以100px为基础，计算此Div中可以放多少个宽100px的单元格
@@ -88,7 +89,8 @@ function loadCategory() {
     console.log(perRowCellNum);
 
     c_w = 100 / perRowCellNum + "%"; //单元格宽度
-    c_h = parseFloat(1 / perRowCellNum).toFixed(1) * category_Width * perRowCellNum_Aspect_Ratio + "px"; //单元格高度
+    c_h =
+      parseFloat(1 / perRowCellNum).toFixed(1) * category_Width * perRowCellNum_Aspect_Ratio + "px"; //单元格高度
     i = 0;
     while (i < categoryNum) {
       var div = document.createElement("div");
@@ -97,9 +99,9 @@ function loadCategory() {
       var div_div_a_div = document.createElement("div");
       var div_div_a_div_h1 = document.createElement("h1");
 
-      div_div_a.href = j[i].url;
-      div_div_a_div.style.backgroundImage = "url(" + j[i].imgGrd + ")";
-      div_div_a_div_h1.textContent = j[i].name;
+      div_div_a.href = json[i].url;
+      div_div_a_div.style.backgroundImage = "url(" + json[i].imgGrd + ")";
+      div_div_a_div_h1.textContent = json[i].name;
 
       div_div_a_div.appendChild(div_div_a_div_h1);
       div_div_a.appendChild(div_div_a_div);

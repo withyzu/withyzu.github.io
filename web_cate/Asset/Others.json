@@ -1,0 +1,29 @@
+[
+    {
+        "id": "o-cg-about",
+        "name": "CG教程、资源、插件",
+        "website": [
+            {
+                "href": "http://www.iiicg.com/",
+                "name": "画忆妙妙屋",
+                "introduc": "精品CG场景资源。"
+            },
+            {
+                "href": "https://help.autodesk.com/view/ARNOL/CHS/",
+                "name": "Arnold",
+                "introduc": "Arnold帮助手册。"
+            }
+        ]
+    },
+    {
+        "id": "o-have-fun",
+        "name": "小游戏",
+        "website": [
+            {
+                "href": "https://bezier.method.ac/",
+                "name": "thebeziergame",
+                "introduc": "一个钢笔工具小游戏。"
+            }
+        ]
+    }
+]
