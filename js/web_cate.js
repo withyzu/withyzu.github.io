@@ -44,7 +44,9 @@ function loadMain(json) {
       var lb_img = document.createElement("a");
       var lb_intro = document.createElement("p");
 
-      var name = json[i].website[j].name;
+      var a = "HL";
+      var name = json[i].website[j].name.toLowerCase();
+      console.log(name);
       lb_img.href = json[i].website[j].href;
       lb_img.style.backgroundImage = "url(" + "/web_cate/Asset/img-zip/" + name + ".png" + ")";
       lb_intro.textContent = json[i].website[j].introduc;
