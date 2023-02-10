@@ -46,7 +46,7 @@ function loadMain(json) {
 
       var name = json[i].website[j].name;
       lb_img.href = json[i].website[j].href;
-      lb_img.style.backgroundImage = "url(" + "/web_cate/Asset/img/" + name + ".png" + ")";
+      lb_img.style.backgroundImage = "url(" + "/web_cate/Asset/img-zip/" + name + ".png" + ")";
       lb_intro.textContent = json[i].website[j].introduc;
 
       l_b.appendChild(lb_img);
