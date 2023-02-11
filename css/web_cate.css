@@ -13,7 +13,6 @@
   --box-black-shadow: 2px 2px 3px #0b3c3053;
   --item-font-color-hover: #b56ade;
 
-
   --fix-icon-w-h: 45px;
 
   --transiton-time: 0.3s;
@@ -46,12 +45,14 @@
   --foregrd: #eeeeee;
   --backgrd: #101e34d8;
   --photo-backgrd: #101e34;
-  --box-fore-img-brg: repeating-linear-gradient(0deg,
+  --box-fore-img-brg: repeating-linear-gradient(
+      0deg,
       #ffffff00,
       #3937a280,
       2px,
       #507fcb00 2px,
-      #2b884d80 4px),
+      #2b884d80 4px
+    ),
     repeating-linear-gradient(90deg, #ffffff00, #3937a280, 2px, #507fcb00 2px, #2b884d80 4px);
   --box-img-brg-hover: linear-gradient(to left, #00000000, #40688785 60%, #0978c841);
   --box-black-shadow: 2px 2px 3px #ffffff30;
@@ -111,7 +112,7 @@
 }
 
 /* #region #body > 布局 */
-#body>div:first-child {
+#body > div:first-child {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
@@ -175,7 +176,6 @@
   background: var(--box-fore-img-brg);
   outline: var(--backgrd) 4px solid;
   display: none;
-
 }
 
 #main {
@@ -235,7 +235,7 @@
   width: 100%;
 }
 
-.list-box>label {
+.list-box > label {
   height: 36px;
   position: relative;
   display: flex;
@@ -244,7 +244,7 @@
   background: var(--box-fore-img-brg);
 }
 
-.list-box>label>i {
+.list-box > label > i {
   vertical-align: middle;
   text-align: center;
   font-style: normal;
@@ -252,23 +252,23 @@
   flex: none;
 }
 
-.list-box>label>i:first-child {
+.list-box > label > i:first-child {
   width: 30px;
 }
 
-.list-box>label>i:last-child {
+.list-box > label > i:last-child {
   width: 30px;
   rotate: 90deg;
   transition: rotate var(--transiton-time);
 }
 
-.list-box>label>span {
+.list-box > label > span {
   flex: 1;
 }
 
-.list-box>label>i:first-child,
-.list-box>label>i:last-child,
-.list-box>label>span {
+.list-box > label > i:first-child,
+.list-box > label > i:last-child,
+.list-box > label > span {
   text-align: center;
   vertical-align: middle;
   line-height: var(--shelf-line-height);
@@ -286,13 +286,13 @@
   transition: height var(--transiton-time);
 }
 
-.item-content>a {
+.item-content > a {
   display: block;
   width: 100%;
   text-decoration: none;
 }
 
-.item-content>a>div {
+.item-content > a > div {
   padding: 0 10px 0px 10px;
   position: relative;
   display: flex;
@@ -305,12 +305,12 @@
   font-size: var(--item-font-size);
 }
 
-.item-content>a>div>i:first-child {
+.item-content > a > div > i:first-child {
   font-style: normal;
   flex: none;
 }
 
-.item-content>a>div>span:last-child {
+.item-content > a > div > span:last-child {
   margin-left: 10px;
   flex: 1;
 }
@@ -318,7 +318,7 @@
 /* #endregion */
 
 /* #region side-head */
-#side>div:first-child {
+#side > div:first-child {
   border-top-right-radius: 8px;
   margin-right: 5px;
   margin-top: 5px;
@@ -327,7 +327,7 @@
   position: relative;
 }
 
-#side>div:first-child>div {
+#side > div:first-child > div {
   border: 3px solid var(--foregrd);
   height: 60px;
   width: 60px;
@@ -341,7 +341,7 @@
   box-shadow: var(--box-black-shadow);
 }
 
-#side>div:first-child>h1 {
+#side > div:first-child > h1 {
   color: var(--foregrd);
   font-size: 16px;
   position: relative;
@@ -353,7 +353,7 @@
   text-shadow: var(--box-black-shadow);
 }
 
-#side>div:last-child {
+#side > div:last-child {
   margin-right: 5px;
   margin-top: 5px;
   border-bottom-right-radius: 8px;
@@ -361,7 +361,7 @@
   overflow: hidden;
 }
 
-#side>div:last-child>div {
+#side > div:last-child > div {
   min-height: 100px;
   border-bottom-right-radius: 8px;
   background: var(--box-fore-img-brg);
@@ -372,37 +372,37 @@
 /* #region 触发器 */
 /* A ~ B : 代表A元素之后所有的B元素使用以下CSS */
 /* A:checked : 代表A元素当前状态为checked */
-#side-display-btn:checked~#side {
+#side-display-btn:checked ~ #side {
   width: 0px;
 }
 
-#side-display-btn:checked~#vacancy {
+#side-display-btn:checked ~ #vacancy {
   width: 0px;
 }
 
-.trigger-btn:checked~.item-content {
+.trigger-btn:checked ~ .item-content {
   height: 0px !important;
 }
 
-.trigger-btn:checked+label>i:last-child {
+.trigger-btn:checked + label > i:last-child {
   rotate: 180deg;
 }
 
-.item-content>a>div:hover {
+.item-content > a > div:hover {
   background: var(--box-img-brg-hover);
 }
 
-#side>div:first-child>h1:hover,
-.list-box>label>span:hover,
-.list-box>label>i:hover {
+#side > div:first-child > h1:hover,
+.list-box > label > span:hover,
+.list-box > label > i:hover {
   color: var(--item-font-color-hover);
 }
 
 /* #endregion */
 
 /* #region 针对某一属性*/
-#side>div:first-child>h1,
-.list-box>label>i,
+#side > div:first-child > h1,
+.list-box > label > i,
 .fix-lb,
 .item-content,
 .list-item {
@@ -434,7 +434,6 @@
   border-radius: 8px;
   background-color: var(--backgrd);
   box-shadow: var(--box-black-shadow);
-
 }
 
 .cate-name {
@@ -452,12 +451,10 @@
 .cate-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(9rem, 100%), 1fr));
-  line-height: 300px;
   grid-gap: 10px;
-  grid-auto-rows: auto;
 }
 
-.cate-content>div {
+.cate-content > div {
   height: 100%;
   position: relative;
   padding: 5px;
@@ -467,7 +464,7 @@
   overflow: hidden;
 }
 
-.cate-content>div>a:nth-child(1) {
+.cate-content > div > a:nth-child(1) {
   display: block;
   height: 2em;
   width: 90%;
@@ -480,7 +477,7 @@
   box-shadow: var(--box-black-shadow);
 }
 
-.cate-content>div>p:nth-child(2) {
+.cate-content > div > p:nth-child(2) {
   font-size: var(--cate-caontent-intro-font-size);
   font-weight: var(--cate-caontent-intro-font-weight);
   line-height: var(--cate-caontent-intro-line-height);
@@ -500,7 +497,7 @@
   margin-bottom: 20px;
 }
 
-#footer>div {
+#footer > div {
   height: 100%;
   background: var(--backgrd);
   margin-bottom: 5px;
