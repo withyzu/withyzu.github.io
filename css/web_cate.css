@@ -10,7 +10,7 @@
   --photo-backgrd: #ffffff;
   --box-fore-img-brg: radial-gradient(farthest-corner at 120% 100%, #46b4ab8f 30px, #46b4ab8f);
   --box-img-brg-hover: #e7b990b6;
-  --box-black-shadow: 3px 3px 3px 0px #0b3c3053;
+  --box-black-shadow: 2px 2px 3px #0b3c3053;
   --item-font-color-hover: #b56ade;
 
 
@@ -54,7 +54,7 @@
       #2b884d80 4px),
     repeating-linear-gradient(90deg, #ffffff00, #3937a280, 2px, #507fcb00 2px, #2b884d80 4px);
   --box-img-brg-hover: linear-gradient(to left, #00000000, #40688785 60%, #0978c841);
-  --box-black-shadow: 0px 0px 3px#0000005e;
+  --box-black-shadow: 2px 2px 3px#ffffff30;
   --item-font-color-hover: #cc7e72;
 
   --fix-icon-w-h: 45px;
@@ -338,6 +338,7 @@
   transform: translate(-50%, 0);
   margin-top: 10px;
   overflow: hidden;
+  box-shadow: var(--box-black-shadow);
 }
 
 #side>div:first-child>h1 {
@@ -349,6 +350,7 @@
   transform: translate(-50%, 0);
   margin-top: 10px;
   margin-bottom: 10px;
+  text-shadow: var(--box-black-shadow);
 }
 
 #side>div:last-child {
@@ -449,27 +451,33 @@
 
 .cate-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 160px);
+  grid-template-columns: repeat(auto-fill, minmax(min(9rem, 100%), 1fr));
+  line-height: 300px;
   grid-gap: 10px;
   grid-auto-rows: auto;
 }
 
 .cate-content>div {
+  height: 100%;
   position: relative;
-  height: auto;
   padding: 5px;
   border-radius: 8px;
   background: var(--box-fore-img-brg);
   box-shadow: var(--box-black-shadow);
+  overflow: hidden;
 }
 
 .cate-content>div>a:nth-child(1) {
   display: block;
-  height: 40px;
-  border-radius: 4px;
+  height: 2em;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 8px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-top: 5px;
+  box-shadow: var(--box-black-shadow);
 }
 
 .cate-content>div>p:nth-child(2) {

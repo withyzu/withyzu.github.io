@@ -9,28 +9,6 @@ function reRender() {
   searchBoxVisibility();
 } //重新渲染Category
 function onresize() {}
-function displayTxt() {
-  var xmlhttp;
-  if (window.XMLHttpRequest) {
-    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-    xmlhttp = new XMLHttpRequest();
-  } else {
-    // IE6, IE5 浏览器执行代码
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xmlhttp.onreadystatechange = function () {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-      document.getElementById("showTxt").innerHTML = xmlhttp.responseText;
-    }
-  };
-  xmlhttp.open("GET", "./1.txt", true);
-  xmlhttp.send();
-}
-function displayMd() {
-  document.getElementById("showMd").innerHTML = marked.parse(
-    "# Marked in the browser\n\nRendered by **marked**."
-  );
-}
 function divAddChild() {
   var category_Width = document.getElementById("category").clientWidth;
   var category_Heigh = document.getElementById("category").clientHeight;
