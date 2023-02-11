@@ -54,7 +54,7 @@
       #2b884d80 4px),
     repeating-linear-gradient(90deg, #ffffff00, #3937a280, 2px, #507fcb00 2px, #2b884d80 4px);
   --box-img-brg-hover: linear-gradient(to left, #00000000, #40688785 60%, #0978c841);
-  --box-black-shadow: 2px 2px 3px#ffffff30;
+  --box-black-shadow: 2px 2px 3px #ffffff30;
   --item-font-color-hover: #cc7e72;
 
   --fix-icon-w-h: 45px;
