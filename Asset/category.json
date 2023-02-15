@@ -1,12 +1,14 @@
 [
     {
+        "name": "Withyzu",
+        "url": "/index.html"
+    },
+    {
         "name": "My Note",
-        "url": "/note/home.html",
-        "imgGrd": "/Asset/img/note.jpg"
+        "url": "/note/home.html"
     },
     {
         "name": "Web Cate",
-        "url": "/web_cate/home.html",
-        "imgGrd": "/Asset/img/cate.jpg"
+        "url": "/web_cate/home.html"
     }
 ]

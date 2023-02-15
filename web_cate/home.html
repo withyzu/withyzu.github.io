@@ -22,6 +22,7 @@
     <!-- #region Link -->
     <link href="/favicon.ico" rel="shortcut icon" />
     <link href="/css/web_cate.css" rel="stylesheet" type="text/css" />
+    <link href="/css/public.css" rel="stylesheet" type="text/css" />
     <link href="/web_cate/Asset/iconfont/iconfont.css" rel="stylesheet" />
     <!-- #endregion -->
 
@@ -31,26 +32,20 @@
     <!-- #endregion -->
 
     <!-- #region Script -->
+    <script type="text/javascript" src="/js/mark.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/web_cate.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="text/javascript" src="/js/public.js"></script>
     <!-- #endregion -->
   </head>
 
   <body id="body">
-    <div>
-      <label for="change-theme-btn" class="fix-lb fix-lb-theme-change"
-        ><i class="fix-i">🌞</i>
-      </label>
-      <input
-        id="change-theme-btn"
-        class="trigger-btn"
-        type="checkbox"
-        onclick="click_change_theme()"
-      />
+    <div id="content-body">
       <label for="side-display-btn" class="fix-lb fix-lb-side-display"
         ><i class="fix-i">📜</i>
       </label>
       <input id="side-display-btn" class="trigger-btn" type="checkbox" />
+      <label for="side-display-btn"></label>
       <div id="side">
         <div>
           <div></div>
@@ -63,8 +58,11 @@
           <div></div>
         </div>
       </div>
+
+      <div id="nav-bar">
+        <div id="nav-bar-content"></div>
+      </div>
       <div id="vacancy"></div>
-      <div id="search"></div>
       <div id="main">
         <div id="main-content"></div>
         <div id="footer">

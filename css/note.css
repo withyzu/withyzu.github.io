@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: auto;
+  box-sizing: border-box;
+}
+
+:root {
+  --foregrd: #000000;
+  --backgrd: #ddece0;
+  --photo-backgrd: #7f7f7f;
+  --box-fore-img-brg: radial-gradient(farthest-corner at 120% 100%, #46b4ab8f 30px, #46b4ab8f);
+  --brg-hover: #ffddbc;
+  --box-black-shadow: 0px 0px 4px #0b3c3053;
+}
+
+body {
+  background: var(--backgrd);
+}
+
+#note-content {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", 微软雅黑, Tahoma, Arial, sans-serif;
+  color: #464e57;
+  font-weight: 500;
+}
+
+/* #region 表格 */
+#note-content table {
+  vertical-align: middle;
+  border-collapse: collapse;
+  font-size: 14px;
+  border-spacing: 0;
+}
+
+#note-content td,
+#note-content th {
+  padding: 3px 1rem 3px 1rem;
+  border: 2px solid #ffffff80;
+}
+
+#note-content tr:nth-child(odd) {
+  background: #d8e9f8;
+}
+
+#note-content tr:nth-child(even) {
+  background-color: #cce2da;
+}
+
+#note-content tr:hover {
+  background-color: var(--brg-hover);
+}
+
+#note-content th {
+  line-height: 2rem;
+  background-color: #5b9bd5;
+}
+/* #endregion */
+/* #region 标题 */
+#note-content h1 {
+  border-left: 1rem solid #ed515191;
+  font-size: 1.8rem;
+}
+#note-content h2 {
+  border-left: 2rem solid #ed975191;
+  font-size: 1.6rem;
+}
+#note-content h3 {
+  border-left: 3rem solid #e6ed6491;
+  font-size: 1.4rem;
+}
+#note-content h4 {
+  border-left: 4rem solid #2be23491;
+  font-size: 1.2rem;
+}
+#note-content h5 {
+  border-left: 5rem solid #0d83fa91;
+}
+
+#note-content h1,
+#note-content h2,
+#note-content h3,
+#note-content h4,
+#note-content h5 {
+  padding: 0 20px;
+  background: transparent;
+  color: cornflowerblue;
+  font-weight: bold;
+  margin: 5px 0;
+  line-height: 150%;
+}
+
+/* #endregion */
+#note-content p {
+  word-spacing: 0;
+  text-align: left;
+  word-wrap: break-word;
+  padding: 0.4rem;
+} /* 段落 */
+#note-content a {
+  font-size: 1rem;
+  color: rgb(96, 127, 200);
+} /* 链接 */
+#note-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  border: 0;
+  vertical-align: middle;
+} /* 图片 */
+#note-content kbd {
+  background-color: #c0dde6;
+  padding: 2px;
+  margin: 4px;
+  height: max-content;
+  width: max-content;
+  border-radius: 4px;
+  color: rgb(46, 43, 43);
+  font-size: 14px;
+  border: 2px #8db5bcad solid;
+}

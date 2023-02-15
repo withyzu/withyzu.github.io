@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = () => {
   var tofind = "/web_cate/Asset/To Find.json";
   var onlinetools = "/web_cate/Asset/Online Tools.json";
   var others = "/web_cate/Asset/Others.json";
@@ -108,10 +108,3 @@ function loadSide(json, json_name) {
   e_7.style.height = json_h * 30 + "px";
   e_0.appendChild(e_1);
 } //加载#mside-content的内容
-function click_change_theme() {
-  if (document.body.classList.contains("theme-dark")) {
-    document.body.classList.remove("theme-dark");
-  } else {
-    document.body.classList.add("theme-dark");
-  }
-} //改变主题
