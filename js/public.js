@@ -17,6 +17,8 @@ async function json_to_navbar(url) {
 } // }将json内容转换为nav-side;
 
 function load_navbar(json) {
+  var e1 = document.createElement("div");
+  e1.setAttribute("id", "nav-bar-content");
   var categoryNum = Object.keys(json).length;
   var i = 0;
   while (i < categoryNum) {
@@ -25,11 +27,19 @@ function load_navbar(json) {
 
     a.href = json[i].url;
     a_h1.textContent = json[i].name;
-
     a.appendChild(a_h1);
-    document.getElementById("nav-bar-content").appendChild(a);
+    e1.appendChild(a);
     i++;
   }
+  var e3 = document.createElement("label");
+  e3.setAttribute("for", "nav-side-display-btn");
+  var e2 = document.createElement("input");
+  e2.setAttribute("id", "nav-side-display-btn");
+  e2.setAttribute("type", "checkbox");
+  e2.setAttribute("class", "trigger-btn");
+  document.getElementById("nav-bar").appendChild(e2);
+  document.getElementById("nav-bar").appendChild(e1);
+  document.getElementById("nav-bar").appendChild(e3);
 } //加载nav-side
 
 function add_theme_change_btn() {
