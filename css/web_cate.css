@@ -33,7 +33,7 @@
 #body {
   overflow: hidden;
   box-sizing: border-box;
-  background: url("/Asset/img/PageBackgrd.jpg");
+  background: url("/Asset/img/pageimggrd.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50%;
@@ -223,7 +223,7 @@
   border: 3px solid var(--shelf-font-color);
   height: 60px;
   width: 60px;
-  background: center / cover no-repeat url("/Asset/img/UserHead.webp");
+  background: center / cover no-repeat url("/Asset/img/userhead.png");
   border-radius: 30px;
   position: relative;
   left: 50%;

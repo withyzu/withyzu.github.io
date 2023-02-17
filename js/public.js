@@ -19,18 +19,21 @@ async function json_to_navbar(url) {
 function load_navbar(json) {
   var e1 = document.createElement("div");
   e1.setAttribute("id", "nav-bar-content");
-  var categoryNum = Object.keys(json).length;
-  var i = 0;
-  while (i < categoryNum) {
+
+  json.forEach((item) => {
     var a = document.createElement("a");
     var a_h1 = document.createElement("h1");
-
-    a.href = json[i].url;
-    a_h1.textContent = json[i].name;
+    ///////////////////////////////////////////////////////
+    if (!item.name.localeCompare(document.title)) {
+      a.style.background = "var(--accent-color-no-alpha-havor)";
+    }
+    ///////////////////////////////////////////////////////当前网页标题突出显示
+    a.href = item.url;
+    a_h1.textContent = item.name;
     a.appendChild(a_h1);
     e1.appendChild(a);
-    i++;
-  }
+  });
+
   var e3 = document.createElement("label");
   e3.setAttribute("for", "nav-side-display-btn");
   var e2 = document.createElement("input");
@@ -68,3 +71,16 @@ function click_change_theme() {
     document.body.classList.add("theme-dark");
   }
 } //改变主题
+
+function GetUrlRelativePath() {
+  var url = document.location.toString();
+  var arrUrl = url.split("//");
+
+  var start = arrUrl[1].indexOf("/");
+  var relUrl = arrUrl[1].substring(start); //stop省略，截取从start开始到结尾的所有字符
+
+  if (relUrl.indexOf("?") != -1) {
+    relUrl = relUrl.split("?")[0];
+  }
+  return relUrl;
+} //获取当前相对路径的方法

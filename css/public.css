@@ -72,9 +72,21 @@ label[for="nav-side-display-btn"] {
   margin: 0 auto;
 }
 
-#nav-bar-content > a:hover {
-  background: var(--backbrg-hover);
-  transition: background-color var(--transiton-double-time);
+#nav-bar-content > a::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  border: 2px solid black;
+  border: 8px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #00000000;
+  transition: background-color var(--transiton-fast-time);
+}
+
+#nav-bar-content > a:hover::after {
+  background-color: var(--accent-color-no-alpha-havor);
 }
 
 #nav-bar-content a > h1 {

@@ -1,14 +1,17 @@
 [
     {
-        "name": "Withyzu",
+        "id": "home",
+        "name": "首页",
         "url": "/index.html"
     },
     {
-        "name": "My Note",
-        "url": "/note/home.html"
+        "id": "mynote",
+        "name": "我的笔记",
+        "url": "/note"
     },
     {
-        "name": "Web Cate",
-        "url": "/web_cate/home.html"
+        "id": "webcate",
+        "name": "网站导航",
+        "url": "/web_cate"
     }
 ]
