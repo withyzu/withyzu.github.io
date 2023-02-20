@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  var nav_side = "/Asset/category.json";
+  var nav_side = "/boot.json";
   json_to_navbar(nav_side);
   add_theme_change_btn();
 });
@@ -25,8 +25,8 @@ function load_navbar(json) {
     var a_h1 = document.createElement("h1");
     ///////////////////////////////////////////////////////
     if (!item.name.localeCompare(document.title)) {
-      a.style.background = "var(--accent-color-no-alpha-havor)";
-    }
+      a.style.backgroundColor = "var(--accent-color-no-alpha-havor)";
+    } //当前网页标题突出显示
     ///////////////////////////////////////////////////////当前网页标题突出显示
     a.href = item.url;
     a_h1.textContent = item.name;

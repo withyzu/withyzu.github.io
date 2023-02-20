@@ -1,5 +1,5 @@
 window.onload = () => {
-  var url = "/web_cate/assets/catalogue.json";
+  var url = "boot.json";
   load_catalog(url).catch((e) => {
     console.log("err: " + e.message);
   });
@@ -38,7 +38,7 @@ function loadMain(json) {
 
       var name = site.name.toLowerCase();
       lb_img.href = site.href;
-      lb_img.style.backgroundImage = "url(" + "/web_cate/assets/img-zip/" + name + ".png" + ")";
+      lb_img.style.backgroundImage = "url(" + "assets/img-zip/" + name + ".png" + ")";
       lb_intro.textContent = site.introduc;
 
       l_b.appendChild(lb_img);

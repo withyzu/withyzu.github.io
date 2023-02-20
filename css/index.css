@@ -5,7 +5,3 @@ body {
   background-attachment: fixed;
   background-position: 50%;
 }
-
-#nav-bar-content {
-  background: var(--backgrd);
-}

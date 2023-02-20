@@ -2,7 +2,7 @@
     {
         "id": "home",
         "name": "首页",
-        "url": "/index.html"
+        "url": "/"
     },
     {
         "id": "mynote",

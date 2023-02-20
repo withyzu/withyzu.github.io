@@ -7,9 +7,9 @@
 :root {
   --backgrd: #fffefebb;
   --backgrd-no-alpha: #ffffff;
-  --backbrg-hover: #f6ba85b5;
+  --backbrg-hover: #f6ba853c;
 
-  --foregrd: black;
+  --foregrd: #464e57;
   --foregrd-no-alpha: #85bfb6;
   --foregrd-hover: #de8b6a;
 
@@ -17,18 +17,25 @@
   --accent-color-no-alpha: #85bfb6;
   --accent-color-no-alpha-havor: #f0b785;
 
+  --box-box-shadow: 0px 10px 30px #0000001a;
+
+  /*通用*/
   --fix-icon-w-h: 45px;
 
   --transiton-fast-time: 0.4s;
   --transiton-double-time: 0.8s;
+
+  --nav-bar-content-height: 2.5rem;
+
+  --hover: #00a4ff;
 }
 
 .theme-dark {
   --backgrd: #2c3a53ee;
   --backgrd-no-alpha: #2c3a53;
-  --backbrg-hover: #a361ffb5;
+  --backbrg-hover: #a361ff80;
 
-  --foregrd: #ffffff;
+  --foregrd: #bec9db;
   --foregrd-no-alpha: #85bfb6;
   --foregrd-hover: #b56ade;
 
@@ -36,21 +43,44 @@
   --accent-color-no-alpha: #71b8df;
   --accent-color-no-alpha-havor: #994fff;
 
-  --fix-icon-w-h: 45px;
-
-  --transiton-fast-time: 0.4s;
-  --transiton-double-time: 0.8s;
+  --box-box-shadow: 0px 10px 30px #ffffff1a;
 }
 
 /* #region 导航栏 */
+#nav-bar {
+  position: fixed;
+  height: auto;
+  width: 100%;
+  z-index: 1;
+  background-color: transparent;
+  box-shadow: var(--box-box-shadow);
+}
+
 label[for="nav-side-display-btn"] {
-  height: 20px;
+  height: var(--nav-bar-content-height);
   width: 100%;
   background: var(--accent-color-no-alpha);
 }
 
+label[for="nav-side-display-btn"]::before {
+  font-style: normal;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0px;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto auto;
+  z-index: 1;
+  content: "\e89f";
+  font-family: "iconfont";
+  color: var(--foregrd);
+}
+
 #nav-side-display-btn:checked + #nav-bar-content {
-  max-height: 0px;
+  max-height: 0;
 }
 
 #nav-bar-content {
@@ -64,21 +94,22 @@ label[for="nav-side-display-btn"] {
 }
 
 #nav-bar-content > a {
-  height: 2rem;
+  height: var(--nav-bar-content-height);
   width: 100%;
   position: relative;
   text-decoration: none;
   padding: 2px;
   margin: 0 auto;
+  transition: background-color var(--transiton-fast-time);
 }
 
 #nav-bar-content > a::after {
   content: "";
   position: absolute;
   width: 80%;
-  height: 4px;
-  border: 2px solid black;
+  height: 5px;
   border: 8px;
+  top: calc(var(--nav-bar-content-height) - 8px);
   left: 50%;
   transform: translate(-50%, 0);
   background-color: #00000000;
@@ -151,6 +182,7 @@ label[for="nav-side-display-btn"] {
 }
 
 /* #endregion */
+
 /* #region 适配 */
 @media only screen and (max-width: 600px) {
   label[for="nav-side-display-btn"] {

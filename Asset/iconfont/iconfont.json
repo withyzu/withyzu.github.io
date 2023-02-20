@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "34190685",
+      "name": "下拉-copy",
+      "font_class": "down_arrow",
+      "unicode": "e89f",
+      "unicode_decimal": 59551
+    },
+    {
       "icon_id": "34170422",
       "name": "空气清新-copy",
       "font_class": "others",

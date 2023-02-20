@@ -2,16 +2,16 @@
   {
     "id": "tofind",
     "name": "寻找资源",
-    "path": "/web_cate/assets/tofind.json"
+    "path": "assets/tofind.json"
   },
   {
     "id": "onlinetools",
     "name": "在线工具",
-    "path": "/web_cate/assets/onlinetools.json"
+    "path": "assets/onlinetools.json"
   },
   {
     "id": "others",
     "name": "未分类",
-    "path": "/web_cate/assets/others.json"
+    "path": "assets/others.json"
   }
 ]
