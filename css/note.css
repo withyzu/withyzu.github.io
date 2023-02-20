@@ -8,17 +8,19 @@ body {
 :root {
   --form-tr-odd-brg: #d8e9f8;
   --form-tr-even-brg: #cce2da;
-
   --combobox-h1-brg: #e3e3e3;
+
   --combobox-shadow: 0px 3px 30px #0000001a;
+  --options-box-shadow: 0px 6px 30px #0000003a;
 }
 
 .theme-dark {
   --form-tr-odd-brg: #c39876;
   --form-tr-even-brg: #7db4a5;
-
   --combobox-h1-brg: #0c16268c;
-  --combobox-shadow: 0px 3px 30px #ffffff1c;
+
+  --combobox-shadow: 0px 1px 60px #000000a8;
+  --options-box-shadow: 0px 3px 60px #0000003e;
 }
 /* #region markdown style */
 #note-content {
@@ -182,7 +184,7 @@ body {
   border-radius: 4px;
   color: var(--foregrd);
   background: var(--backgrd-no-alpha);
-  box-shadow: 0px 0px 6px var(--foregrd);
+  box-shadow: var(--options-box-shadow);
   visibility: hidden;
   opacity: 0;
   transition: background var(--transiton-fast-time);
