@@ -1,11 +1,12 @@
 var boot_url = "boot.json";
-window.onload = () => {};
-
-function combobox_onclick(element) {
-  element.classList.toggle("active");
+window.onload = () => {
   load_notebook_list(boot_url).catch((e) => {
     console.log("err: " + e.message);
   });
+};
+
+function combobox_onclick(element) {
+  element.classList.toggle("active");
 } //ComboBox点击事件
 
 async function load_note_list(url) {
@@ -28,7 +29,7 @@ async function load_note_list(url) {
 function option_onclick(e) {
   e_id = e.dataset.id;
   var h1 = document.querySelector("#combobox > h1");
-  h1.textContent = e.textContent;
+  h1.textContent = e.textContent; //当点击option，h1内容变为option的name
   var note_list = document.getElementById("note-list");
   note_list.setAttribute("data-id", e_id);
   note_list.innerHTML = "";
@@ -53,7 +54,6 @@ async function load_notebook_list(url) {
     var e = document.createElement("div");
     e.setAttribute("class", "option");
     e.setAttribute("data-id", item.id);
-    console.log(e.dataset.id);
     e.setAttribute("onclick", "option_onclick(this)");
     e.appendChild(document.createTextNode(item.name));
     options.appendChild(e);
@@ -66,6 +66,7 @@ function note_onclick(e) {
 } //note 点击事件
 
 async function load_note_content(url) {
+  document.getElementById("note-content").innerHTML = "";
   let response = await fetch(url);
   let md_str = await response.text();
   document.getElementById("note-content").innerHTML = marked.parse(md_str);
