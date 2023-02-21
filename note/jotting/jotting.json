@@ -1,13 +1,6 @@
 [
     {
-        "name": "markdown",
-        "path": "jotting/markdown.md"
-    },
-    {
-        "name": "markdown",
-        "path": "jotting/markdown.md"
-    },
-    {
+        "id": "markdown",
         "name": "markdown",
         "path": "jotting/markdown.md"
     }
