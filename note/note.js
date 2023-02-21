@@ -3,9 +3,7 @@ window.onload = () => {
   load_ini_content(boot_url);
 };
 
-window.addEventListener("resize", () => {
-  layoutfitdevice;
-});
+window.addEventListener("resize", debounce(layout_fit_device, 200), false);
 
 function combobox_onclick(element) {
   element.classList.toggle("active");
@@ -120,18 +118,29 @@ function catalog_display_onclick() {
   }
 } //catalog 点击事件 显示
 
-const debounce = (fn, delay) => {
-  let timer;
-  return function () {
-    if (timer) {
-      clearTimeout(timer);
+function debounce(operate, delay) {
+  let time = null;
+  let timer = null;
+  let newTime = null;
+  function task() {
+    newTime = +new Date();
+    if (newTime - time < delay) {
+      timer = setTimeout(task, delay);
+    } else {
+      operate();
+      timer = null;
     }
-    timer = setTimeout(() => {
-      fn();
-    }, delay);
+    time = newTime;
+  }
+  return function () {
+    // 更新时间戳
+    time = +new Date();
+    if (!timer) {
+      timer = setTimeout(task, delay);
+    }
   };
-}; //防抖
-const layoutfitdevice = debounce(layout_fit_device, 500);
+}
+//防抖
 
 function layout_fit_device() {
   var c = document.querySelector("#catalog");

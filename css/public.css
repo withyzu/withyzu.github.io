@@ -59,7 +59,7 @@
 label[for="nav-side-display-btn"] {
   height: var(--nav-bar-content-height);
   width: 100%;
-  background: var(--accent-color-no-alpha);
+  background: #00000035;
 }
 
 label[for="nav-side-display-btn"]::before {
