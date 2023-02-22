@@ -17,7 +17,7 @@
   --accent-color-no-alpha: #85bfb6;
   --accent-color-no-alpha-havor: #f0b785;
 
-  --box-box-shadow: 0px 10px 30px #0000001a;
+  --fix-lb-box-shadow: 0px 0px 3px #00000078;
 
   /*通用*/
   --fix-icon-w-h: 45px;
@@ -33,7 +33,7 @@
 .theme-dark {
   --backgrd: #2c3a53ee;
   --backgrd-no-alpha: #2c3a53;
-  --backbrg-hover: #a361ff80;
+  --backbrg-hover: #d0adff3c;
 
   --foregrd: #bec9db;
   --foregrd-no-alpha: #85bfb6;
@@ -43,7 +43,7 @@
   --accent-color-no-alpha: #71b8df;
   --accent-color-no-alpha-havor: #994fff;
 
-  --box-box-shadow: 0px 10px 30px #ffffff1a;
+  --fix-lb-box-shadow: 0px 0px 2px #ffffffb7;
 }
 
 /* #region 导航栏 */
@@ -53,13 +53,12 @@
   width: 100%;
   z-index: 1;
   background-color: transparent;
-  box-shadow: var(--box-box-shadow);
 }
 
 label[for="nav-side-display-btn"] {
   height: var(--nav-bar-content-height);
   width: 100%;
-  background: #00000035;
+  background: var(--backgrd-no-alpha);
 }
 
 label[for="nav-side-display-btn"]::before {
@@ -142,7 +141,7 @@ label[for="nav-side-display-btn"]::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0px 0px 3px black;
+  box-shadow: var(--fix-lb-box-shadow);
   z-index: 9;
 }
 

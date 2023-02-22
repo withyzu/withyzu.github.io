@@ -22,8 +22,14 @@ function option_onclick(e) {
 } //NoteBook点击事件 向note-list添加内容
 
 function note_onclick(e) {
+  if (document.getElementById("clicked_note")) {
+    var e3 = document.getElementById("clicked_note");
+    e3.removeAttribute("id");
+  }
+  e.setAttribute("id", "clicked_note");
+
   var e1 = document.getElementById("note-list");
-  document.getElementById("note-content").innerHTML = "";
+  document.getElementById("content").innerHTML = "";
 
   load_note_content(e1.dataset.id + "/" + e.dataset.id + ".md");
   var c = document.querySelector("#catalog");
@@ -56,7 +62,10 @@ async function load_notebook_list(json) {
 async function load_note_list(url) {
   let response = await fetch(url);
   let note_list = await response.json();
+
   var p = document.getElementById("note-list");
+  p.appendChild(document.createElement("div")); //
+
   note_list.forEach((item) => {
     var e1 = document.createElement("span");
     e1.setAttribute("class", "note");
@@ -65,16 +74,16 @@ async function load_note_list(url) {
     e1.appendChild(document.createTextNode(item.name));
     p.appendChild(e1);
   });
+
   var e2 = document.createElement("div");
-  e2.style.height = "300px";
   p.appendChild(e2);
 } //加载笔记目录
 
 async function load_note_content(url) {
-  document.getElementById("note-content").innerHTML = "";
+  document.getElementById("content").innerHTML = "";
   let response = await fetch(url);
   let md_str = await response.text();
-  document.getElementById("note-content").innerHTML = marked.parse(md_str);
+  document.getElementById("content").innerHTML = marked.parse(md_str);
 } //将md转为内容
 
 async function load_ini_content(boot_url) {
