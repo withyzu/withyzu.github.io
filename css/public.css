@@ -33,7 +33,7 @@
 .theme-dark {
   --backgrd: #2c3a53ee;
   --backgrd-no-alpha: #2c3a53;
-  --backbrg-hover: #d0adff3c;
+  --backbrg-hover: #9869e850;
 
   --foregrd: #bec9db;
   --foregrd-no-alpha: #85bfb6;
@@ -51,7 +51,7 @@
   position: fixed;
   height: auto;
   width: 100%;
-  z-index: 1;
+  z-index: 9;
   background-color: transparent;
 }
 

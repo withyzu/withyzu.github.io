@@ -33,11 +33,11 @@ function note_onclick(e) {
 
   load_note_content(e1.dataset.id + "/" + e.dataset.id + ".md");
   var c = document.querySelector("#catalog");
-  if (document.documentElement.clientWidth < 600) {
-    if (getComputedStyle(c, null)["left"] != "-210px") {
-      c.style.left = "-210px";
-    }
-  }
+  // if (document.documentElement.clientWidth < 600) {
+  //   if (getComputedStyle(c, null)["left"] != "-210px") {
+  //     c.style.left = "-210px";
+  //   }
+  // }
 } //Note 点击事件 先note-content添加内容
 
 async function load_notebook_list(json) {
