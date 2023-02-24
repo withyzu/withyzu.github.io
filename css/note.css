@@ -91,6 +91,7 @@ body {
   margin: 1.5rem auto 1rem auto;
   overflow: hidden;
   padding: 0.5rem 2rem 4px 2rem;
+  border-radius: 8px;
 }
 
 #content-title > h1 {
@@ -99,10 +100,11 @@ body {
   color: var(--foregrd);
   height: 3rem;
   line-height: 3rem;
-  border-bottom: 3px solid #87878780;
-  text-align: center;
-  font-weight: 600;
+  border-bottom: 3px solid #87878730;
+  text-align: left;
+  font-weight: 00;
   white-space: 10px;
+  text-indent: 1rem;
 }
 
 #content-title > span {
@@ -111,7 +113,9 @@ body {
   color: var(--foregrd);
   height: 1.6rem;
   line-height: 1.6rem;
-  text-align: right;
+  text-align: left;
+  text-indent: 1rem;
+  font-weight: 400;
 }
 
 #content {
@@ -338,13 +342,20 @@ body,
   #note-content {
     margin-left: 0px;
   }
+
   #catalog {
     left: -210px;
   }
+
   body::-webkit-scrollbar {
     display: none;
   }
+
+  #note-content > div:nth-child(1) {
+    display: none;
+  }
 }
+
 @media only screen and (min-width: 600px) {
   #note-content {
     margin-left: 210px;
