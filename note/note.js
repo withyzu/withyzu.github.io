@@ -1,9 +1,12 @@
+// import { marked } from "../js/marked.umd";
+
+/////////////////
 var boot_url = "boot.json";
 window.onload = () => {
   load_ini_content(boot_url);
 };
 
-window.addEventListener("resize", debounce(layout_fit_device, 200), false);
+window.addEventListener("resize", debounce(layout_fit_device, 200), false); //令布局适配设备;
 
 function combobox_onclick(element) {
   element.classList.toggle("active");
@@ -19,6 +22,16 @@ function option_onclick(e) {
 
   var url = e_id + "/" + e_id + ".json";
   load_note_list(url);
+
+  if (document.querySelector(".option.option-checked")) {
+    let p3 = document.querySelector(".option.option-checked");
+    // console.log(p3);
+    p3.classList.remove("option-checked");
+  } //是否存在 已打开笔记本 option的样式
+
+  // console.log(p.dataset.id);
+  var p1 = document.querySelector('.option[data-id="' + note_list.dataset.id + '"]');
+  p1.classList.add("option-checked"); //已打开笔记本 option的样式
 } //NoteBook点击事件 向note-list添加内容
 
 function note_onclick(e) {
@@ -83,7 +96,10 @@ async function load_note_content(url) {
   document.getElementById("content").innerHTML = "";
   let response = await fetch(url);
   let md_str = await response.text();
-  document.getElementById("content").innerHTML = marked.parse(md_str);
+  let content = md_str.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""); //从文件开头删除最常见的零宽度字符
+
+  marked.use(customHeadingId());
+  document.getElementById("content").innerHTML = marked.parse(content);
 } //将md转为内容
 
 async function load_ini_content(boot_url) {
@@ -99,9 +115,14 @@ async function load_ini_content(boot_url) {
   //加载笔记列表
   var url = op.dataset.id + "/" + op.dataset.id + ".json";
   await load_note_list(url);
-  //加载毕竟内容
+  //加载笔记内容
   var e2 = document.querySelector("#note-list .note:nth-of-type(1)");
   await load_note_content(op.dataset.id + "/" + e2.dataset.id + ".md");
+
+  if (!document.querySelector(".option.option-checked")) {
+    var p1 = document.querySelector('.option[data-id="' + note_list.dataset.id + '"]');
+    p1.classList.add("option-checked");
+  } //已打开笔记本 option的样式
 }
 // 加载初始内容
 

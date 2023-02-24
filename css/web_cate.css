@@ -31,7 +31,6 @@
 }
 
 #body {
-  overflow: hidden;
   box-sizing: border-box;
   background: url("/Asset/img/pageimggrd.jpg");
   background-repeat: no-repeat;
@@ -61,7 +60,6 @@
 
 /* #region #body > 布局 */
 #content-body {
-  overflow: hidden;
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -92,7 +90,6 @@
 }
 
 #nav-bar {
-  position: relative;
   min-height: 0px;
   grid-column: 2/3;
   grid-row: 1/2;
@@ -441,6 +438,12 @@
 .category-box,
 #side ::-webkit-scrollbar-thumb {
   transition: background var(--transiton-double-time);
+}
+
+#content-body,
+body {
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* #endregion */
