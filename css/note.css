@@ -350,10 +350,6 @@ body,
   body::-webkit-scrollbar {
     display: none;
   }
-
-  #note-content > div:nth-child(1) {
-    display: none;
-  }
 }
 
 @media only screen and (min-width: 600px) {
