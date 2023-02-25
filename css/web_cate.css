@@ -327,20 +327,18 @@
 }
 
 #footer {
-  width: 90%;
   position: relative;
-  left: 6px;
   margin: 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
+  width: 90%;
   box-shadow: var(--box-black-shadow);
   margin-bottom: 20px;
 }
 
 #footer > div {
-  width: 100%;
+  position: relative;
   background: var(--backgrd);
   height: 45px;
+  border-radius: 8px;
 }
 /* #endregion */
 
@@ -413,6 +411,10 @@
     top: 0;
     z-index: 5;
     background-color: #202329a9;
+  }
+
+  label[for="nav-side-display-btn"] {
+    background-color: #00000020;
   }
 }
 

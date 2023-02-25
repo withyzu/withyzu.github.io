@@ -81,13 +81,12 @@ label[for="nav-side-display-btn"]::before {
 }
 
 #nav-side-display-btn:checked + #nav-bar-content {
-  max-height: 0;
+  max-height: 900px;
 }
 
 #nav-bar-content {
   background: var(--backgrd-no-alpha);
   width: 100%;
-  max-height: 900px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(6rem, 100%), 1fr));
   overflow: hidden;
@@ -188,6 +187,9 @@ label[for="nav-side-display-btn"]::before {
 
 /* #region 适配 */
 @media only screen and (max-width: 600px) {
+  #nav-bar-content {
+    max-height: 0;
+  }
   label[for="nav-side-display-btn"] {
     display: block;
   }
@@ -197,7 +199,7 @@ label[for="nav-side-display-btn"]::before {
   label[for="nav-side-display-btn"] {
     display: none;
   }
-  #nav-side-display-btn:checked + #nav-bar-content {
+  #nav-bar-content {
     max-height: 900px;
   }
 }
