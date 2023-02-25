@@ -45,7 +45,6 @@ body {
   z-index: 3;
   position: fixed;
   width: 210px;
-  overflow: hidden;
   height: calc(100vh - 1rem - var(--nav-bar-content-height));
   background: var(--catalog-brg);
   transition: Left var(--transiton-fast-time), background var(--transiton-fast-time);
