@@ -65,7 +65,7 @@ body {
   top: 0;
   overflow-y: scroll;
   width: 100%;
-  height: calc(100vh - 2rem - var(--nav-bar-content-height));
+  height: calc(100vh - var(--nav-bar-content-height));
 }
 
 #note-content > div:nth-child(1)::-webkit-scrollbar {
