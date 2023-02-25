@@ -1,7 +1,6 @@
 var boot_url = "boot.json";
 window.onload = () => {
   load_ini_content(boot_url);
-  console.log(document.querySelectorAll("link"));
 };
 
 window.addEventListener("resize", debounce(layout_fit_device, 200), false); //令布局适配设备;
