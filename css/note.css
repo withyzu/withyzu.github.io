@@ -5,13 +5,17 @@ body {
 }
 
 :root {
-  --form-border: 2px solid #00000050;
+  --form-border: 2px solid #6da99330;
   --form-thead: #5b9bd5;
+  --form-backgrd: #c8ffed20;
 
   --combobox-h1-backbrg: #ffffff;
   --catalog-brg: #ffffff; /*不能为透明*/
   --note-content-backgrd: #ffffff;
   --note-border: var(--note-border-thickness) #276cc7 solid;
+
+  --code-block-backgrd: #c7edcc90;
+  --code-color: #1f377f;
 
   /* #region 通用 */
   --note-border-thickness: 2px;
@@ -19,13 +23,17 @@ body {
 }
 
 .theme-dark {
-  --form-border: 2px solid #ffffff50;
+  --form-border: 2px solid #afbc8c2e;
   --form-thead: #164a86;
+  --form-backgrd: #ffffff08;
 
   --combobox-h1-backbrg: #0c16268c;
-  --catalog-brg: #1b263a; /*不能为透明*/
+  --catalog-brg: #1e263c; /*不能为透明*/
   --note-content-backgrd: #282c34;
   --note-border: var(--note-border-thickness) #81818172 solid;
+
+  --code-block-backgrd: #121e4250;
+  --code-color: var(--foregrd);
 }
 
 /* #region 布局 */
@@ -65,13 +73,17 @@ body {
   position: relative;
   top: 0;
   overflow-y: scroll;
-  width: 100%;
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
   height: calc(100vh - 1rem - var(--nav-bar-content-height));
+  left: 8px;
 }
 
 #note-content > div:nth-child(1)::-webkit-scrollbar {
   display: block;
-  width: 8px;
+  width: 16px;
+  height: 16px;
 }
 
 #note-content > div:nth-child(1)::-webkit-scrollbar-thumb {
@@ -79,9 +91,13 @@ body {
   border-radius: 4px;
 }
 
+#note-content > div:nth-child(1)::-webkit-scrollbar-corner {
+  height: 0px;
+  width: 0px;
+}
+
 #content-title {
   height: max-content;
-  width: 90%;
   background-color: #88888815;
   margin: 1.5rem auto 1rem auto;
   padding: 0.5rem 2rem 4px 2rem;
@@ -118,7 +134,6 @@ body {
 #content {
   position: relative;
   margin: 0 auto;
-  width: 90%;
 }
 
 #note-content > div:nth-child(1) > a:last-child {
@@ -336,9 +351,15 @@ body {
   #note-content > div:nth-child(1) {
     position: relative;
     top: 0;
+    left: 0;
     overflow-y: scroll;
-    width: 100%;
     height: calc(100vh - 1rem);
+  }
+
+  #note-content > div:nth-child(1)::-webkit-scrollbar {
+    display: block;
+    width: 0px;
+    height: 0px;
   }
 
   #catalog {
@@ -353,6 +374,44 @@ body {
   #catalog {
     left: 0px;
   }
+}
+/* #endregion */
+
+/* #region  特定属性 */
+#combobox > h1,
+.options,
+.note {
+  font-weight: 600;
+  font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", STHeiti, MingLiu;
+}
+
+#content tbody tr:nth-child(even),
+.options,
+#body > *:nth-child(2) {
+  background: var(--catalog-brg);
+  transition: background var(--transiton-fast-time);
+}
+
+#content pre,
+#content tbody,
+#content thead,
+#content thead tr th,
+body,
+#clicked_note,
+#note-content div:nth-child(1),
+#combobox > h1 {
+  transition: background var(--transiton-fast-time);
+}
+
+#catalog ::-webkit-scrollbar {
+  display: block;
+  width: 0px;
+  height: 0px;
+}
+
+#nav-bar-content,
+label[for="nav-side-display-btn"] {
+  background: var(--catalog-brg);
 }
 /* #endregion */
 
@@ -380,7 +439,7 @@ body {
 }
 
 #content tbody tr:nth-child(even) {
-  background-color: #8080801a;
+  background-color: var(--form-backgrd);
 }
 
 #content tbody tr:hover {
@@ -406,6 +465,39 @@ body {
 }
 
 /* #endregion */
+
+/* #region code */
+#content pre {
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 0.8rem;
+  background: var(--code-block-backgrd);
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+}
+
+#content code {
+  color: var(--code-color);
+  font-size: 1rem;
+  font-family: Consolas, "Courier New", monospace;
+  text-align: left;
+  overflow-wrap: normal;
+  line-height: 1.2rem;
+}
+
+#content pre::-webkit-scrollbar {
+  display: block;
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 8px;
+}
+
+#content pre::-webkit-scrollbar-thumb {
+  background-color: #61616150;
+  border-radius: 8px;
+}
+/* #endregion */
+
 /* #region 标题 */
 #content h1 {
   border-left: 1rem solid #ed515191;
@@ -470,39 +562,4 @@ body {
   border: 2px #8db5bcad solid;
 }
 
-/* #endregion */
-
-/* #region  特定属性 */
-#combobox > h1,
-.options,
-.note {
-  font-weight: 600;
-  font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", STHeiti, MingLiu;
-}
-
-.options,
-#body > *:nth-child(2) {
-  background: var(--catalog-brg);
-  transition: background var(--transiton-fast-time);
-}
-
-#content tbody,
-#content thead,
-#content thead tr th,
-body,
-#clicked_note,
-#note-content div:nth-child(1),
-#combobox > h1 {
-  transition: background var(--transiton-fast-time);
-}
-
-#catalog ::-webkit-scrollbar {
-  display: block;
-  width: 0px;
-}
-
-#nav-bar-content,
-label[for="nav-side-display-btn"] {
-  background: var(--catalog-brg);
-}
 /* #endregion */

@@ -1,9 +1,7 @@
-// import { marked } from "../js/marked.umd";
-
-/////////////////
 var boot_url = "boot.json";
 window.onload = () => {
   load_ini_content(boot_url);
+  console.log(document.querySelectorAll("link"));
 };
 
 window.addEventListener("resize", debounce(layout_fit_device, 200), false); //令布局适配设备;
@@ -105,6 +103,12 @@ async function load_note_content(url) {
   let md_str = await response.text();
   let content = md_str.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""); //从文件开头删除最常见的零宽度字符
 
+  marked.setOptions({
+    highlight: function (code) {
+      return hljs.highlightAuto(code).value;
+    }, //hljs.function用法: https://highlightjs.readthedocs.io/en/latest/api.html#highlightauto
+  });
+
   marked.use(customHeadingId());
   document.getElementById("content").innerHTML = marked.parse(content);
 } //将md转为内容
@@ -130,10 +134,9 @@ async function load_ini_content(boot_url) {
     var p1 = document.querySelector('.option[data-id="' + note_list.dataset.id + '"]');
     p1.classList.add("option-checked");
   } //已打开笔记本 option的样式
-}
-// 加载初始内容
+} // 加载初始内容
 
-// #region Others
+// #region 其他
 function catalog_display_onclick() {
   var c = document.querySelector("#catalog");
   var d = document.getElementById("note-content");
