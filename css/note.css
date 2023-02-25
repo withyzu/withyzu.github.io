@@ -55,6 +55,7 @@ body {
   z-index: 1;
   transition: margin-left var(--transiton-fast-time);
   border-top: var(--note-border);
+  height: calc(100vh - 1rem - var(--nav-bar-content-height));
   overflow: hidden;
 }
 
@@ -321,6 +322,7 @@ body {
 /* #region 适配 */
 @media only screen and (max-width: 600px) {
   #note-content {
+    height: calc(100vh - 1rem);
     margin-left: 0px;
   }
 
