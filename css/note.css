@@ -23,7 +23,7 @@ body {
   --form-thead: #164a86;
 
   --combobox-h1-backbrg: #0c16268c;
-  --catalog-brg: #1b263a;
+  --catalog-brg: #1b263a; /*不能为透明*/
   --note-content-backgrd: #282c34;
   --note-border: var(--note-border-thickness) #81818172 solid;
 }
@@ -35,37 +35,31 @@ body {
   top: 0;
 }
 
+#body > *:nth-child(2) {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+}
+
 #catalog {
   z-index: 3;
   position: fixed;
   width: 210px;
-  width: 210px;
   height: calc(100vh - var(--nav-bar-content-height));
   background: var(--catalog-brg);
-  transition: Left var(--transiton-fast-time), background-color var(--transiton-fast-time);
+  transition: Left var(--transiton-fast-time), background var(--transiton-fast-time);
 }
 
 #note-content {
-  overflow: hidden;
-  margin-bottom: 2rem;
   transition: margin-left var(--transiton-fast-time);
+  border-top: var(--note-border);
 }
 
 /* #endregion */
 
-/* #region 笔记本内容 */
-#note-content > div:nth-child(1) {
-  z-index: 2;
-  position: relative;
-  top: 0;
-  height: 2rem;
-  width: 100%;
-  display: block;
-  outline: var(--note-border);
-  background-color: var(--catalog-brg);
-}
+/* #region 笔记内容 */
 
-#note-content > div:nth-child(2) {
+#note-content > div:nth-child(1) {
   position: relative;
   z-index: 1;
   top: 0;
@@ -74,12 +68,12 @@ body {
   height: calc(100vh - 2rem - var(--nav-bar-content-height));
 }
 
-#note-content > div:nth-child(2)::-webkit-scrollbar {
+#note-content > div:nth-child(1)::-webkit-scrollbar {
   display: block;
   width: 8px;
 }
 
-#note-content > div:nth-child(2)::-webkit-scrollbar-thumb {
+#note-content > div:nth-child(1)::-webkit-scrollbar-thumb {
   background-color: #276cc760;
   border-radius: 4px;
 }
@@ -89,9 +83,9 @@ body {
   width: 90%;
   background-color: rgba(136, 136, 136, 0.152);
   margin: 1.5rem auto 1rem auto;
-  overflow: hidden;
   padding: 0.5rem 2rem 4px 2rem;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 #content-title > h1 {
@@ -102,9 +96,11 @@ body {
   line-height: 3rem;
   border-bottom: 3px solid #87878730;
   text-align: left;
-  font-weight: 00;
-  white-space: 10px;
+  font-weight: 600;
   text-indent: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #content-title > span {
@@ -124,7 +120,7 @@ body {
   width: 90%;
 }
 
-#note-content > div:nth-child(2) > a:last-child {
+#note-content > div:nth-child(1) > a:last-child {
   text-decoration: none;
   color: var(--foregrd);
   font-size: 1.5rem;
@@ -134,6 +130,7 @@ body {
   background-color: var(--backbrg-hover);
   line-height: 3rem;
   text-align: center;
+  margin-bottom: 1.2rem;
 }
 
 /* #endregion */
@@ -144,7 +141,7 @@ body {
   z-index: 2;
   position: relative;
   height: 2rem;
-  background: var(--catalog-brg);
+  border-right: var(--note-border);
 }
 
 #combobox::before {
@@ -182,6 +179,7 @@ body {
   transform: translate(0, -50%);
   background: var(--combobox-h1-backbrg);
   user-select: none;
+  box-shadow: inset 0px 0px 2px var(--catalog-brg);
 }
 
 #combobox > h1::before {
@@ -199,7 +197,6 @@ body {
   padding: 8px;
   border-radius: 4px;
   color: var(--foregrd);
-  background: var(--catalog-brg);
   visibility: hidden;
   opacity: 0;
   border: var(--note-border);
@@ -220,7 +217,6 @@ body {
   text-indent: 0.5rem;
   border-bottom: var(--note-border);
   margin-bottom: 0.5rem;
-  font-weight: 800;
   text-align: center;
 } /*笔记列表*/
 
@@ -253,14 +249,14 @@ body {
 #note-list {
   height: 100%;
   overflow: auto;
-  padding: 0px 0px 0px 0.5rem;
+  padding: 0px 0px 0px 4px;
 }
 #note-list * {
   border-right: var(--note-border);
 }
 
 #note-list *:nth-child(1) {
-  height: 10px;
+  height: 0.4rem;
   width: 100%;
 }
 
@@ -269,7 +265,6 @@ body {
   height: 1.6rem;
   font-size: 0.8rem;
   line-height: 1.6rem;
-  text-indent: 0.5rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -290,6 +285,7 @@ body {
   border-right: 0;
   height: 1.6rem;
   line-height: calc(1.6rem - 2 * var(--note-border-thickness));
+  text-indent: 4px;
 } /*被点击的note样式*/
 
 #clicked_note::before {
@@ -316,23 +312,6 @@ body {
 
 .note:hover {
   background-color: var(--backbrg-hover);
-}
-
-#content tbody,
-#content thead,
-#content thead tr th,
-body,
-#clicked_note,
-#note-content div:nth-child(1),
-#combobox,
-.options,
-#combobox > h1 {
-  transition: background-color var(--transiton-fast-time);
-}
-
-#catalog ::-webkit-scrollbar {
-  display: block;
-  width: 0px;
 }
 
 /* #endregion */
@@ -477,4 +456,36 @@ body,
   border: 2px #8db5bcad solid;
 }
 
+/* #endregion */
+
+/* #region  特定属性 */
+#combobox > h1,
+.options,
+.note {
+  font-weight: 600;
+  font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", STHeiti, MingLiu;
+}
+
+.options,
+label[for="nav-side-display-btn"],
+#nav-bar-content,
+#body > *:nth-child(2) {
+  background: var(--catalog-brg);
+  transition: background var(--transiton-fast-time);
+}
+
+#content tbody,
+#content thead,
+#content thead tr th,
+body,
+#clicked_note,
+#note-content div:nth-child(1),
+#combobox > h1 {
+  transition: background var(--transiton-fast-time);
+}
+
+#catalog ::-webkit-scrollbar {
+  display: block;
+  width: 0px;
+}
 /* #endregion */

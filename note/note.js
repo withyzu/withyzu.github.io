@@ -85,6 +85,7 @@ async function load_note_list(url) {
     e1.setAttribute("data-id", item.id);
     e1.setAttribute("onclick", "note_onclick(this)");
     e1.appendChild(document.createTextNode(item.name));
+    e1.setAttribute("data-time", item.time);
     p.appendChild(e1);
   });
 
@@ -94,6 +95,12 @@ async function load_note_list(url) {
 
 async function load_note_content(url) {
   document.getElementById("content").innerHTML = "";
+
+  var fileName = url.replace(/(.*\/)*([^.]+).*/gi, "$2");
+  var p1 = document.querySelector('.note[data-id="' + fileName + '"]');
+  document.querySelector("#content-title > h1 ").textContent = p1.textContent;
+  document.querySelector("#content-title > span ").textContent = p1.dataset.time;
+
   let response = await fetch(url);
   let md_str = await response.text();
   let content = md_str.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""); //从文件开头删除最常见的零宽度字符
