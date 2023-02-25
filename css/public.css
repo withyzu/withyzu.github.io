@@ -151,12 +151,12 @@ label[for="nav-side-display-btn"]::before {
 
 .fix-lb-theme-change {
   right: 20px;
-  bottom: 80px;
+  bottom: 20px;
 }
 
 .fix-lb-side-display {
   right: 20px;
-  bottom: 20px;
+  bottom: 80px;
 }
 
 .fix-i {

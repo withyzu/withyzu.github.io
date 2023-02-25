@@ -8,7 +8,7 @@ body {
   --form-border: 2px solid #00000050;
   --form-thead: #5b9bd5;
 
-  --combobox-h1-backbrg: #e0e0e0;
+  --combobox-h1-backbrg: #ffffff;
   --catalog-brg: #ffffff; /*不能为透明*/
   --note-content-backgrd: #ffffff;
   --note-border: var(--note-border-thickness) #276cc7 solid;
