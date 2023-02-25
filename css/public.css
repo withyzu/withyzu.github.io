@@ -56,9 +56,10 @@
 }
 
 label[for="nav-side-display-btn"] {
-  height: 1.2rem;
+  height: 1rem;
   width: 100%;
   background-color: var(--backgrd-no-alpha);
+  transition: background var(--transiton-fast-time);
 }
 
 label[for="nav-side-display-btn"]::before {
@@ -66,17 +67,17 @@ label[for="nav-side-display-btn"]::before {
   font-size: 1.5rem;
   text-align: center;
   letter-spacing: 0px;
-  line-height: 1.2rem;
+  line-height: 1rem;
 
   position: relative;
   display: block;
   width: 100%;
-  height: 1.2rem;
+  height: 1rem;
   margin: auto auto;
   z-index: 1;
   content: "\e89f";
   font-family: "iconfont";
-  color: var(--foregrd);
+  color: var(--accent-color-no-alpha-havor);
 }
 
 #nav-side-display-btn:checked + #nav-bar-content {
@@ -90,7 +91,7 @@ label[for="nav-side-display-btn"]::before {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(6rem, 100%), 1fr));
   overflow: hidden;
-  transition: background-color var(--transiton-double-time), max-height 0.6s;
+  transition: background-color var(--transiton-fast-time), max-height 0.6s;
 }
 
 #nav-bar-content > a {
@@ -101,6 +102,8 @@ label[for="nav-side-display-btn"]::before {
   padding: 2px;
   margin: 0 auto;
   transition: background-color var(--transiton-fast-time);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 #nav-bar-content > a::after {

@@ -45,27 +45,28 @@ body {
   z-index: 3;
   position: fixed;
   width: 210px;
-  height: calc(100vh - var(--nav-bar-content-height));
+  overflow: hidden;
+  height: calc(100vh - 1rem - var(--nav-bar-content-height));
   background: var(--catalog-brg);
   transition: Left var(--transiton-fast-time), background var(--transiton-fast-time);
 }
 
 #note-content {
+  z-index: 1;
   transition: margin-left var(--transiton-fast-time);
   border-top: var(--note-border);
+  overflow: hidden;
 }
 
 /* #endregion */
 
 /* #region 笔记内容 */
-
 #note-content > div:nth-child(1) {
   position: relative;
-  z-index: 1;
   top: 0;
   overflow-y: scroll;
   width: 100%;
-  height: calc(100vh - var(--nav-bar-content-height));
+  height: calc(100vh - 1rem - var(--nav-bar-content-height));
 }
 
 #note-content > div:nth-child(1)::-webkit-scrollbar {
@@ -81,7 +82,7 @@ body {
 #content-title {
   height: max-content;
   width: 90%;
-  background-color: rgba(136, 136, 136, 0.152);
+  background-color: #88888815;
   margin: 1.5rem auto 1rem auto;
   padding: 0.5rem 2rem 4px 2rem;
   border-radius: 8px;
@@ -130,7 +131,6 @@ body {
   background-color: var(--backbrg-hover);
   line-height: 3rem;
   text-align: center;
-  margin-bottom: 1.2rem;
 }
 
 /* #endregion */
@@ -157,7 +157,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
   content: "\e89f";
   font-family: "iconfont";
   color: var(--foregrd);
@@ -179,7 +179,7 @@ body {
   transform: translate(0, -50%);
   background: var(--combobox-h1-backbrg);
   user-select: none;
-  box-shadow: inset 0px 0px 2px var(--catalog-brg);
+  box-shadow: inset 0px 0px 3px var(--foregrd-hover);
 }
 
 #combobox > h1::before {
@@ -188,7 +188,7 @@ body {
 }
 
 .options {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   width: 210px;
   height: auto;
@@ -247,10 +247,12 @@ body {
 
 /* #region  笔记列表*/
 #note-list {
+  width: 100%;
   height: 100%;
   overflow: auto;
   padding: 0px 0px 0px 4px;
 }
+
 #note-list * {
   border-right: var(--note-border);
 }
@@ -326,8 +328,20 @@ body {
     left: -210px;
   }
 
-  body::-webkit-scrollbar {
-    display: none;
+  #nav-bar {
+    position: fixed;
+  }
+
+  #note-content > div:nth-child(1) {
+    position: relative;
+    top: 0;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100vh - 1rem);
+  }
+
+  #catalog {
+    height: calc(100vh - 1rem);
   }
 }
 
@@ -339,7 +353,6 @@ body {
     left: 0px;
   }
 }
-
 /* #endregion */
 
 /* #region markdown style */
@@ -467,8 +480,6 @@ body {
 }
 
 .options,
-label[for="nav-side-display-btn"],
-#nav-bar-content,
 #body > *:nth-child(2) {
   background: var(--catalog-brg);
   transition: background var(--transiton-fast-time);
@@ -487,5 +498,10 @@ body,
 #catalog ::-webkit-scrollbar {
   display: block;
   width: 0px;
+}
+
+#nav-bar-content,
+label[for="nav-side-display-btn"] {
+  background: var(--catalog-brg);
 }
 /* #endregion */
