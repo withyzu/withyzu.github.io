@@ -7,10 +7,10 @@
 :root {
   --backgrd: #fffefebb;
   --backgrd-no-alpha: #ffffff;
-  --backbrg-hover: #f6ba853c;
+  --backbrg-hover: #ff770040;
 
-  --foregrd: #464e57;
-  --foregrd-no-alpha: #85bfb6;
+  --foregrd: #00000020;
+  --foregrd-no-alpha: #3b4249;
   --foregrd-hover: #de8b6a;
 
   --accent-color: #46b4ab8f;
@@ -35,15 +35,15 @@
   --backgrd-no-alpha: #2c3a53;
   --backbrg-hover: #9869e850;
 
-  --foregrd: #bec9db;
-  --foregrd-no-alpha: #85bfb6;
+  --foregrd: #ffffff20;
+  --foregrd-no-alpha: #bec9db;
   --foregrd-hover: #b56ade;
 
   --accent-color: #43b5ea8f;
   --accent-color-no-alpha: #71b8df;
   --accent-color-no-alpha-havor: #994fff;
 
-  --fix-lb-box-shadow: 0px 0px 2px #ffffffb7;
+  --fix-lb-box-shadow: 0px 0px 5px #ffffffb7;
 }
 
 /* #region 导航栏 */
@@ -122,7 +122,7 @@ label[for="nav-side-display-btn"]::before {
 
 #nav-bar-content a > h1 {
   font-size: 1rem;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   line-height: 150%;
   text-align: center;
   vertical-align: middle;
@@ -157,7 +157,7 @@ label[for="nav-side-display-btn"]::before {
 }
 
 .fix-i {
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   font-style: normal;
   letter-spacing: 0px;
   background: var(--accent-color-no-alpha);

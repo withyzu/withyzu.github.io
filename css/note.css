@@ -5,7 +5,7 @@ body {
 }
 
 :root {
-  --form-border: 2px solid #6da99330;
+  --form-border: 2px solid #b7d6ca80;
   --form-thead: #5b9bd5;
   --form-backgrd: #c8ffed20;
 
@@ -16,6 +16,8 @@ body {
 
   --code-block-backgrd: #c7edcc90;
   --code-color: #1f377f;
+
+  --blockquote-color: #5a5a5a;
 
   /* #region 通用 */
   --note-border-thickness: 2px;
@@ -33,7 +35,9 @@ body {
   --note-border: var(--note-border-thickness) #81818172 solid;
 
   --code-block-backgrd: #121e4250;
-  --code-color: var(--foregrd);
+  --code-color: var(--foregrd-no-alpha);
+
+  --blockquote-color: #cbcbcb;
 }
 
 /* #region 布局 */
@@ -108,7 +112,7 @@ body {
 #content-title > h1 {
   display: block;
   font-size: 1.2rem;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   height: 3rem;
   line-height: 3rem;
   border-bottom: 3px solid #87878730;
@@ -123,7 +127,7 @@ body {
 #content-title > span {
   display: block;
   font-size: 0.8rem;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   height: 1.6rem;
   line-height: 1.6rem;
   text-align: left;
@@ -138,7 +142,7 @@ body {
 
 #note-content > div:nth-child(1) > a:last-child {
   text-decoration: none;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   font-size: 1.5rem;
   display: block;
   height: 3rem;
@@ -175,7 +179,7 @@ body {
   z-index: 2;
   content: "\e89f";
   font-family: "iconfont";
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   border-radius: 8px;
 }
 
@@ -190,11 +194,11 @@ body {
   line-height: 200%;
   cursor: pointer;
   top: 50%;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   transform: translate(0, -50%);
   background: var(--combobox-h1-backbrg);
   user-select: none;
-  box-shadow: inset 0px 0px 3px var(--foregrd-hover);
+  box-shadow: inset 0px 0px 3px var(--foregrd-no-alpha-hover);
 }
 
 #combobox > h1::before {
@@ -211,7 +215,7 @@ body {
   left: 10px;
   padding: 8px;
   border-radius: 4px;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   visibility: hidden;
   opacity: 0;
   border: var(--note-border);
@@ -285,7 +289,7 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
   user-select: none;
   border-radius: 8px 0px 0px 8px;
   cursor: pointer;
@@ -333,50 +337,6 @@ body {
 
 /* #endregion */
 
-/* #region 适配 */
-@media only screen and (max-width: 600px) {
-  #note-content {
-    height: calc(100vh - 1rem);
-    margin-left: 0px;
-  }
-
-  #catalog {
-    left: -210px;
-  }
-
-  #nav-bar {
-    position: fixed;
-  }
-
-  #note-content > div:nth-child(1) {
-    position: relative;
-    top: 0;
-    left: 0;
-    overflow-y: scroll;
-    height: calc(100vh - 1rem);
-  }
-
-  #note-content > div:nth-child(1)::-webkit-scrollbar {
-    display: block;
-    width: 0px;
-    height: 0px;
-  }
-
-  #catalog {
-    height: calc(100vh - 1rem);
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  #note-content {
-    margin-left: 210px;
-  }
-  #catalog {
-    left: 0px;
-  }
-}
-/* #endregion */
-
 /* #region  特定属性 */
 #combobox > h1,
 .options,
@@ -419,7 +379,7 @@ label[for="nav-side-display-btn"] {
 #content {
   margin: 0 auto;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", 微软雅黑, Tahoma, Arial, sans-serif;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
 }
 
 /* #region 表格 */
@@ -427,6 +387,8 @@ label[for="nav-side-display-btn"] {
   vertical-align: middle;
   border-collapse: collapse;
   border-spacing: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #content td,
@@ -448,19 +410,19 @@ label[for="nav-side-display-btn"] {
 }
 
 #content thead tr th {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  line-height: 2.5rem;
-  height: 2.5rem;
+  line-height: 1.6rem;
+  height: 1.6rem;
   padding: 0px 0.5rem 0px 0.5rem;
   background-color: var(--form-thead);
 }
 
 #content tbody tr td {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 400;
-  line-height: 2rem;
-  height: 2rem;
+  line-height: 1.6rem;
+  height: 1.6rem;
   padding: 0px 0.5rem 0px 0.5rem;
 }
 
@@ -468,11 +430,13 @@ label[for="nav-side-display-btn"] {
 
 /* #region code */
 #content pre {
+  width: 90%;
   overflow-y: hidden;
   overflow-x: auto;
-  padding: 0.8rem;
+  padding: 1rem;
   background: var(--code-block-backgrd);
-  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   border-radius: 8px;
 }
 
@@ -499,67 +463,157 @@ label[for="nav-side-display-btn"] {
 /* #endregion */
 
 /* #region 标题 */
-#content h1 {
-  border-left: 1rem solid #ed515191;
-  font-size: 1.8rem;
-}
-#content h2 {
-  border-left: 2rem solid #ed975191;
-  font-size: 1.6rem;
-}
-#content h3 {
-  border-left: 3rem solid #e6ed6491;
-  font-size: 1.4rem;
-}
-#content h4 {
-  border-left: 4rem solid #2be23491;
-  font-size: 1.2rem;
-}
-#content h5 {
-  border-left: 5rem solid #0d83fa91;
-}
-
 #content h1,
 #content h2,
 #content h3,
 #content h4,
 #content h5 {
-  padding: 0 20px;
-  background: transparent;
   color: cornflowerblue;
-  font-weight: bold;
-  margin: 5px 0;
-  line-height: 150%;
+  font-weight: 600;
+  line-height: 200%;
+  font-size: 1.2rem;
 }
 
 /* #endregion */
-#content p {
+#content > p {
   word-spacing: 0;
   text-align: left;
   word-wrap: break-word;
-  padding: 0.4rem;
+  font-size: 1rem;
+  line-height: 150%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 } /* 段落 */
 #content a {
   font-size: 1rem;
   color: rgb(96, 127, 200);
 } /* 链接 */
-#content img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  border: 0;
-  vertical-align: middle;
-} /* 图片 */
 #content kbd {
-  background-color: #c0dde6;
-  padding: 2px;
+  background-color: #80808014;
+  padding: 2px 4px;
   margin: 4px;
-  height: max-content;
-  width: max-content;
   border-radius: 4px;
-  color: rgb(46, 43, 43);
+  color: var(--foregrd-no-alpha);
   font-size: 14px;
-  border: 2px #8db5bcad solid;
+  border: 1px #858585ad solid;
+  box-shadow: inset 0px 0px 80px var(--foregrd);
+  box-shadow: 0px 0px 5px var(--foregrd);
+} /*key board*/
+#content hr {
+  margin-left: 0px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 90%;
+  border: 0;
+  padding: 3px;
+  background: repeating-linear-gradient(
+    135deg,
+    #a2a9b6 0px,
+    #a2a9b6 1px,
+    transparent 1px,
+    transparent 6px
+  );
+} /*分割线*/
+/* #region 块 */
+#content blockquote {
+  white-space: nowrap;
+  width: 80%;
+  color: var(--blockquote-color);
+  background-color: #88888815;
+  border-radius: 4px;
+  overflow-x: auto;
+  padding: 6px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+} /*引文块*/
+
+#content blockquote p {
+  font-weight: 100;
+  font-family: "Consolas", "Microsoft YaHei", 华文细黑, 微软雅黑, "MicrosoftJhengHei", STHeiti,
+    MingLiu;
+  text-decoration: none;
+} /*引文*/
+
+#content blockquote * {
+  font-size: 12px !important;
 }
 
+#content blockquote p a {
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+} /*引文*/
+
+#content blockquote::-webkit-scrollbar {
+  display: block;
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 8px;
+}
+#content blockquote::-webkit-scrollbar-thumb {
+  background-color: #61616150;
+  border-radius: 8px;
+}
+
+/* #endregion */
+#content img {
+  width: 60%;
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+} /*img*/
+
+/* #endregion */
+
+/* #region 适配 */
+@media only screen and (max-width: 600px) {
+  #note-content {
+    height: calc(100vh - 1rem);
+    margin-left: 0px;
+  }
+
+  #catalog {
+    left: -210px;
+  }
+
+  #nav-bar {
+    position: fixed;
+  }
+
+  #note-content > div:nth-child(1) {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    height: calc(100vh - 1rem);
+  }
+
+  #note-content > div:nth-child(1)::-webkit-scrollbar {
+    display: block;
+    width: 0px;
+    height: 0px;
+  }
+
+  #catalog {
+    height: calc(100vh - 1rem);
+  }
+
+  #content pre,
+  #content blockquote,
+  #content img,
+  #content table {
+    margin-right: auto;
+    margin-left: auto;
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #note-content {
+    margin-left: 210px;
+  }
+  #catalog {
+    left: 0px;
+  }
+}
 /* #endregion */

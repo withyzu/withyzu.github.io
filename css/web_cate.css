@@ -223,7 +223,7 @@
   box-shadow: var(--box-black-shadow);
 }
 #side > div:first-child > a:hover {
-  border-color: var(--foregrd-hover);
+  border-color: var(--foregrd-no-alpha-hover);
 }
 
 #side > div:first-child > h1 {
@@ -323,7 +323,7 @@
   margin-top: 10px;
   text-indent: 1rem;
   word-break: break-all;
-  color: var(--foregrd);
+  color: var(--foregrd-no-alpha);
 }
 
 #footer {
@@ -373,7 +373,7 @@
 #side > div:first-child > h1:hover,
 .list-box > label > span:hover,
 .list-box > label > i:hover {
-  color: var(--foregrd-hover);
+  color: var(--foregrd-no-alpha-hover);
 }
 
 /* #endregion */

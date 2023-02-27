@@ -82,7 +82,7 @@ async function load_note_list(url) {
     e1.setAttribute("data-id", item.id);
     e1.setAttribute("onclick", "note_onclick(this)");
     e1.appendChild(document.createTextNode(item.name));
-    e1.setAttribute("data-time", item.time);
+    e1.setAttribute("data-data", item.data);
     p.appendChild(e1);
   });
 
@@ -96,7 +96,7 @@ async function load_note_content(url) {
   var fileName = url.replace(/(.*\/)*([^.]+).*/gi, "$2");
   var p1 = document.querySelector('.note[data-id="' + fileName + '"]');
   document.querySelector("#content-title > h1 ").textContent = p1.textContent;
-  document.querySelector("#content-title > span ").textContent = p1.dataset.time;
+  document.querySelector("#content-title > span ").textContent = p1.dataset.data;
 
   let response = await fetch(url);
   let md_str = await response.text();
@@ -158,24 +158,24 @@ function catalog_display_onclick() {
 } //catalog 点击事件 显示
 
 function debounce(operate, delay) {
-  let time = null;
-  let timer = null;
+  let data = null;
+  let datar = null;
   let newTime = null;
   function task() {
     newTime = +new Date();
-    if (newTime - time < delay) {
-      timer = setTimeout(task, delay);
+    if (newTime - data < delay) {
+      datar = setTimeout(task, delay);
     } else {
       operate();
-      timer = null;
+      datar = null;
     }
-    time = newTime;
+    data = newTime;
   }
   return function () {
     // 更新时间戳
-    time = +new Date();
-    if (!timer) {
-      timer = setTimeout(task, delay);
+    data = +new Date();
+    if (!datar) {
+      datar = setTimeout(task, delay);
     }
   };
 }
