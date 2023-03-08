@@ -19,7 +19,7 @@ body {
   --code-block-backgrd: #c7edcc90;
   --code-color: #1f377f;
   --blockquote-color: #5a5a5a;
-  --accent-backgrd: #ff770040;
+  --accent-backgrd: #ff770030;
 
   /* #region 通用 */
   --note-border-thickness: 2px;
@@ -27,7 +27,7 @@ body {
 }
 
 .theme-dark {
-  --font-color: #bec9db;
+  --font-color: #b2bdcf;
 
   --form-border: 2px solid #afbc8c2e;
   --form-thead: #164a86;
@@ -296,6 +296,7 @@ body {
   user-select: none;
   border-radius: 8px 0px 0px 8px;
   cursor: pointer;
+  text-indent: 4px;
 }
 
 .note::before {
