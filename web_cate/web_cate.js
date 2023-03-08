@@ -8,28 +8,30 @@ window.onload = () => {
 async function load_catalog(url) {
   let response = await fetch(url);
   let json = await response.json();
-  json.forEach((item) => {
-    load_all_content(item.path, item.name, item.id);
-  });
+  console.log(json);
+  for (var i = 0; i < json.length; i++) {
+    await load_all_content(json[i].path, json[i].name, json[i].id);
+  }
 } //加载分类网站目录
 
 async function load_all_content(url, name, id) {
   let response = await fetch(url);
   let json = await response.json();
+  console.log(json);
   loadMain(json);
   loadSide(json, name, id);
 } //将json内容转换为内容
 
-function loadMain(json) {
+async function loadMain(json) {
   json.forEach((cate) => {
     var category_box = document.createElement("div");
     var c_n = document.createElement("div"); //分割线
     var c_c = document.createElement("div"); //网站链接、内容
     category_box.classList = "category-box";
-    c_n.className = "cate-name"; //id:cate-name
-    c_c.className = "cate-content"; //id:cate-content
+    c_n.className = "cate-name"; //
+    c_c.className = "cate-content"; //
     c_n.textContent = cate.name;
-    c_n.id = cate.id;
+    category_box.id = cate.id;
 
     cate.website.forEach((site) => {
       var l_b = document.createElement("div"); //链接盒子
@@ -38,7 +40,7 @@ function loadMain(json) {
 
       var name = site.name.toLowerCase();
       lb_img.href = site.href;
-      lb_img.style.backgroundImage = "url(" + "assets/img-zip/" + name + ".png" + ")";
+      lb_img.style.backgroundImage = "url(" + "assets/img/" + name + ".png" + ")";
       lb_intro.textContent = site.introduc;
 
       l_b.appendChild(lb_img);
@@ -51,7 +53,7 @@ function loadMain(json) {
   });
 } //加载#main-content的内容
 
-function loadSide(json, json_name, json_id) {
+async function loadSide(json, json_name, json_id) {
   var e_0 = document.querySelector(".side-content");
   var e_1 = document.createElement("div");
   e_1.setAttribute("class", "list-box");

@@ -6,8 +6,6 @@
     STheiti, Verdana, "microsoft yahei", "simsun", Geneva, sans-serif;
 
   --item-height: 30px;
-  --item-font-family: "Lantinghei SC", "Open Sans", "Lucida Grande", Helvetica, "PingFang SC",
-    STheiti, Verdana, "microsoft yahei", "simsun", Geneva, sans-serif;
   --item-font-size: 0.8rem;
   --item-line-height: 30px;
   --item-font-weight: 600;
@@ -25,9 +23,9 @@
 }
 
 .theme-dark {
-  --shelf-font-color: #ffffff;
-  --item-font-color: #ffffff;
-  --cate-name-font-color: #ffffff;
+  --shelf-font-color: #ffffffaa;
+  --item-font-color: #ffffffaa;
+  --cate-name-font-color: #ffffffaa;
 }
 
 #body {
@@ -98,10 +96,10 @@
 #main {
   display: block;
   position: relative;
-  height: 100vh;
+  height: calc(100vh - var(--nav-bar-content-height));
   overflow-y: auto;
   grid-column: 2/3;
-  grid-row: 1/3;
+  grid-row: 2/3;
   z-index: 0;
 }
 
@@ -180,7 +178,6 @@
   display: flex;
   width: 100%;
   height: var(--item-height);
-  font-family: var(--item-font-family);
   line-height: var(--item-line-height);
   color: var(--item-font-color);
   font-weight: var(--item-font-weight);
@@ -259,13 +256,12 @@
   width: 90%;
   background-color: transparent;
   overflow: hidden;
-  margin-top: 65px;
   position: relative;
   left: 6px;
 }
 
 .category-box {
-  margin-bottom: 20px;
+  margin-top: 20px;
   padding: 10px;
   margin-left: 5px;
   margin-right: 5px;
@@ -328,17 +324,21 @@
 
 #footer {
   position: relative;
-  margin: 0 auto;
-  width: 90%;
   box-shadow: var(--box-black-shadow);
+  margin: 0 auto;
   margin-bottom: 20px;
+  margin-top: 20px;
+  width: 90%;
+  left: 6px;
 }
 
 #footer > div {
   position: relative;
   background: var(--backgrd);
-  height: 45px;
+  height: 3rem;
   border-radius: 8px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 /* #endregion */
 
@@ -370,12 +370,6 @@
   background: var(--backbrg-hover);
 }
 
-#side > div:first-child > h1:hover,
-.list-box > label > span:hover,
-.list-box > label > i:hover {
-  color: var(--foregrd-no-alpha-hover);
-}
-
 /* #endregion */
 
 /* #region 适配 */
@@ -385,6 +379,7 @@
   }
 
   #main {
+    height: 100vh;
     overflow-y: auto;
   }
 
@@ -397,6 +392,7 @@
     width: 0px;
   }
 
+  #footer,
   #main-content {
     position: relative;
     left: 0px;

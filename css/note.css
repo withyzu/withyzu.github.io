@@ -5,19 +5,21 @@ body {
 }
 
 :root {
+  --font-color: #3b4249;
+
   --form-border: 2px solid #b7d6ca80;
   --form-thead: #5b9bd5;
   --form-backgrd: #c8ffed20;
 
-  --combobox-h1-backbrg: #ffffff;
+  --combobox-h1-backbrg: #d9d8d290;
   --catalog-brg: #ffffff; /*不能为透明*/
   --note-content-backgrd: #ffffff;
   --note-border: var(--note-border-thickness) #276cc7 solid;
 
   --code-block-backgrd: #c7edcc90;
   --code-color: #1f377f;
-
   --blockquote-color: #5a5a5a;
+  --accent-backgrd: #ff770040;
 
   /* #region 通用 */
   --note-border-thickness: 2px;
@@ -25,6 +27,8 @@ body {
 }
 
 .theme-dark {
+  --font-color: #bec9db;
+
   --form-border: 2px solid #afbc8c2e;
   --form-thead: #164a86;
   --form-backgrd: #ffffff08;
@@ -35,9 +39,9 @@ body {
   --note-border: var(--note-border-thickness) #81818172 solid;
 
   --code-block-backgrd: #121e4250;
-  --code-color: var(--foregrd-no-alpha);
-
+  --code-color: var(--font-color);
   --blockquote-color: #cbcbcb;
+  --accent-backgrd: #9869e850;
 }
 
 /* #region 布局 */
@@ -112,7 +116,7 @@ body {
 #content-title > h1 {
   display: block;
   font-size: 1.2rem;
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
   height: 3rem;
   line-height: 3rem;
   border-bottom: 3px solid #87878730;
@@ -127,7 +131,7 @@ body {
 #content-title > span {
   display: block;
   font-size: 0.8rem;
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
   height: 1.6rem;
   line-height: 1.6rem;
   text-align: left;
@@ -142,12 +146,12 @@ body {
 
 #note-content > div:nth-child(1) > a:last-child {
   text-decoration: none;
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
   font-size: 1.5rem;
   display: block;
   height: 3rem;
   width: 100%;
-  background-color: var(--backbrg-hover);
+  background-color: var(--accent-backgrd);
   line-height: 3rem;
   text-align: center;
 }
@@ -179,7 +183,7 @@ body {
   z-index: 2;
   content: "\e89f";
   font-family: "iconfont";
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
   border-radius: 8px;
 }
 
@@ -194,11 +198,10 @@ body {
   line-height: 200%;
   cursor: pointer;
   top: 50%;
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
   transform: translate(0, -50%);
   background: var(--combobox-h1-backbrg);
   user-select: none;
-  box-shadow: inset 0px 0px 3px var(--foregrd-no-alpha-hover);
 }
 
 #combobox > h1::before {
@@ -215,7 +218,7 @@ body {
   left: 10px;
   padding: 8px;
   border-radius: 4px;
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
   visibility: hidden;
   opacity: 0;
   border: var(--note-border);
@@ -289,7 +292,7 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
   user-select: none;
   border-radius: 8px 0px 0px 8px;
   cursor: pointer;
@@ -324,15 +327,15 @@ body {
 /* #region 触发事件 */
 
 #combobox:hover::before {
-  color: var(--hover);
+  color: #00a4ff;
 }
 
 .option:hover {
-  background: var(--backbrg-hover);
+  background: var(--accent-backgrd);
 }
 
 .note:hover {
-  background-color: var(--backbrg-hover);
+  background-color: var(--accent-backgrd);
 }
 
 /* #endregion */
@@ -379,7 +382,7 @@ label[for="nav-side-display-btn"] {
 #content {
   margin: 0 auto;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", 微软雅黑, Tahoma, Arial, sans-serif;
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
 }
 
 /* #region 表格 */
@@ -405,7 +408,7 @@ label[for="nav-side-display-btn"] {
 }
 
 #content tbody tr:hover {
-  background-color: var(--backbrg-hover);
+  background-color: var(--accent-backgrd);
   transition: background-color 0s;
 }
 
@@ -493,11 +496,9 @@ label[for="nav-side-display-btn"] {
   padding: 2px 4px;
   margin: 4px;
   border-radius: 4px;
-  color: var(--foregrd-no-alpha);
+  color: var(--font-color);
   font-size: 14px;
   border: 1px #858585ad solid;
-  box-shadow: inset 0px 0px 80px var(--foregrd);
-  box-shadow: 0px 0px 5px var(--foregrd);
 } /*key board*/
 #content hr {
   margin-left: 0px;

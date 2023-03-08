@@ -15,19 +15,17 @@
 
   --accent-color: #46b4ab8f;
   --accent-color-no-alpha: #85bfb6;
-  --accent-color-no-alpha-havor: #f0b785;
+  --accent-color-no-alpha-havor: #f0b785ee;
 
-  --fix-lb-box-shadow: 0px 0px 3px #00000078;
+  /* #region 通用 */
 
-  /*通用*/
-  --fix-icon-w-h: 45px;
+  --fix-icon-w-h: 2.5rem;
 
   --transiton-fast-time: 0.4s;
   --transiton-double-time: 0.8s;
 
   --nav-bar-content-height: 2.5rem;
-
-  --hover: #00a4ff;
+  /* #endregion */
 }
 
 .theme-dark {
@@ -36,14 +34,12 @@
   --backbrg-hover: #9869e850;
 
   --foregrd: #ffffff20;
-  --foregrd-no-alpha: #bec9db;
+  --foregrd-no-alpha: #d9d9d9;
   --foregrd-hover: #b56ade;
 
-  --accent-color: #43b5ea8f;
+  --accent-color: #2f4e68aa;
   --accent-color-no-alpha: #71b8df;
-  --accent-color-no-alpha-havor: #994fff;
-
-  --fix-lb-box-shadow: 0px 0px 5px #ffffffb7;
+  --accent-color-no-alpha-havor: #994fffaa;
 }
 
 /* #region 导航栏 */
@@ -135,15 +131,15 @@ label[for="nav-side-display-btn"]::before {
 
 /* #region 悬浮按钮 */
 .fix-lb {
-  border-radius: var(--fix-icon-w-h);
-  border: 3px var(--backgrd) solid;
+  border: 1.5px var(--foregrd-no-alpha) solid;
+  background: var(--accent-color-no-alpha);
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: var(--fix-lb-box-shadow);
   z-index: 9;
+  border-radius: 45px;
 }
 
 .fix-lb-theme-change {
@@ -157,12 +153,12 @@ label[for="nav-side-display-btn"]::before {
 }
 
 .fix-i {
-  color: var(--foregrd-no-alpha);
   font-style: normal;
   letter-spacing: 0px;
   background: var(--accent-color-no-alpha);
   height: var(--fix-icon-w-h);
   line-height: var(--fix-icon-w-h);
+  border-radius: var(--fix-icon-w-h);
   width: var(--fix-icon-w-h);
   vertical-align: middle;
   text-align: center;
