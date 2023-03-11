@@ -61,7 +61,7 @@ function add_theme_change_btn() {
   e_3.setAttribute("type", "checkbox");
   e_3.setAttribute("onclick", "click_change_theme()");
   e_0.appendChild(e_3);
-  document.getElementById("body").appendChild(e_0);
+  document.querySelector("body").appendChild(e_0);
 } //添加主题更换的按钮
 
 function click_change_theme() {

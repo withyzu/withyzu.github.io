@@ -10,8 +10,13 @@
         "url": "/note"
     },
     {
-        "id": "webcate",
+        "id": "web_cate",
         "name": "网站导航",
         "url": "/web_cate"
+    },
+    {
+        "id": "photo",
+        "name": "图片",
+        "url": "/photo"
     }
 ]

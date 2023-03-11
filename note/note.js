@@ -88,6 +88,13 @@ async function load_note_list(url) {
 
   var e2 = document.createElement("div");
   p.appendChild(e2);
+
+  if (document.getElementById("clicked_note")) {
+    var e13 = document.getElementById("clicked_note");
+    e13.removeAttribute("id");
+  }
+  var e11 = document.querySelector("#note-list span:nth-of-type(1)");
+  e11.setAttribute("id", "clicked_note"); //默认 notelist 第一个 span 为 clicked note样式
 } //加载笔记目录
 
 async function load_note_content(url) {
@@ -125,6 +132,7 @@ async function load_ini_content(boot_url) {
   //加载笔记列表
   var url = op.dataset.id + "/" + op.dataset.id + ".json";
   await load_note_list(url);
+
   //加载笔记内容
   var e2 = document.querySelector("#note-list .note:nth-of-type(1)");
   await load_note_content(op.dataset.id + "/" + e2.dataset.id + ".md");

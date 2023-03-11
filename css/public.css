@@ -131,7 +131,7 @@ label[for="nav-side-display-btn"]::before {
 
 /* #region 悬浮按钮 */
 .fix-lb {
-  border: 1.5px var(--foregrd-no-alpha) solid;
+  outline: 1.5px var(--foregrd-no-alpha) solid;
   background: var(--accent-color-no-alpha);
   position: fixed;
   display: flex;

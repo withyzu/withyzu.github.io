@@ -1,0 +1,64 @@
+:root {
+  --keyword-backgrd: #ed9658;
+
+  /* #region 通用 */
+  /* #endregion */
+}
+
+.theme-dark {
+  --keyword-backgrd: #6b5dbb;
+}
+body {
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+#keyword-pad {
+  position: fixed;
+  display: flex;
+  height: 160px;
+  width: calc(100% - var(--fix-icon-w-h));
+  background-color: var(--keyword-backgrd);
+
+  bottom: calc(var(--fix-icon-w-h) / 2);
+  border-radius: 12px;
+  right: calc(var(--fix-icon-w-h) / 2);
+  box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.11);
+  visibility: visible;
+
+  transition: all 2s;
+}
+
+#keyword-display {
+  position: fixed;
+  display: flex;
+  border-radius: 12px;
+  width: var(--fix-icon-w-h);
+  height: var(--fix-icon-w-h);
+  right: calc(var(--fix-icon-w-h) / 2);
+  bottom: calc(160px - var(--fix-icon-w-h) * 0.5);
+
+  line-height: var(--fix-icon-w-h);
+  font-size: 1rem;
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: transparent;
+  transition: all var(--transiton-double-time);
+}
+
+#keyword-display.fix-lb {
+  outline: 0;
+}
+
+.fix-i {
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+.fix-lb-theme-change {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 2s;
+  bottom: calc(100px - var(--fix-icon-w-h) * 0.5);
+}

@@ -1,4 +1,5 @@
 :root {
+  /* #region 通用 */
   --shelf-line-height: 30px;
   --shelf-font-size: 1rem;
   --shelf-font-weight: 600;
@@ -16,6 +17,7 @@
   --cate-caontent-intro-font-size: 0.8rem;
   --cate-caontent-intro-font-weight: 500;
   --cate-caontent-intro-line-height: 1rem;
+  /* #endregion */
 
   --shelf-font-color: #3e767e;
   --item-font-color: #489898;
