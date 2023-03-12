@@ -76,10 +76,6 @@ label[for="nav-side-display-btn"]::before {
   color: var(--accent-color-no-alpha-havor);
 }
 
-#nav-side-display-btn:checked + #nav-bar-content {
-  max-height: 900px;
-}
-
 #nav-bar-content {
   background: var(--backgrd-no-alpha);
   width: 100%;
@@ -182,10 +178,15 @@ label[for="nav-side-display-btn"]::before {
 /* #region 适配 */
 @media only screen and (max-width: 600px) {
   #nav-bar-content {
-    max-height: 0;
+    max-height: 990px;
   }
+
   label[for="nav-side-display-btn"] {
     display: block;
+  }
+
+  #nav-side-display-btn:checked + #nav-bar-content {
+    max-height: 0px;
   }
 }
 
