@@ -9,8 +9,8 @@ body {
   --form-thead: #5b9bd5;
   --form-backgrd: #c8ffed20;
 
-  --combobox-h1-backbrg: #d9d8d290;
-  --catalog-brg: #ffffff; /*不能为透明*/
+  --combobox-h1-backbrg: #eff4f0;
+  --catalog-brg: #c7e7d4; /*不能为透明*/
   --note-content-box-backgrd: #ffffff;
   --note-border: var(--note-border-thickness) #276cc7 solid;
 
@@ -51,7 +51,7 @@ body {
 }
 
 #nav-bar {
-  background-color: var(--catalog-brg);
+  background: var(--catalog-brg);
   height: 3rem;
   position: fixed;
   display: block;
@@ -313,7 +313,7 @@ body {
 #note-list *:last-child {
   height: 50vh;
   width: 100%;
-  background-color: #76aeee;
+  background: var(--catalog-brg);
 }
 
 /* #endregion */
