@@ -6,43 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>我的笔记</title>
 
-    <link href="/Asset/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+    <link href="/Asset//iconfont/iconfont.css" rel="stylesheet" type="text/css" />
     <link href="/css/highlight-atom-one-dark.min.css" rel="stylesheet" type="text/css" />
-    <link href="/css/public.css" rel="stylesheet" type="text/css" />
+    <link href="/css/general.css" rel="stylesheet" type="text/css" />
     <link href="/css/note.css" rel="stylesheet" type="text/css" />
 
-    <script src="/js/highlight.min.js" type="text/javascript"></script>
-    <script src="/js//marked-custom-render.js" type="text/javascript"></script>
-    <script src="/js/marked.umd.js" type="text/javascript"></script>
-    <script src="/js/jquery.min.js" type="text/javascript"></script>
-    <script src="/js/public.js" type="text/javascript"></script>
-    <script src="note.js" type="text/javascript"></script>
+    <script src="/js//marked.umd.js"></script>
+    <script src="/js/marked-custom-render.js " type="text/javascript"></script>
+    <script src="/js//highlight.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/note.js" type="text/javascript"></script>
   </head>
-  <body id="body">
+
+  <body>
+    <div id="nav-bar-vacancy"></div>
     <div id="nav-bar"></div>
-    <div></div>
     <div id="catalog">
       <div id="combobox" onclick="combobox_onclick(combobox)">
         <h1>笔记列表</h1>
       </div>
       <div id="note-list"></div>
     </div>
-    <div id="note-content">
-      <div>
+    <div id="note-content-box">
+      <div id="note-content">
         <div id="content-title">
           <h1></h1>
           <span></span>
         </div>
         <div id="content"></div>
-        <a href="#content-title">😅 到 底 了 . . .</a>
+        <a class="content-end" href="#nav-bar-vacancy">😅 到 底 了 . . .</a>
       </div>
     </div>
 
-    <div
-      id="catalog-display"
-      class="fix-lb fix-lb-side-display"
-      onclick="catalog_display_onclick()"
-    >
+    <div id="catalog-display" onclick="catalog_display_onclick()">
       <i class="fix-i">📄</i>
     </div>
   </body>

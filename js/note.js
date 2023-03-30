@@ -1,4 +1,4 @@
-var boot_url = "boot.json";
+var boot_url = "/boot/note.boot.json";
 window.onload = () => {
   load_ini_content(boot_url);
 };
@@ -48,7 +48,7 @@ function note_onclick(e) {
   //     c.style.left = "-210px";
   //   }
   // }
-} //Note 点击事件 先note-content添加内容
+} //Note 点击事件 先note-content-box添加内容
 
 async function load_notebook_list(json) {
   var box = document.getElementById("combobox");
@@ -146,7 +146,7 @@ async function load_ini_content(boot_url) {
 // #region 其他
 function catalog_display_onclick() {
   var c = document.querySelector("#catalog");
-  var d = document.getElementById("note-content");
+  var d = document.getElementById("note-content-box");
   if (document.documentElement.clientWidth >= 600) {
     if (c.style.left == "" || c.style.left == "0px") {
       c.style.left = "-210px";
@@ -191,7 +191,7 @@ function debounce(operate, delay) {
 
 function layout_fit_device() {
   var c = document.querySelector("#catalog");
-  var d = document.getElementById("note-content");
+  var d = document.getElementById("note-content-box");
   if (document.documentElement.clientWidth >= 600) {
     d.style.marginLeft = "210px";
     c.style.left = "0px";
