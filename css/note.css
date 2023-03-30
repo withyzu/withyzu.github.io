@@ -9,8 +9,8 @@ body {
   --form-thead: #5b9bd5;
   --form-backgrd: #c8ffed20;
 
-  --combobox-h1-backbrg: #eff4f0;
-  --catalog-brg: #c7e7d4; /*不能为透明*/
+  --combobox-h1-backbrg: #ffffff;
+  --catalog-brg: #e6f2f4; /*不能为透明*/
   --note-content-box-backgrd: #ffffff;
   --note-border: var(--note-border-thickness) #276cc7 solid;
 
