@@ -1,43 +1,13 @@
+body {
+  background: url(/Asset/img/pageimggrd.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --backgrd: #fffefebb;
-  --backgrd-no-alpha: #ffffff;
-  --backbrg-hover: #ff770040;
-
-  --foregrd: #00000020;
-  --foregrd-no-alpha: #3b4249;
-  --foregrd-hover: #de8b6a;
-
-  --accent-color: #46b4ab8f;
-  --accent-color-no-alpha: #85bfb6;
-  --accent-color-no-alpha-havor: #f0b785ee;
-
-  /* #region 通用 */
-
-  --fix-icon-w-h: 2.5rem;
-
-  --transiton-fast-time: 0.4s;
-  --transiton-double-time: 0.8s;
-
-  --nav-bar-content-height: 2.5rem;
-  /* #endregion */
-}
-
-.theme-dark {
-  --backgrd: #2c3a53ee;
-  --backgrd-no-alpha: #2c3a53;
-  --backbrg-hover: #9869e850;
-
-  --foregrd: #ffffff20;
-  --foregrd-no-alpha: #d9d9d9;
-  --foregrd-hover: #b56ade;
-
-  --accent-color: #2f4e68aa;
-  --accent-color-no-alpha: #71b8df;
-  --accent-color-no-alpha-havor: #994fffaa;
 }

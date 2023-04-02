@@ -1,0 +1,15 @@
+body {
+  background-image: url("/Asset/img/pageimggrd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50%;
+}
+
+#content {
+  background-color: rgba(254, 254, 254, 0.789);
+  width: 90%;
+  height: 1800px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
