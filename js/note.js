@@ -3,7 +3,7 @@ window.onload = () => {
   load_ini_content(boot_url);
 };
 
-// window.addEventListener("resize", debounce(layout_fit_device, 200), false); //令布局适配设备;
+window.addEventListener("resize", debounce(layout_fit_device, 0), false); //令布局适配设备;
 
 function combobox_onclick(element) {
   element.classList.toggle("active");
@@ -27,7 +27,9 @@ function option_onclick(e) {
   } //是否存在 已打开笔记本 option的样式
 
   // console.log(p.dataset.id);
-  var p1 = document.querySelector('.option[data-id="' + note_list.dataset.id + '"]');
+  var p1 = document.querySelector(
+    '.option[data-id="' + note_list.dataset.id + '"]'
+  );
   p1.classList.add("option-checked"); //已打开笔记本 option的样式
 } //NoteBook点击事件 向note-list添加内容
 
@@ -102,7 +104,8 @@ async function load_note_content(url) {
   var fileName = url.replace(/(.*\/)*([^.]+).*/gi, "$2");
   var p1 = document.querySelector('.note[data-id="' + fileName + '"]');
   document.querySelector("#content-title > h1 ").textContent = p1.textContent;
-  document.querySelector("#content-title > span ").textContent = p1.dataset.data;
+  document.querySelector("#content-title > span ").textContent =
+    p1.dataset.data;
 
   let response = await fetch(url);
   let md_str = await response.text();
@@ -137,7 +140,9 @@ async function load_ini_content(boot_url) {
   await load_note_content(op.dataset.id + "/" + e2.dataset.id + ".md");
 
   if (!document.querySelector(".option.option-checked")) {
-    var p1 = document.querySelector('.option[data-id="' + note_list.dataset.id + '"]');
+    var p1 = document.querySelector(
+      '.option[data-id="' + note_list.dataset.id + '"]'
+    );
     p1.classList.add("option-checked");
   } //已打开笔记本 option的样式
 } // 加载初始内容
@@ -146,18 +151,19 @@ async function load_ini_content(boot_url) {
 function catalog_display_onclick() {
   var c = document.querySelector("#catalog");
   var d = document.querySelector("#note-content-box");
-  if (document.documentElement.clientWidth >= 1200) {
+  if (document.documentElement.clientWidth >= 1216) {
     if (c.style.left == "" || c.style.left == "0px") {
       c.style.left = "-210px";
       c.style.opacity = "0";
-      d.style.width = "1200px";
+      d.style.width = "100%";
     } else {
       c.style.left = "0px";
       c.style.opacity = "1";
       d.style.width = "calc(1200px - 210px)";
     }
+    return 0;
   }
-  if (document.documentElement.clientWidth < 1200) {
+  if (document.documentElement.clientWidth < 1216) {
     if (getComputedStyle(c, null)["left"] == "-210px") {
       c.style.left = "0px";
       c.style.opacity = "1";
@@ -193,16 +199,25 @@ function debounce(operate, delay) {
 //防抖
 
 // function layout_fit_device() {
-//   var c = document.querySelector("#catalog");
+//   var c = document.getElementById("catalog");
 //   var d = document.getElementById("note-content-box");
-//   if (document.documentElement.clientWidth >= 600) {
-//     d.style.marginLeft = "210px";
+//   var e = document.getElementById("nav-bar");
+
+//   if (e.clientWidth == 1200) {
 //     c.style.left = "0px";
-//   }
-//   if (document.documentElement.clientWidth < 600) {
-//     d.style.marginLeft = "0px";
+//     c.style.opacity = "1";
+
+//     d.style.width = "calc(1200px - 210px)";
+//     d.style.right = "calc((100% - 1200px) / 2)";
+//   } else {
 //     c.style.left = "-210px";
+//     c.style.opacity = "0";
+
+//     d.style.width = "calc(100% - var(--ele-gap) * 2)";
+//     d.style.right = "0px";
 //   }
+//   console.log(document.documentElement.clientWidth);
+//   console.log("---" + e.clientWidth);
 // } //令布局适配设备
 
 // #endregion

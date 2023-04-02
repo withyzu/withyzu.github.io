@@ -1,9 +1,5 @@
 :root {
-  --ele-gap: 0.5rem;
-  --ele-radius: 0.5rem;
-
-  --note-hue: rgb(150, 187, 181);
-  --combobox-bg: #eeeee;
+  --ele-gap: 8px;
 }
 
 .theme-dark {
@@ -39,10 +35,10 @@ body {
       #43ffcaaa,
       #49dbffaa
     ),
-    white;
+    #fff;
   background-size: 500%;
   animation: bgAnimation 10s linear infinite;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 
 #nav-bar,
@@ -53,33 +49,50 @@ body {
 
 #catalog {
   position: fixed;
-  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 3rem - 3 * var(--ele-gap));
   z-index: 10;
   width: 210px;
-  margin-left: calc((100% - 1200px) / 2);
-  opacity: 1;
-  left: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
 
-  transition-property: left opacity;
-  transition-duration: 0.4s;
+  transition-property: left, opacity, margin-left;
+  transition-duration: 1s;
+
+  background-image: url(/Asset/img/p2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-/* #catalog::before {
-  position: absolute;
-  left: 0px;
-  content: "";
-  width: 0.5rem;
+#note-list {
+  position: relative;
+  display: block;
+  z-index: 10;
+  width: 100%;
   height: 100%;
+  margin: var(--ele-gap) auto;
+  overflow-y: auto;
+}
+
+/* #note-list::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  border-radius: var(--ele-gap);
 } */
 
 #note-content-box {
   z-index: 1;
   position: absolute;
-  right: calc((100% - 1200px) / 2);
-  width: calc(1200px - 210px);
+  max-width: 1200px;
   padding: 0 0 0 var(--ele-gap);
-  transition-property: width;
-  transition-duration: 0.4s;
+
+  transition-property: right, width;
+  transition-duration: 1.5s;
 }
 
 #note-content {
@@ -90,19 +103,23 @@ body {
 
 #content {
   position: relative;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
-}
+  margin: var(--ele-gap) auto;
+  background-color: #eeeeee;
 
+  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
 /* #endregion */
 
 /* #region 笔记内容 */
 #content-title {
   height: max-content;
-  background-image: linear-gradient(120deg, #84fab090 0%, #8fd3f480 100%);
+  background: linear-gradient(120deg, #84fab090 0%, #8fd3f480 100%), #dddddd;
   padding: 0.5rem 2rem 4px 2rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
@@ -151,7 +168,7 @@ body {
   width: 100%;
   z-index: 2;
   position: relative;
-  height: 2rem;
+  height: 2.5rem;
   border-radius: 0.5rem;
 }
 
@@ -171,7 +188,7 @@ body {
   z-index: 2;
   content: "\e89f";
   font-family: "iconfont";
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 #combobox > h1 {
@@ -187,7 +204,7 @@ body {
   top: 50%;
   transform: translate(0, -50%);
   user-select: none;
-  background-color: var(--combobox-bg);
+  background-color: #cccccc90;
 }
 
 #combobox > h1::before {
@@ -259,18 +276,8 @@ body {
 /* #endregion */
 
 /* #region  笔记列表*/
-
-#note-list {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  border-radius: 8px;
-  margin: var(--ele-gap) auto;
-  border-top: var(--ele-gap) solid var(--note-hue);
-  border-bottom: var(--ele-gap) solid var(--note-hue);
-}
-
 .note {
+  position: relative;
   display: block;
   height: 1.6rem;
   font-size: 0.8rem;
@@ -281,6 +288,7 @@ body {
 
   cursor: pointer;
   text-indent: var(--ele-gap);
+  z-index: 2;
 }
 
 .note::before {
@@ -289,15 +297,17 @@ body {
 }
 
 #clicked_note {
-  border-right: 0;
+  margin: 0 var(--ele-gap);
+
   font-size: 1rem;
   height: 2rem;
   line-height: 2rem;
-  background-color: transparent;
-  text-indent: 0.5rem;
+
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: all 0.2s;
-  z-index: 11;
+  transition-property: font-size, height, line-height;
+  transition-duration: 0.2s;
+  backdrop-filter: blur(16px);
+  border-radius: 0.5rem;
 }
 
 /*被点击的note样式*/
@@ -322,7 +332,7 @@ body {
   bottom: 20%;
   right: calc((100% - 1200px) / 2);
   z-index: 11;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
   align-items: center;
@@ -336,7 +346,7 @@ body {
   height: 45px;
   width: 45px;
   z-index: 11;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: flex;
 }
 
@@ -377,23 +387,15 @@ body {
   font-weight: 600;
   font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
     STHeiti, MingLiu;
-}
+} /* #combobox、options、note 统一字体 */
 
-#combobox,
-#catalog::before,
-#note-list *:last-child,
-.content-end,
-.options,
-.note {
-  background: var(--note-hue);
-} /* 主颜色 */
-
-#catalog ::-webkit-scrollbar {
+#note-list::-webkit-scrollbar {
   display: block;
   width: 0px;
   height: 0px;
-}
+} /* 隐藏note-list滚动条 */
 
+.fix-i,
 .note {
   user-select: none;
 } /*不可选择*/
@@ -401,12 +403,6 @@ body {
 /* #endregion */
 
 /* #region markdown style */
-#content {
-  margin: 0 auto;
-  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
 /* #region 表格 */
 #content table {
   border-collapse: separate;
@@ -478,7 +474,7 @@ body {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   margin: 0.5rem 0;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: 1px solid #d8d0d0b2;
 }
 
@@ -494,12 +490,12 @@ body {
   display: block;
   height: 0.6rem;
   width: 0.6rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 #content pre::-webkit-scrollbar-thumb {
   background-color: #61616150;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 /* #endregion */
@@ -630,12 +626,12 @@ body {
   display: block;
   height: 0.6rem;
   width: 0.6rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 #content blockquote::-webkit-scrollbar-thumb {
   background-color: #61616150;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 /* #endregion */
@@ -657,11 +653,9 @@ body {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 50% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
@@ -670,18 +664,16 @@ body {
 /* #endregion */
 
 /* #region 适配 */
-@media only screen and (max-width: 1300px) {
-  #note-content-box {
-    width: calc(100% - var(--ele-gap) * 2);
-    right: 0px;
-    margin: 0 var(--ele-gap);
-    padding: 0px;
-  }
-
+@media only screen and (max-width: 1216px) {
   #catalog {
     margin-left: var(--ele-gap);
     left: -210px;
     opacity: 0;
+  }
+
+  #note-content-box {
+    width: calc(100% - var(--ele-gap) * 2);
+    right: var(--ele-gap);
   }
 
   #fix-tool {
@@ -689,6 +681,17 @@ body {
   }
 }
 
-/* @media only screen and (max-width: 1200px) {} */
+@media only screen and (min-width: 1216px) {
+  #catalog {
+    margin-left: calc((100% - 1200px) / 2);
+    left: 0px;
+    opacity: 1;
+  }
+
+  #note-content-box {
+    width: calc(1200px - 210px);
+    right: calc((100% - 1200px) / 2);
+  }
+}
 
 /* #endregion*/
