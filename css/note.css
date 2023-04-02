@@ -2,15 +2,12 @@
   --ele-gap: 0.5rem;
   --ele-radius: 0.5rem;
 
-
   --note-hue: rgb(150, 187, 181);
   --combobox-bg: #eeeee;
-
 }
 
-
-
-.theme-dark {}
+.theme-dark {
+}
 
 body {
   position: relative;
@@ -35,7 +32,14 @@ body {
   transform: translate(-50%, 0);
 
   border-radius: 0.5rem;
-  background: linear-gradient(120deg, #2cd4c9aa, #739ae9aa, #43ffcaaa, #49dbffaa), white;
+  background: linear-gradient(
+      120deg,
+      #2cd4c9aa,
+      #739ae9aa,
+      #43ffcaaa,
+      #49dbffaa
+    ),
+    white;
   background-size: 500%;
   animation: bgAnimation 10s linear infinite;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -46,7 +50,6 @@ body {
   margin: var(--ele-gap) auto;
   height: 3rem;
 }
-
 
 #catalog {
   position: fixed;
@@ -104,7 +107,7 @@ body {
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-#content-title>h1 {
+#content-title > h1 {
   display: block;
   font-size: 1.2rem;
   height: 3rem;
@@ -118,7 +121,7 @@ body {
   text-overflow: ellipsis;
 }
 
-#content-title>span {
+#content-title > span {
   display: block;
   font-size: 0.8rem;
   height: 1.6rem;
@@ -171,7 +174,7 @@ body {
   border-radius: 8px;
 }
 
-#combobox>h1 {
+#combobox > h1 {
   border-radius: 6px;
   display: block;
   position: relative;
@@ -184,10 +187,10 @@ body {
   top: 50%;
   transform: translate(0, -50%);
   user-select: none;
-  background-color: var(--combobox-bg)
+  background-color: var(--combobox-bg);
 }
 
-#combobox>h1::before {
+#combobox > h1::before {
   position: relative;
   content: "📚 ";
 }
@@ -263,10 +266,9 @@ body {
   overflow: auto;
   border-radius: 8px;
   margin: var(--ele-gap) auto;
-  border-top: var(--ele-gap)solid var(--note-hue);
+  border-top: var(--ele-gap) solid var(--note-hue);
   border-bottom: var(--ele-gap) solid var(--note-hue);
 }
-
 
 .note {
   display: block;
@@ -277,13 +279,8 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
 
-  user-select: none;
   cursor: pointer;
   text-indent: var(--ele-gap);
-
-  z-index: 3;
-
-
 }
 
 .note::before {
@@ -303,8 +300,6 @@ body {
   z-index: 11;
 }
 
-
-
 /*被点击的note样式*/
 
 #clicked_note::before {
@@ -315,7 +310,6 @@ body {
 #note-list *:last-child {
   height: 50vh;
   width: 100%;
-
 }
 
 #fix-tool {
@@ -357,7 +351,8 @@ body {
   text-align: center;
 }
 
-.fix-i:hover {}
+.fix-i:hover {
+}
 
 /* #endregion */
 
@@ -367,22 +362,22 @@ body {
   color: #00a4ff;
 }
 
-.option:hover {}
+.option:hover {
+}
 
-.note:hover {}
+.note:hover {
+}
 
 /* #endregion */
 
 /* #region  特定属性 */
-#combobox>h1,
+#combobox > h1,
 .options,
 .note {
   font-weight: 600;
   font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
     STHeiti, MingLiu;
 }
-
-/* 字体 */
 
 #combobox,
 #catalog::before,
@@ -391,15 +386,17 @@ body {
 .options,
 .note {
   background: var(--note-hue);
-}
-
-/* 主颜色 */
+} /* 主颜色 */
 
 #catalog ::-webkit-scrollbar {
   display: block;
   width: 0px;
   height: 0px;
 }
+
+.note {
+  user-select: none;
+} /*不可选择*/
 
 /* #endregion */
 
@@ -534,10 +531,12 @@ body {
 #content h2 {
   font-size: 1.1rem;
   border-left: solid #ff8b9d 0.5rem;
-  background-image: linear-gradient(-225deg,
-      #ffe29f90 0%,
-      #ffa99faa 48%,
-      #ff719a50 100%);
+  background-image: linear-gradient(
+    -225deg,
+    #ffe29f90 0%,
+    #ffa99faa 48%,
+    #ff719a50 100%
+  );
 }
 
 #content h3 {
@@ -559,7 +558,7 @@ body {
 }
 
 /* #endregion */
-#content>p {
+#content > p {
   word-spacing: 0;
   text-align: left;
   word-wrap: break-word;
@@ -571,16 +570,14 @@ body {
 
   padding: 0.5rem;
   border-radius: 0.5rem;
-}
+} /* 段落 */
 
-/* 段落 */
 #content a {
   font-size: 1rem;
   color: #6495ed;
   text-decoration: underline;
-}
+} /* 链接 */
 
-/* 链接 */
 #content kbd {
   background-color: #80808014;
   padding: 2px 4px;
@@ -589,9 +586,7 @@ body {
 
   font-size: 14px;
   border: 1px #858585ad solid;
-}
-
-/*key board*/
+} /*key board*/
 
 /* #region 块 */
 #content blockquote {
@@ -604,7 +599,7 @@ body {
   border-left: 10px solid #db998134;
   margin: 0.5rem 0px;
   padding: 0.5em 10px;
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C""\201D""\2018""\2019";
   overflow-x: auto;
 }
 
@@ -653,9 +648,7 @@ body {
   margin-bottom: 0.5rem;
   box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
     rgb(60 64 67 / 15%) 0px 1px 3px 1px;
-}
-
-/*img*/
+} /*img*/
 
 /* #endregion */
 
@@ -687,7 +680,6 @@ body {
 
   #catalog {
     margin-left: var(--ele-gap);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     left: -210px;
     opacity: 0;
   }
@@ -696,7 +688,6 @@ body {
     right: var(--ele-gap);
   }
 }
-
 
 /* @media only screen and (max-width: 1200px) {} */
 
