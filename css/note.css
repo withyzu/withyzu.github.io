@@ -297,29 +297,13 @@ body {
   height: 2rem;
   line-height: 2rem;
   background-color: transparent;
-  filter: blur(0px);
   text-indent: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: all 0.2s;
   z-index: 11;
 }
 
-#clicked_note::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  z-index: -1;
 
-  background: linear-gradient(120deg, #2cd4c9aa, #739ae9aa, #43ffcaaa, #49dbffaa), white;
-  background-size: 500%;
-  backdrop-filter: blur(1px);
-  filter: blur(30px);
-  animation: bgAnimation 10s linear infinite;
-
-}
 
 /*被点击的note样式*/
 
