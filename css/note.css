@@ -56,7 +56,7 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
 
-  transition-property: left, opacity, margin-left;
+  /* transition-property: left, opacity, margin-left; */
 
   background-image: url(/Asset/img/p2.jpg);
   background-repeat: no-repeat;
@@ -87,9 +87,8 @@ body {
   z-index: 1;
   position: absolute;
   max-width: 1200px;
-  padding: 0 0 0 var(--ele-gap);
 
-  transition-property: right, width;
+  /* transition-property: right, width; */
 }
 
 #note-content {
@@ -660,8 +659,7 @@ body {
 
 #note-content-box,
 #catalog {
-  transition-duration: 0.8s;
-  transition-timing-function: ease-out;
+  transition: all 0.8s;
 }
 
 /* #endregion */
@@ -677,6 +675,8 @@ body {
   #note-content-box {
     width: calc(100% - var(--ele-gap) * 2);
     right: var(--ele-gap);
+
+    padding: 0;
   }
 
   #fix-tool {
@@ -694,6 +694,8 @@ body {
   #note-content-box {
     width: calc(1200px - 210px);
     right: calc((100% - 1200px) / 2);
+
+    padding: 0 0 0 var(--ele-gap);
   }
 }
 

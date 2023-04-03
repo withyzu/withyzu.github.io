@@ -3,7 +3,7 @@ window.onload = () => {
   load_ini_content(boot_url);
 };
 
-window.addEventListener("resize", debounce(layout_fit_device, 0), false); //令布局适配设备;
+window.addEventListener("resize", debounce(reset_js_style, 0), false); //令布局适配设备;
 
 function combobox_onclick(element) {
   element.classList.toggle("active");
@@ -156,10 +156,12 @@ function catalog_display_onclick() {
       c.style.left = "-210px";
       c.style.opacity = "0";
       d.style.width = "100%";
+      d.style.padding = "0";
     } else {
       c.style.left = "0px";
       c.style.opacity = "1";
       d.style.width = "calc(1200px - 210px)";
+      d.style.padding = "0 0 0 var(--ele-gap)";
     }
     return 0;
   }
@@ -198,26 +200,13 @@ function debounce(operate, delay) {
 }
 //防抖
 
-// function layout_fit_device() {
-//   var c = document.getElementById("catalog");
-//   var d = document.getElementById("note-content-box");
-//   var e = document.getElementById("nav-bar");
+function reset_js_style() {
+  var c = document.getElementById("catalog");
+  var d = document.getElementById("note-content-box");
+  var e = document.getElementById("nav-bar");
 
-//   if (e.clientWidth == 1200) {
-//     c.style.left = "0px";
-//     c.style.opacity = "1";
-
-//     d.style.width = "calc(1200px - 210px)";
-//     d.style.right = "calc((100% - 1200px) / 2)";
-//   } else {
-//     c.style.left = "-210px";
-//     c.style.opacity = "0";
-
-//     d.style.width = "calc(100% - var(--ele-gap) * 2)";
-//     d.style.right = "0px";
-//   }
-//   console.log(document.documentElement.clientWidth);
-//   console.log("---" + e.clientWidth);
-// } //令布局适配设备
+  c.style = "";
+  d.style = "";
+} //令布局适配设备
 
 // #endregion
