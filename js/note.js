@@ -5,8 +5,28 @@ window.onload = () => {
 
 window.addEventListener("resize", debounce(reset_js_style, 0), false); //令布局适配设备;
 
-function combobox_onclick(element) {
-  element.classList.toggle("active");
+function combobox_onclick() {
+  let e = document.getElementById("options");
+  let o = document.getElementById("options_close");
+
+  if (e.style.opacity != 0) {
+    e.style = "";
+    e.style.opacity = "0";
+
+    o.style = "";
+    o.style.display = "none";
+  } else {
+    if (document.documentElement.clientHeight <= 600) e.style.height = "210px";
+    else e.style.height = "420px";
+
+    e.style.width = "210px";
+    e.style.top = "35px";
+    e.style.left = "10px";
+    e.style.opacity = "1";
+
+    o.style = "";
+    o.style.display = "block";
+  }
 } //ComboBox 点击事件
 
 function option_onclick(e) {
@@ -31,7 +51,7 @@ function option_onclick(e) {
     '.option[data-id="' + note_list.dataset.id + '"]'
   );
   p1.classList.add("option-checked"); //已打开笔记本 option的样式
-} //NoteBook点击事件 向note-list添加内容
+} //option 点击事件 向note-list添加内容
 
 function note_onclick(e) {
   if (document.getElementById("clicked_note")) {
@@ -44,7 +64,7 @@ function note_onclick(e) {
   document.getElementById("content").innerHTML = "";
 
   load_note_content(e1.dataset.id + "/" + e.dataset.id + ".md");
-  var c = document.querySelector("#catalog");
+  // var c = document.querySelector("#catalog");
   // if (document.documentElement.clientWidth < 600) {
   //   if (getComputedStyle(c, null)["left"] != "-210px") {
   //     c.style.left = "-210px";
@@ -57,8 +77,13 @@ async function load_notebook_list(json) {
   var span = document.createElement("span");
   span.appendChild(document.createTextNode("笔记列表"));
   var options = document.createElement("div");
+  var options_close = document.createElement("div");
+  options.setAttribute("id", "options");
   options.setAttribute("class", "options");
+  options.style.opacity = "0";
   options.appendChild(span);
+  options_close.setAttribute("id", "options_close");
+  box.appendChild(options_close);
   box.appendChild(options);
 
   json.forEach((item) => {
@@ -148,30 +173,42 @@ async function load_ini_content(boot_url) {
 } // 加载初始内容
 
 // #region 其他
+function catalog_close_onclick() {
+  var c = document.getElementById("catalog");
+  var cc = document.getElementById("catalog-close");
+
+  if (document.documentElement.clientWidth < 1216) {
+    c.style.left = "-210px";
+    c.style.opacity = "0";
+    cc.style.display = "none";
+  } else console.log("catalog_close_onclick() : errer");
+}
+
 function catalog_display_onclick() {
-  var c = document.querySelector("#catalog");
-  var d = document.querySelector("#note-content-box");
+  var c = document.getElementById("catalog");
+  var cc = document.getElementById("catalog-close");
+  var d = document.getElementById("note-content-box");
+
   if (document.documentElement.clientWidth >= 1216) {
     if (c.style.left == "" || c.style.left == "0px") {
       c.style.left = "-210px";
       c.style.opacity = "0";
       d.style.width = "100%";
-      d.style.padding = "0";
     } else {
       c.style.left = "0px";
       c.style.opacity = "1";
-      d.style.width = "calc(1200px - 210px)";
-      d.style.padding = "0 0 0 var(--ele-gap)";
+      d.style.width = "calc(1200px - 210px - var(--ele-gap))";
     }
-    return 0;
   }
   if (document.documentElement.clientWidth < 1216) {
     if (getComputedStyle(c, null)["left"] == "-210px") {
       c.style.left = "0px";
       c.style.opacity = "1";
+      cc.style.display = "block";
     } else {
       c.style.left = "-210px";
       c.style.opacity = "0";
+      cc.style.display = "none";
     }
   }
 } //catalog 点击事件 显示
@@ -203,10 +240,17 @@ function debounce(operate, delay) {
 function reset_js_style() {
   var c = document.getElementById("catalog");
   var d = document.getElementById("note-content-box");
-  var e = document.getElementById("nav-bar");
+  var o = document.getElementById("options");
+  var os = document.getElementById("options_close");
+  var cc = document.getElementById("catalog-close");
 
   c.style = "";
   d.style = "";
+  o.style = "";
+  os.style = "";
+  cc.style = "";
+
+  o.style.opacity = "0";
 } //令布局适配设备
 
 // #endregion

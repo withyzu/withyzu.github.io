@@ -1,26 +1,32 @@
 :root {
   --ele-gap: 8px;
+  --content-bg: #eeeeee83;
 }
 
 .theme-dark {
 }
+* {
+  scroll-behavior: smooth;
+}
 
 body {
-  position: relative;
   margin: 0 auto;
 }
 
 /* #region 布局 */
 #nav-bar-vacancy {
-  /* background-color: red; */
+  position: relative;
+  height: calc(3rem + var(--ele-gap) * 2);
   width: 100%;
 }
 
 #nav-bar {
+  height: 3rem;
   width: calc(100% - var(--ele-gap) * 2);
   max-width: 1200px;
   position: fixed;
   display: block;
+  margin: var(--ele-gap) auto;
 
   top: 0;
   z-index: 9;
@@ -41,11 +47,6 @@ body {
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 
-#nav-bar,
-#nav-bar-vacancy {
-  margin: var(--ele-gap) auto;
-  height: 3rem;
-}
 #catalog {
   position: fixed;
   display: flex;
@@ -53,25 +54,14 @@ body {
   height: calc(100vh - 3rem - 3 * var(--ele-gap));
   z-index: 10;
   width: 210px;
-  border-radius: 0.5rem;
-  overflow: hidden;
+  border-radius: var(--ele-gap);
 
-  /* transition-property: left, opacity, margin-left; */
+  transition-property: left, opacity, margin-left;
 
   background-image: url(/Asset/img/p2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-#note-list {
-  position: relative;
-  display: block;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  margin: var(--ele-gap) auto;
-  overflow-y: auto;
 }
 
 /* #note-list::before {
@@ -88,7 +78,7 @@ body {
   position: absolute;
   max-width: 1200px;
 
-  /* transition-property: right, width; */
+  transition-property: width, right;
 }
 
 #note-content {
@@ -103,7 +93,7 @@ body {
   padding: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
   margin: var(--ele-gap) auto;
-  background-color: #eeeeee;
+  background-color: var(--content-bg);
 
   font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
     "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -155,6 +145,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
+  background-color: var(--content-bg);
 }
 
 /* #endregion */
@@ -199,7 +190,6 @@ body {
   cursor: pointer;
   top: 50%;
   transform: translate(0, -50%);
-  user-select: none;
   background-color: #cccccc90;
 }
 
@@ -208,28 +198,32 @@ body {
   content: "📚 ";
 }
 
-.options {
-  z-index: 2;
+#options {
   position: absolute;
-  width: 210px;
-  height: auto;
-  top: 35px;
-  left: 10px;
   padding: 8px;
   border-radius: 4px;
+  z-index: 11;
 
-  visibility: hidden;
-  opacity: 0;
+  width: 20px;
+  height: 20px;
+  top: 4px;
+  left: 4px;
+  overflow: hidden;
+  opacity: 1;
 
+  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  cursor: pointer;
-  user-select: none;
+  backdrop-filter: blur(16px);
+  transition-property: width, height, opacity, top, left, backdrop-filter;
 }
 
-#combobox.active .options {
-  opacity: 1;
-  visibility: visible;
+#options_close {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
 }
 
 .options span {
@@ -238,7 +232,7 @@ body {
   line-height: 200%;
   text-indent: 0.5rem;
 
-  margin-bottom: 0.5rem;
+  margin: var(--ele-gap) 0;
   text-align: center;
 }
 
@@ -264,6 +258,10 @@ body {
   content: "📘";
 }
 
+.option-checked {
+  background-color: red;
+}
+
 .option-checked::before {
   position: relative;
   content: "📖";
@@ -272,6 +270,15 @@ body {
 /* #endregion */
 
 /* #region  笔记列表*/
+#note-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: var(--ele-gap) auto;
+  overflow-y: auto;
+}
+
 .note {
   position: relative;
   display: block;
@@ -284,7 +291,6 @@ body {
 
   cursor: pointer;
   text-indent: var(--ele-gap);
-  z-index: 2;
 }
 
 .note::before {
@@ -327,7 +333,7 @@ body {
   padding: 0.2rem;
   bottom: 20%;
   right: calc((100% - 1200px) / 2);
-  z-index: 11;
+  z-index: 9;
   border-radius: 0.5rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
@@ -341,7 +347,6 @@ body {
   position: relative;
   height: 45px;
   width: 45px;
-  z-index: 11;
   border-radius: 0.5rem;
   display: flex;
 }
@@ -369,9 +374,19 @@ body {
 }
 
 .option:hover {
+  /* outline: 2px palegreen solid; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .note:hover {
+  margin: 0 var(--ele-gap);
+  border-radius: 0.5rem;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  backdrop-filter: blur(16px);
+  /* 
+  transition-property: ;
+  transition-duration: 0.2s; */
 }
 
 /* #endregion */
@@ -391,6 +406,8 @@ body {
   height: 0px;
 } /* 隐藏note-list滚动条 */
 
+#combobox > h1,
+.options,
 .fix-i,
 .note {
   user-select: none;
@@ -402,33 +419,14 @@ body {
 /* #region 表格 */
 #content table {
   border-collapse: separate;
-  border-radius: 1rem;
+  border-radius: var(--ele-gap);
   border-spacing: 0;
 
   overflow: hidden;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: var(--ele-gap) 0;
   box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
     rgb(60 64 67 / 15%) 0px 1px 3px 1px;
 }
-
-#content td,
-#content th {
-  height: 30px;
-}
-
-#content td:last-child,
-#content th:last-child {
-  border-right-color: transparent;
-}
-
-/* #content tbody tr:nth-child(odd) {
-  background: transparent;
-}
-
-#content tbody tr:nth-child(even) {
-
-} */
 
 #content tbody tr:hover {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
@@ -457,6 +455,18 @@ body {
   padding: 0px 0.5rem 0px 0.5rem;
 }
 
+#content td,
+#content th {
+  border-right: 2px solid #1e90ff;
+  text-align: center;
+}
+#content td {
+  border-top: 2px solid #1e90ff;
+}
+#content td:last-child,
+#content th:last-child {
+  border-right-color: transparent;
+}
 /* #endregion */
 
 /* #region code */
@@ -557,9 +567,7 @@ body {
   font-size: 1rem;
   font-weight: 500;
   line-height: 150%;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-
+  margin: var(--ele-gap) 0;
   padding: 0.5rem;
   border-radius: 0.5rem;
 } /* 段落 */
@@ -636,8 +644,7 @@ body {
   max-width: 600px;
   border-radius: 0.5rem;
   display: block;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: var(--ele-gap) 0;
   box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
     rgb(60 64 67 / 15%) 0px 1px 3px 1px;
 } /*img*/
@@ -657,9 +664,11 @@ body {
   }
 }
 
+#options,
 #note-content-box,
 #catalog {
-  transition: all 0.8s;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.62, -0.14, 0.62, 1.25);
 }
 
 /* #endregion */
@@ -675,12 +684,18 @@ body {
   #note-content-box {
     width: calc(100% - var(--ele-gap) * 2);
     right: var(--ele-gap);
-
-    padding: 0;
   }
 
   #fix-tool {
     right: var(--ele-gap);
+  }
+
+  #catalog-close {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 8;
   }
 }
 
@@ -692,10 +707,8 @@ body {
   }
 
   #note-content-box {
-    width: calc(1200px - 210px);
+    width: calc(1200px - 210px - var(--ele-gap));
     right: calc((100% - 1200px) / 2);
-
-    padding: 0 0 0 var(--ele-gap);
   }
 }
 
