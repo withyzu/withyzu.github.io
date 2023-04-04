@@ -16,7 +16,7 @@ body {
 /* #region 布局 */
 #nav-bar-vacancy {
   position: relative;
-  height: calc(3rem + var(--ele-gap) * 2);
+  height: 4rem;
   width: 100%;
 }
 
@@ -104,7 +104,7 @@ body {
 #content-title {
   height: max-content;
   background: linear-gradient(120deg, #84fab090 0%, #8fd3f480 100%), #dddddd;
-  padding: 0.5rem 2rem 4px 2rem;
+  padding: 0.5rem 2.5rem 4px 2.5rem;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -162,9 +162,9 @@ body {
 #combobox::before {
   font-style: normal;
   font-size: 1rem;
-  height: 2rem;
-  width: 2rem;
-  line-height: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 2.5rem;
   text-align: center;
   vertical-align: middle;
   letter-spacing: 0px;
@@ -184,7 +184,7 @@ body {
   position: relative;
   font-size: 0.8rem;
   text-indent: 0.5rem;
-  margin-right: 2rem;
+  margin-right: 2.5rem;
   margin-left: 4px;
   line-height: 200%;
   cursor: pointer;
@@ -302,8 +302,8 @@ body {
   margin: 0 var(--ele-gap);
 
   font-size: 1rem;
-  height: 2rem;
-  line-height: 2rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
 
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition-property: font-size, height, line-height;
@@ -325,44 +325,46 @@ body {
 }
 
 #fix-tool {
+  position: fixed;
   height: auto;
   width: auto;
 
-  position: fixed;
-  background-color: #6f8bbd80;
-  padding: 0.2rem;
-  bottom: 20%;
-  right: calc((100% - 1200px) / 2);
   z-index: 9;
-  border-radius: 0.5rem;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-
-  align-items: center;
-  justify-content: center;
 }
 
 #to-current-note,
 #catalog-display {
-  margin: 0.2rem auto;
   position: relative;
-  height: 45px;
-  width: 45px;
+  display: block;
+  text-decoration: none;
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 0.5rem;
   display: flex;
+
+  margin: var(--ele-gap);
+
+  background: rgb(104, 124, 184);
+  box-shadow: rgba(23, 7, 85, 0.24) 0px 3px 8px;
+}
+
+#to-current-note:hover,
+#catalog-display:hover {
+  background: red;
+
+  transition-property: background;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.62, -0.14, 0.62, 1.25);
 }
 
 .fix-i {
   font-style: normal;
   letter-spacing: 0px;
-  height: 45px;
-  line-height: 45px;
-  border-radius: 45px;
-  width: 45px;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  width: 2.5rem;
   vertical-align: middle;
   text-align: center;
-}
-
-.fix-i:hover {
 }
 
 /* #endregion */
@@ -436,8 +438,8 @@ body {
 #content thead tr th {
   font-size: 1rem;
   font-weight: bolder;
-  line-height: 2rem;
-  height: 2rem;
+  line-height: 2.5rem;
+  height: 2.5rem;
   padding: 0px 0.8rem 0px 0.8rem;
 }
 
@@ -518,6 +520,7 @@ body {
   text-indent: 0.5rem;
   margin: 0.5rem 0;
   padding: 0.1rem 1rem 0.1rem 1rem;
+  max-width: 100%;
   width: max-content;
   border-radius: 0.5rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -555,7 +558,7 @@ body {
 
 #content h5 {
   font-size: 0.8rem;
-  border-left: solid #fab57890 0.2rem;
+  border-left: solid #fab57890 0.2.5rem;
   background-image: linear-gradient(-225deg, #f6d36580 0%, #fda08530 100%);
 }
 
@@ -674,6 +677,51 @@ body {
 /* #endregion */
 
 /* #region 适配 */
+@media only screen and (min-width: 600px) {
+  body::before {
+    top: 0;
+    right: 0;
+    height: 4rem;
+
+    -webkit-mask: url(/Asset/img/p5.png);
+    mask: url(/Asset/img/p5.png);
+    -webkit-mask-size: auto 4rem;
+    mask-size: auto 4rem;
+  }
+
+  body::after {
+    bottom: 0;
+    right: 0;
+    height: calc(var(--ele-gap) * 2);
+
+    -webkit-mask: url(/Asset/img/p4.png);
+    mask: url(/Asset/img/p4.png);
+    -webkit-mask-size: auto var(--ele-gap);
+    mask-size: auto var(--ele-gap);
+  }
+
+  body::before,
+  body::after {
+    z-index: 2;
+    position: fixed;
+    display: block;
+    width: 100%;
+    content: "";
+    background-image: url(/Asset/img/pageimggrd.jpg);
+
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    -webkit-mask-position: bottom;
+    mask-position: bottom;
+    -webkit-mask-attachment: fixed;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+  }
+}
+
 @media only screen and (max-width: 1216px) {
   #catalog {
     margin-left: var(--ele-gap);
@@ -687,6 +735,7 @@ body {
   }
 
   #fix-tool {
+    bottom: 20%;
     right: var(--ele-gap);
   }
 
@@ -708,6 +757,11 @@ body {
 
   #note-content-box {
     width: calc(1200px - 210px - var(--ele-gap));
+    right: calc((100% - 1200px) / 2);
+  }
+
+  #fix-tool {
+    bottom: 20%;
     right: calc((100% - 1200px) / 2);
   }
 }
