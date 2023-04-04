@@ -119,9 +119,6 @@ body {
   text-align: left;
   font-weight: 600;
   text-indent: 1rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 #content-title > span {
@@ -234,9 +231,8 @@ body {
 
   margin: var(--ele-gap) 0;
   text-align: center;
-}
-
-/*笔记列表*/
+  text-indent: -1.6rem;
+} /*笔记列表*/
 
 .options span::before {
   position: relative;
@@ -249,9 +245,7 @@ body {
   line-height: 200%;
   text-indent: 0.5rem;
   border-radius: 4px;
-}
-
-/*笔记列表项*/
+} /*笔记列表项*/
 
 .option::before {
   position: relative;
@@ -259,7 +253,26 @@ body {
 }
 
 .option-checked {
-  background-color: red;
+  margin-right: calc(1.6rem + var(--ele-gap));
+  background-color: #6161614f;
+}
+
+.option-checked::after {
+  position: absolute;
+  right: var(--ele-gap);
+  content: "✔️";
+
+  height: 1.6rem;
+  width: 1.6rem;
+  line-height: 1.6rem;
+  font-size: 0.5rem;
+  text-align: center;
+  text-indent: 0.1rem;
+
+  color: #33a729;
+  border-radius: 4px;
+
+  background-color: #6161614f;
 }
 
 .option-checked::before {
@@ -285,9 +298,6 @@ body {
   height: 1.6rem;
   font-size: 0.8rem;
   line-height: 1.6rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 
   cursor: pointer;
   text-indent: var(--ele-gap);
@@ -350,7 +360,7 @@ body {
 
 #to-current-note:hover,
 #catalog-display:hover {
-  background: red;
+  background: rgb(86, 93, 156);
 
   transition-property: background;
   transition-duration: 0.4s;
@@ -394,12 +404,18 @@ body {
 /* #endregion */
 
 /* #region  特定属性 */
+#content-title > h1,
 #combobox > h1,
 .options,
+.option,
 .note {
   font-weight: 600;
   font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
     STHeiti, MingLiu;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 } /* #combobox、options、note 统一字体 */
 
 #note-list::-webkit-scrollbar {
@@ -680,7 +696,7 @@ body {
 @media only screen and (min-width: 600px) {
   body::before {
     top: 0;
-    right: 0;
+    left: 0;
     height: 4rem;
 
     -webkit-mask: url(/Asset/img/p5.png);
@@ -691,7 +707,7 @@ body {
 
   body::after {
     bottom: 0;
-    right: 0;
+    left: 0;
     height: calc(var(--ele-gap) * 2);
 
     -webkit-mask: url(/Asset/img/p4.png);
@@ -709,7 +725,7 @@ body {
     content: "";
     background-image: url(/Asset/img/pageimggrd.jpg);
 
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
