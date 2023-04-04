@@ -1,6 +1,21 @@
 :root {
   --ele-gap: 8px;
-  --content-bg: #eeeeee83;
+  --content-bg: repeating-linear-gradient(
+      0deg,
+      #caebfd,
+      #caebfd 1px,
+      #00000000 1px,
+      #00000000 2rem
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #caebfd,
+      #caebfd 1px,
+      #00000000 1px,
+      #00000000 2rem
+    ),
+    #eef8f6;
+  --table-border: 1px solid #8888884d;
 }
 
 .theme-dark {
@@ -9,9 +24,40 @@
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0 auto;
-}
+/* #region  特定属性 */
+#content-title > h1,
+#combobox > h1,
+.options,
+.option,
+#content,
+.note {
+  font-weight: 600;
+  font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
+    STHeiti, MingLiu, sans-serif;
+} /* #combobox、options、note 统一字体 */
+
+#content-title > h1,
+#combobox > h1,
+.option,
+.note {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+} /*字符串 超出变成省略号*/
+
+#note-list::-webkit-scrollbar {
+  display: block;
+  width: 0px;
+  height: 0px;
+} /* 隐藏note-list滚动条 */
+
+#combobox > h1,
+.options,
+.fix-i,
+.note {
+  user-select: none;
+} /*不可选择*/
+/* #endregion */
 
 /* #region 布局 */
 #nav-bar-vacancy {
@@ -58,10 +104,12 @@ body {
 
   transition-property: left, opacity, margin-left;
 
-  background-image: url(/Asset/img/p2.jpg);
+  outline: var(--table-border);
+  background: url(/Asset/img/p2.png), #dce6f5;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px;
 }
 
 /* #note-list::before {
@@ -93,10 +141,7 @@ body {
   padding: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
   margin: var(--ele-gap) auto;
-  background-color: var(--content-bg);
-
-  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: var(--content-bg);
 }
 /* #endregion */
 
@@ -142,7 +187,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
-  background-color: var(--content-bg);
+  background: var(--content-bg);
 }
 
 /* #endregion */
@@ -187,7 +232,7 @@ body {
   cursor: pointer;
   top: 50%;
   transform: translate(0, -50%);
-  background-color: #cccccc90;
+  background-color: #fff;
 }
 
 #combobox > h1::before {
@@ -209,8 +254,8 @@ body {
   opacity: 1;
 
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px, #ab8deb4d 0px 0px 0px 3px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition-property: width, height, opacity, top, left;
@@ -408,45 +453,16 @@ body {
 
 /* #endregion */
 
-/* #region  特定属性 */
-#content-title > h1,
-#combobox > h1,
-.options,
-.option,
-.note {
-  font-weight: 600;
-  font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
-    STHeiti, MingLiu;
-
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-} /* #combobox、options、note 统一字体 */
-
-#note-list::-webkit-scrollbar {
-  display: block;
-  width: 0px;
-  height: 0px;
-} /* 隐藏note-list滚动条 */
-
-#combobox > h1,
-.options,
-.fix-i,
-.note {
-  user-select: none;
-} /*不可选择*/
-
-/* #endregion */
-
 /* #region markdown style */
 /* #region 表格 */
 #content table {
+  overflow: hidden;
+  margin: var(--ele-gap) 0;
+
   border-collapse: separate;
   border-radius: var(--ele-gap);
   border-spacing: 0;
-
-  overflow: hidden;
-  margin: var(--ele-gap) 0;
+  border: var(--table-border);
   box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
     rgb(60 64 67 / 15%) 0px 1px 3px 1px;
 }
@@ -480,11 +496,11 @@ body {
 
 #content td,
 #content th {
-  border-right: 2px solid #1e90ff;
+  border-right: var(--table-border);
   text-align: center;
 }
 #content td {
-  border-top: 2px solid #1e90ff;
+  border-top: var(--table-border);
 }
 #content td:last-child,
 #content th:last-child {
@@ -495,24 +511,40 @@ body {
 /* #region code */
 #content pre {
   width: 100%;
+  max-width: max-content;
+  height: auto;
+
   overflow-y: hidden;
   overflow-x: auto;
-  padding: 1rem;
-  background-color: #c8edcc;
 
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   margin: 0.5rem 0;
+  padding: 0.5rem;
   border-radius: 0.5rem;
-  border: 1px solid #d8d0d0b2;
+  border: var(--table-border);
 }
 
 #content code {
   font-size: 1rem;
-  font-family: Consolas, "Courier New", monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-shadow: 0 1px white;
   text-align: left;
+
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
   overflow-wrap: normal;
-  line-height: 1.2rem;
+
+  color: black;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 #content pre::-webkit-scrollbar {
@@ -523,7 +555,7 @@ body {
 }
 
 #content pre::-webkit-scrollbar-thumb {
-  background-color: #61616150;
+  background-color: #68b89990;
   border-radius: 0.5rem;
 }
 
@@ -585,9 +617,13 @@ body {
 
 /* #endregion */
 #content > p {
-  word-spacing: 0;
-  text-align: left;
   word-wrap: break-word;
+  word-break: break-all;
+  word-spacing: 0;
+
+  text-indent: 2rem;
+  text-align: left;
+
   font-size: 1rem;
   font-weight: 500;
   line-height: 150%;
@@ -603,7 +639,6 @@ body {
 } /* 链接 */
 
 #content kbd {
-  background-color: #80808014;
   padding: 2px 4px;
   margin: 4px;
   border-radius: 4px;
@@ -614,29 +649,25 @@ body {
 
 /* #region 块 */
 #content blockquote {
-  max-width: 600px;
+  width: 100%;
+  max-width: max-content;
   height: auto;
+  overflow-x: auto;
 
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   border-radius: 4px;
-  background: #f9f9f9;
-  border-left: 10px solid #db998134;
+  outline: var(--table-border);
   margin: 0.5rem 0px;
-  padding: 0.5em 10px;
+  padding: 2px 0.5rem;
   quotes: "\201C""\201D""\2018""\2019";
-  overflow-x: auto;
-}
-
-/*引文块*/
+} /*引文块*/
 
 #content blockquote p {
   font-weight: 100;
   font-family: "Consolas", "Microsoft YaHei", 华文细黑, 微软雅黑,
     "MicrosoftJhengHei", STHeiti, MingLiu;
   text-decoration: none;
-}
-
-/*引文*/
+} /*引文*/
 
 #content blockquote * {
   font-size: 12px !important;
@@ -658,7 +689,7 @@ body {
 }
 
 #content blockquote::-webkit-scrollbar-thumb {
-  background-color: #61616150;
+  background-color: #d4b4a390;
   border-radius: 0.5rem;
 }
 
@@ -699,6 +730,10 @@ body {
 
 /* #region 适配 */
 @media only screen and (min-width: 600px) {
+  #content {
+    padding: 1rem 2rem;
+  }
+
   body::before {
     top: 0;
     left: 0;
