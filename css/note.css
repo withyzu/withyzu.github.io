@@ -29,7 +29,6 @@
 #combobox > h1,
 .options,
 .option,
-#content,
 .note {
   font-weight: 600;
   font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
@@ -57,6 +56,19 @@
 .note {
   user-select: none;
 } /*不可选择*/
+
+#content blockquote::-webkit-scrollbar,
+#content pre::-webkit-scrollbar {
+  display: block;
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 0.5rem;
+}
+#content blockquote::-webkit-scrollbar-thumb,
+#content pre::-webkit-scrollbar-thumb {
+  background-color: #68b89990;
+  border-radius: 0.5rem;
+}
 /* #endregion */
 
 /* #region 布局 */
@@ -142,6 +154,10 @@
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
   margin: var(--ele-gap) auto;
   background: var(--content-bg);
+
+  font-weight: 500;
+  font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
+    STHeiti, MingLiu, sans-serif;
 }
 /* #endregion */
 
@@ -517,11 +533,9 @@
   overflow-y: hidden;
   overflow-x: auto;
 
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   margin: 0.5rem 0;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  border: var(--table-border);
 }
 
 #content code {
@@ -546,19 +560,6 @@
   -ms-hyphens: none;
   hyphens: none;
 }
-
-#content pre::-webkit-scrollbar {
-  display: block;
-  height: 0.6rem;
-  width: 0.6rem;
-  border-radius: 0.5rem;
-}
-
-#content pre::-webkit-scrollbar-thumb {
-  background-color: #68b89990;
-  border-radius: 0.5rem;
-}
-
 /* #endregion */
 
 /* #region 标题 */
@@ -644,19 +645,18 @@
   border-radius: 4px;
 
   font-size: 14px;
-  border: 1px #858585ad solid;
+  border: 1px #000000ad solid;
 } /*key board*/
 
 /* #region 块 */
 #content blockquote {
+  color: #595976;
   width: 100%;
   max-width: max-content;
   height: auto;
   overflow-x: auto;
 
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   border-radius: 4px;
-  outline: var(--table-border);
   margin: 0.5rem 0px;
   padding: 2px 0.5rem;
   quotes: "\201C""\201D""\2018""\2019";
@@ -677,21 +677,7 @@
   text-decoration: none;
   font-family: inherit;
   font-size: inherit;
-}
-
-/*引文*/
-
-#content blockquote::-webkit-scrollbar {
-  display: block;
-  height: 0.6rem;
-  width: 0.6rem;
-  border-radius: 0.5rem;
-}
-
-#content blockquote::-webkit-scrollbar-thumb {
-  background-color: #d4b4a390;
-  border-radius: 0.5rem;
-}
+} /*引文*/
 
 /* #endregion */
 #content img {
