@@ -164,7 +164,6 @@ body::-webkit-scrollbar-track {
 
   transition-property: left, opacity, margin-left;
   border: var(--table-border);
-  -webkit-border: var(--table-border);
   background: url(/Asset/img/p2.png), var(--content-bg);
   background-repeat: no-repeat;
   background-size: cover;
