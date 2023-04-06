@@ -163,7 +163,6 @@ body::-webkit-scrollbar-track {
   border-radius: var(--ele-gap);
 
   transition-property: left, opacity, margin-left;
-  border: var(--table-border);
   background: url(/Asset/img/p2.png), var(--content-bg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -316,7 +315,6 @@ body::-webkit-scrollbar-track {
   width: 210px;
   padding: var(--ele-gap);
   border-radius: var(--ele-gap);
-  border: 1px solid #5959d180;
   z-index: 11;
   overflow-y: auto;
   opacity: 1;
@@ -874,6 +872,7 @@ body::-webkit-scrollbar-track {
     margin-left: calc((100% - 1200px) / 2);
     left: 0px;
     opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   #note-content-box {
