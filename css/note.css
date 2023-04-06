@@ -163,22 +163,13 @@ body::-webkit-scrollbar-track {
   border-radius: var(--ele-gap);
 
   transition-property: left, opacity, margin-left;
-
+  border: var(--table-border);
+  -webkit-border: var(--table-border);
   background: url(/Asset/img/p2.png), var(--content-bg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px;
-}
-
-#catalog::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rebeccapurple;
-  border-radius: var(--ele-gap);
-  border: var(--table-border);
 }
 
 #note-content-box {
@@ -350,7 +341,6 @@ body::-webkit-scrollbar-track {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  outline: var(--table-border);
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   backdrop-filter: blur(16px);
@@ -358,6 +348,15 @@ body::-webkit-scrollbar-track {
 
   transition-property: width, height, opacity, top, left, background;
   transition-duration: 0.4s;
+}
+
+#options::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: var(--ele-gap);
+  border: var(--table-border);
 }
 
 #options_close {
@@ -462,7 +461,6 @@ body::-webkit-scrollbar-track {
   border-radius: var(--ele-gap);
 
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  outline: var(--table-border);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
@@ -470,6 +468,16 @@ body::-webkit-scrollbar-track {
   transition-duration: 0.2s;
 }
 
+#clicked_note::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: var(--ele-gap);
+  border: var(--table-border);
+}
 /*被点击的note样式*/
 
 #note-list *:last-child {
