@@ -164,13 +164,21 @@ body::-webkit-scrollbar-track {
 
   transition-property: left, opacity, margin-left;
 
-  outline: var(--table-border);
-  -webkit-border-radius: var(--table-border);
   background: url(/Asset/img/p2.png), var(--content-bg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px;
+}
+
+#catalog::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rebeccapurple;
+  border-radius: var(--ele-gap);
+  border: var(--table-border);
 }
 
 #note-content-box {
