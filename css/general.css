@@ -35,8 +35,8 @@ body {
 #nav-bar-content {
   display: flex;
   flex-direction: column;
-  height: 600px;
-  width: 90px;
+  height: 400px;
+  width: 3rem;
 
   background-color: rgba(0, 128, 0, 0.308);
   border-right: 1px solid;
@@ -54,11 +54,11 @@ body {
   display: block;
   transform: rotate(90deg);
   transform-origin: right top;
-  height: 30px;
-  width: 30px;
+  height: auto;
+  width: auto;
   text-decoration: none;
-  background: green;
   color: white;
+  margin: 8px;
 }
 
 #nav-bar-content > a::after {
