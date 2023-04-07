@@ -805,6 +805,9 @@ body::-webkit-scrollbar-track {
 }
 
 @media only screen and (max-width: 1216px) {
+  #nav-bar {
+    width: 100%;
+  }
   #catalog {
     margin-left: var(--ele-gap);
     left: -210px;
@@ -827,6 +830,26 @@ body::-webkit-scrollbar-track {
     height: 100%;
     width: 100%;
     z-index: 8;
+  }
+
+  #nav-bar-vacancy {
+    height: calc(4rem - 2 * var(--ele-gap));
+  }
+
+  .content-end,
+  #nav-bar,
+  #content,
+  #content-title {
+    border-radius: 0px;
+    margin: 0;
+    background: #eef8f6;
+    border: none;
+  }
+
+  .content-end,
+  #content,
+  #content-title {
+    box-shadow: none;
   }
 }
 
