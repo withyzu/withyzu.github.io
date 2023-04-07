@@ -89,7 +89,6 @@ html {
   -ms-scroll-chaining: contain;
 } /*让滚动嵌套时父滚动不触发*/
 
-body::-webkit-scrollbar,
 #options::-webkit-scrollbar,
 #note-list::-webkit-scrollbar,
 #content blockquote::-webkit-scrollbar,
@@ -99,7 +98,6 @@ body::-webkit-scrollbar,
   width: 0.5rem;
 }
 
-body::-webkit-scrollbar-thumb,
 #options::-webkit-scrollbar-thumb,
 #note-list::-webkit-scrollbar-thumb,
 #content blockquote::-webkit-scrollbar-thumb,
