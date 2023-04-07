@@ -21,10 +21,6 @@
 /* .theme-dark {
 } */
 
-* {
-  scroll-behavior: smooth;
-}
-
 /* #region  动画*/
 @keyframes bgAnimation {
   0% {
@@ -82,41 +78,49 @@
 #note-list {
   overscroll-behavior: contain;
   -ms-scroll-chaining: contain;
-}
+} /*让滚动嵌套时父滚动不触发*/
 
+#options::-webkit-scrollbar,
 #note-list::-webkit-scrollbar,
 #content blockquote::-webkit-scrollbar,
 #content pre::-webkit-scrollbar {
   display: block;
-  height: 0.6rem;
-  width: 0.6rem;
-  border-radius: 8px;
+  height: 4px;
+  width: 4px;
+} /*mouseover scrollbar 变宽*/
+
+#options:hover::-webkit-scrollbar,
+#note-list:hover::-webkit-scrollbar,
+#content blockquote:hover::-webkit-scrollbar,
+#content pre:hover::-webkit-scrollbar {
+  display: block;
+  height: 1rem;
+  width: 1rem;
 }
 
-body::-webkit-scrollbar-thumb,
+#options::-webkit-scrollbar-thumb,
 #note-list::-webkit-scrollbar-thumb,
 #content blockquote::-webkit-scrollbar-thumb,
 #content pre::-webkit-scrollbar-thumb {
-  background: #afbbef99;
-  border-radius: 2px;
+  background: #6889bb87;
+  border-radius: 4px;
 }
 
 body::-webkit-scrollbar {
   display: block;
-  height: 1rem;
-  width: 1rem;
-  border-radius: 8px;
+  width: 0px;
+  height: 0px;
 }
 
 body::-webkit-scrollbar-track {
   background: var(--content-bg);
 }
 
-#options::-webkit-scrollbar {
+/* #options::-webkit-scrollbar {
   display: block;
   height: 0px;
   width: 0px;
-}
+} */
 /* #endregion */
 
 /* #region 布局 */
@@ -317,6 +321,7 @@ body::-webkit-scrollbar-track {
   border-radius: var(--ele-gap);
   z-index: 11;
   overflow-y: auto;
+  overflow-x: hidden;
   opacity: 1;
 
   cursor: pointer;
@@ -428,6 +433,7 @@ body::-webkit-scrollbar-track {
   margin: var(--ele-gap) auto;
   padding: 2px 0 0 0;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .note {
@@ -796,49 +802,6 @@ body::-webkit-scrollbar-track {
   #content {
     padding: 1rem 2rem;
   }
-
-  body::before {
-    top: 0;
-    left: 0;
-    height: 4rem;
-
-    -webkit-mask: url(/Asset/img/p5.png);
-    mask: url(/Asset/img/p5.png);
-    -webkit-mask-size: auto 4rem;
-    mask-size: auto 4rem;
-  }
-
-  body::after {
-    bottom: 0;
-    left: 0;
-    height: calc(var(--ele-gap) * 2);
-
-    -webkit-mask: url(/Asset/img/p4.png);
-    mask: url(/Asset/img/p4.png);
-    -webkit-mask-size: auto var(--ele-gap);
-    mask-size: auto var(--ele-gap);
-  }
-
-  body::before,
-  body::after {
-    z-index: 2;
-    position: fixed;
-    display: block;
-    width: 100%;
-    content: "";
-    background-image: url(/Asset/img/pageimggrd.jpg);
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
-    -webkit-mask-position: bottom;
-    mask-position: bottom;
-    -webkit-mask-attachment: fixed;
-    -webkit-mask-repeat: repeat-x;
-    mask-repeat: repeat-x;
-  }
 }
 
 @media only screen and (max-width: 1216px) {
@@ -849,8 +812,8 @@ body::-webkit-scrollbar-track {
   }
 
   #note-content-box {
-    width: calc(100% - var(--ele-gap) * 2);
-    right: var(--ele-gap);
+    width: 100%;
+    right: 0;
   }
 
   #fix-tool {

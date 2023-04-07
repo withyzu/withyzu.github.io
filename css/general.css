@@ -10,4 +10,82 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth; /*页内标签跳转，滚动条丝滑滚动*/
 }
+
+#nav-bar-content::-webkit-scrollbar-thumb {
+  background: #afbbef99;
+  border-radius: 2px;
+}
+
+#nav-bar-content::-webkit-scrollbar {
+  display: block;
+  height: 4px;
+  width: 4px;
+  border-radius: 8px;
+}
+
+#nav-bar {
+  z-index: 9;
+  position: fixed;
+  display: block;
+  width: 100%;
+}
+
+#nav-bar-content {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 90px;
+
+  background-color: rgba(0, 128, 0, 0.308);
+  border-right: 1px solid;
+
+  white-space: nowrap;
+  transform: rotate(-90deg) translateY(-100px);
+  transform-origin: right top;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  -ms-scroll-chaining: contain;
+}
+
+#nav-bar-content > a {
+  position: relative;
+  display: block;
+  transform: rotate(90deg);
+  transform-origin: right top;
+  height: 30px;
+  width: 30px;
+  text-decoration: none;
+  background: green;
+  color: white;
+}
+
+#nav-bar-content > a::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 5px;
+  border: 8px;
+  top: calc(var(--nav-bar-content-height) - 8px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #00000000;
+  transition: background-color var(--transiton-fast-time);
+}
+
+#nav-bar-content > a:hover::after {
+  background-color: var(--accent-color-no-alpha-havor);
+}
+
+#nav-bar-content a > h1 {
+  font-size: 1rem;
+  color: var(--foregrd-no-alpha);
+  line-height: 150%;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+} /* #endregion */
