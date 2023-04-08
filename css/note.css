@@ -1,4 +1,5 @@
 :root {
+  --nav-bar-height: 3rem;
   --ele-gap: 8px;
   --content-bg: repeating-linear-gradient(
       0deg,
@@ -120,19 +121,17 @@ html {
 /* #endregion */
 
 /* #region 布局 */
-#nav-bar-vacancy {
-  position: relative;
-  height: 4rem;
-  width: 100%;
-}
-
 #nav-bar {
-  height: 3rem;
+  position: fixed;
+  display: grid;
+  grid-template-columns: auto 1fr 30px;
+  grid-gap: 0px;
+
+  height: var(--nav-bar-height);
   width: calc(100% - var(--ele-gap) * 2);
   max-width: 1200px;
-  position: fixed;
-  display: block;
   margin: var(--ele-gap) auto;
+  overflow: hidden;
 
   top: 0;
   z-index: 9;
@@ -140,7 +139,8 @@ html {
   transform: translate(-50%, 0);
 
   border-radius: var(--ele-gap);
-  background: linear-gradient(
+  background: var(--content-bg);
+  /* background: linear-gradient(
       120deg,
       #2cd4c9aa,
       #739ae9aa,
@@ -149,7 +149,7 @@ html {
     ),
     #fff;
   background-size: 500%;
-  animation: bgAnimation 10s linear infinite;
+  animation: bgAnimation 10s linear infinite; */
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 
@@ -157,13 +157,13 @@ html {
   position: fixed;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 3rem - 3 * var(--ele-gap));
+  height: calc(100vh - var(--nav-bar-height) - 3 * var(--ele-gap));
   z-index: 10;
   width: 210px;
   border-radius: var(--ele-gap);
 
   transition-property: left, opacity, margin-left;
-  background: url(/Asset/img/p2.png), var(--content-bg);
+  background: url(/Asset/img/p8.gif), var(--content-bg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -177,31 +177,39 @@ html {
 
   transition-property: width, right;
 }
+/* #endregion */
 
+/* #region  nav-bar*/
+#nav-bar-vacancy {
+  position: relative;
+  height: calc(var(--ele-gap) * 2 + var(--nav-bar-height));
+  width: 100%;
+}
+
+#nav-bar-ico {
+  width: 3rem;
+  grid-column: 1/2;
+  background: url(/Asset/img/icon.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+#nav-bar-content {
+  grid-column: 2/4;
+}
+/* #endregion */
+
+/* #region #content */
 #note-content {
   position: absolute;
   width: 100%;
   height: calc(100vh - 4rem - 1 * var(--ele-gap));
   overflow-y: auto;
+  overflow-x: hidden;
   border-radius: var(--ele-gap);
 }
 
-#content {
-  position: relative;
-  border-radius: var(--ele-gap);
-  padding: var(--ele-gap);
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
-  margin: var(--ele-gap) auto;
-  background: var(--content-bg);
-
-  font-weight: 500;
-  font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
-    STHeiti, MingLiu, sans-serif;
-}
-
-/* #endregion */
-
-/* #region 笔记内容 */
 #content-title {
   height: max-content;
   background: var(--content-bg);
@@ -244,13 +252,26 @@ html {
   font-weight: 400;
 }
 
+#content {
+  position: relative;
+  border-radius: var(--ele-gap);
+  padding: var(--ele-gap);
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
+  margin: var(--ele-gap) auto;
+  background: var(--content-bg);
+
+  font-weight: 500;
+  font-family: 华文细黑, "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei",
+    STHeiti, MingLiu, sans-serif;
+}
+
 .content-end {
   text-decoration: none;
   font-size: 1.5rem;
   display: block;
-  height: 3rem;
+  height: var(--nav-bar-height);
   width: 100%;
-  line-height: 3rem;
+  line-height: var(--nav-bar-height);
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
   border-radius: var(--ele-gap);
@@ -797,10 +818,6 @@ html {
 
 /* #region 适配 */
 @media only screen and (min-width: 600px) {
-  element.style {
-    height: 100%;
-  }
-
   #content {
     padding: 1rem 2rem;
   }
@@ -857,7 +874,7 @@ html {
   }
 
   #note-content {
-    height: calc(100vh - 3rem);
+    height: calc(100vh - var(--nav-bar-height));
   }
 }
 

@@ -32,4 +32,18 @@ function load_navbar(json) {
     e1.appendChild(a);
   });
   document.getElementById("nav-bar").appendChild(e1);
+
+  e1.addEventListener(
+    "wheel",
+    function (e) {
+      v = parseFloat(getComputedStyle(e1, null)["width"]); //获得元素宽度
+      if (e.deltaY > 0) {
+        e1.scrollLeft += v * 0.4;
+        return 0;
+      } else {
+        e1.scrollLeft -= v * 0.4;
+      }
+    },
+    { passive: true }
+  ); //水平滚动事件
 } //加载nav-side
