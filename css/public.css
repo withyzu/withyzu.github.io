@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --backgrd: #fffefebb;
+  --backgrd-no-alpha: #ffffff;
+  --backbrg-hover: #ff770040;
+
+  --foregrd: #00000020;
+  --foregrd-no-alpha: #3b4249;
+  --foregrd-hover: #de8b6a;
+
+  --accent-color: #46b4ab8f;
+  --accent-color-no-alpha: #85bfb6;
+  --accent-color-no-alpha-havor: #f0b785ee;
+
+  /* #region 通用 */
+
+  --fix-icon-w-h: 2.5rem;
+
+  --transiton-fast-time: 0.4s;
+  --transiton-double-time: 0.8s;
+
+  --nav-bar-content-height: 2.5rem;
+  /* #endregion */
+}
+
+.theme-dark {
+  --backgrd: #2c3a53ee;
+  --backgrd-no-alpha: #2c3a53;
+  --backbrg-hover: #9869e850;
+
+  --foregrd: #ffffff20;
+  --foregrd-no-alpha: #d9d9d9;
+  --foregrd-hover: #b56ade;
+
+  --accent-color: #2f4e68aa;
+  --accent-color-no-alpha: #71b8df;
+  --accent-color-no-alpha-havor: #994fffaa;
+}
+
+/* #region 导航栏 */
+
+/* label[for="nav-side-display-btn"]::before {
+  font-style: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0px;
+  line-height: 1rem;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1rem;
+  margin: auto auto;
+  z-index: 1;
+  content: "\e89f";
+  font-family: "iconfont";
+  color: var(--accent-color-no-alpha-havor);
+} */
+
+#nav-bar {
+  z-index: 9;
+  position: fixed;
+  display: block;
+  width: 100%;
+}
+
+.nav-bar-vacancy {
+  height: 5rem;
+  background-color: rgba(102, 51, 153, 0.348);
+  display: block;
+}
+
+#nav-bar-content {
+  background: var(--backgrd-no-alpha);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(6rem, 100%), 1fr));
+  overflow: hidden;
+  transition: background-color var(--transiton-fast-time), max-height 0.6s;
+}
+
+#nav-bar-content > a {
+  height: var(--nav-bar-content-height);
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+  padding: 2px;
+  margin: 0 auto;
+  transition: background-color var(--transiton-fast-time);
+}
+
+#nav-bar-content > a::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 5px;
+  border: 8px;
+  top: calc(var(--nav-bar-content-height) - 8px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #00000000;
+  transition: background-color var(--transiton-fast-time);
+}
+
+#nav-bar-content > a:hover::after {
+  background-color: var(--accent-color-no-alpha-havor);
+}
+
+#nav-bar-content a > h1 {
+  font-size: 1rem;
+  color: var(--foregrd-no-alpha);
+  line-height: 150%;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+/* #endregion */
+
+/* #region 悬浮按钮 */
+.fix-lb {
+  outline: 1.5px var(--foregrd-no-alpha) solid;
+  background: var(--accent-color-no-alpha);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 9;
+  border-radius: 45px;
+}
+
+.fix-lb-theme-change {
+  right: 20px;
+  bottom: 20px;
+}
+
+.fix-lb-side-display {
+  right: 20px;
+  bottom: 80px;
+}
+
+.fix-i {
+  font-style: normal;
+  letter-spacing: 0px;
+  background: var(--accent-color-no-alpha);
+  height: var(--fix-icon-w-h);
+  line-height: var(--fix-icon-w-h);
+  border-radius: var(--fix-icon-w-h);
+  width: var(--fix-icon-w-h);
+  vertical-align: middle;
+  text-align: center;
+}
+
+.fix-i:hover {
+  background: var(--accent-color-no-alpha-havor);
+  transition: background var(--transiton-fast-time);
+}
+
+.fix-lb {
+  user-select: none;
+}
+
+.trigger-btn {
+  display: none;
+}
+
+/* #endregion */
+
+/* #region 适配 */
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+/* #endregion */

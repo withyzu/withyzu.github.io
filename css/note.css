@@ -189,7 +189,7 @@ html {
 #nav-bar-ico {
   width: 3rem;
   grid-column: 1/2;
-  background: url(/Asset/img/icon.webp);
+  background: url(/Asset/img/icon.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -587,7 +587,7 @@ html {
 
 /* #region code */
 #content pre {
-  font-size: 1rem;
+  font-size: 0.8rem;
   width: 100%;
   max-width: max-content;
   height: auto;
@@ -603,7 +603,6 @@ html {
 }
 
 #content code {
-  font-size: 1rem;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-shadow: 0 1px white;
   text-align: left;

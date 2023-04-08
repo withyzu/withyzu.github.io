@@ -1,0 +1,125 @@
+:root {
+  --keyword-backgrd: #ed9658;
+
+  /* #region 通用 */
+  /* #endregion */
+}
+
+.theme-dark {
+  --keyword-backgrd: #6b5dbb;
+}
+
+/* #region 布局 */
+
+#content {
+  position: relative;
+  background: linear-gradient(#e66465, #9198e5);
+  max-width: 1200px;
+  height: 3000px;
+  margin: 0 auto;
+  margin-top: var(--nav-bar-content-height);
+}
+
+#keyword-pad {
+  position: fixed;
+  display: flex;
+  max-width: 1400px;
+  height: calc(var(--fix-icon-w-h) + 240px);
+  bottom: calc(var(--fix-icon-w-h) / 2);
+
+  border-radius: 12px;
+  background-color: var(--keyword-backgrd);
+  box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.11);
+  visibility: visible;
+  opacity: 1;
+
+  transition: all var(--transiton-double-time);
+}
+/* #endregion */
+
+/* #region 关键字面板 */
+#keyword-display {
+  position: fixed;
+  display: flex;
+  border-radius: 12px;
+
+  width: var(--fix-icon-w-h);
+  height: var(--fix-icon-w-h);
+  right: calc(10% - var(--fix-icon-w-h) * 1.5);
+  bottom: calc(160px - var(--fix-icon-w-h) * 0.5);
+
+  line-height: var(--fix-icon-w-h);
+  font-size: 1rem;
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: transparent;
+  transition: all var(--transiton-double-time);
+}
+
+#keyword-display.fix-lb {
+  outline: 0;
+}
+
+.fix-i {
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+.fix-lb-theme-change {
+  right: calc(10% - var(--fix-icon-w-h) * 1.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transiton-double-time), right var(--transiton-double-time);
+  bottom: calc(100px - var(--fix-icon-w-h) * 0.5);
+}
+
+/* #endregion */
+
+/* #region 适配 */
+@media only screen and (max-width: 600px) {
+  #content {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #keyword-pad {
+    width: calc(100% - var(--fix-icon-w-h) * 1);
+    right: calc(var(--fix-icon-w-h) * 0.5);
+  }
+
+  #keyword-display,
+  .fix-lb-theme-change {
+    right: calc(var(--fix-icon-w-h) * 0.5);
+  }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 600px) {
+  #content {
+    width: 100%;
+  }
+
+  #keyword-pad {
+    width: calc(100% - var(--fix-icon-w-h) * 1);
+    right: calc(var(--fix-icon-w-h) * 0.5);
+  }
+
+  #keyword-display,
+  .fix-lb-theme-change {
+    right: calc(var(--fix-icon-w-h) * 1);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #keyword-pad {
+    width: calc(1200px + var(--fix-icon-w-h) * 4);
+    right: calc(50% - 600px - var(--fix-icon-w-h) * 2);
+  }
+
+  #keyword-display,
+  .fix-lb-theme-change {
+    right: calc(50% - 600px - var(--fix-icon-w-h) * 1.5);
+  }
+}
+
+/* #endregion */
