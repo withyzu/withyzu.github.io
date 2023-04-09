@@ -18,11 +18,11 @@ async function load_all_content(url, name, id) {
   let response = await fetch(url);
   let json = await response.json();
   console.log(json);
-  loadMain(json);
-  loadSide(json, name, id);
+  load_MainContent(json);
+  load_SideContent(json, name, id);
 } //将json内容转换为内容
 
-async function loadMain(json) {
+async function load_MainContent(json) {
   json.forEach((cate) => {
     var category_box = document.createElement("div");
     var c_n = document.createElement("div"); //分割线
@@ -54,48 +54,70 @@ async function loadMain(json) {
   });
 } //加载#main-content的内容
 
-async function loadSide(json, json_name, json_id) {
-  var e_0 = document.querySelector(".side-content");
-  var e_1 = document.createElement("div");
+async function load_SideContent(json, json_name, json_id) {
+  var e_0 = document.getElementById("side-content");
+  var e_1 = document.createElement("div"); //list-box
+  var e_2 = document.createElement("div"); //list-item-box
+  var e_3 = document.createElement("div"); //item-hand
+  var e_4 = document.createElement("i"); // item-hand log-ico
+  var e_5 = document.createElement("span"); //item-hand name
+  var e_6 = document.createElement("i"); //item-hand arrow-ico
+  var e_7 = document.createElement("div"); //item-content
+
+  // #region 设置class 加载内容
   e_1.setAttribute("class", "list-box");
-  var e_2 = document.createElement("input");
-  e_2.setAttribute("class", "trigger-btn");
-  e_2.setAttribute("type", "checkbox");
-  e_2.setAttribute("checked", "true");
-  e_2.setAttribute("id", json_id + "btn");
-  e_1.appendChild(e_2);
-  var e_3 = document.createElement("label");
-  e_3.setAttribute("for", json_id + "btn");
-  var e_4 = document.createElement("i");
-  e_4.setAttribute("class", "list-box-icon iconfont" + " " + json_id);
-  e_3.appendChild(e_4);
-  var e_5 = document.createElement("span");
-  e_5.setAttribute("class", "list-item");
+  e_2.setAttribute("class", "list-item-box");
+  e_3.setAttribute("class", "item-hand");
+  e_3.setAttribute("onclick", "side_hand_Click(this)");
+  e_3.setAttribute("id", json_id);
+  e_4.setAttribute("class", "item-hand-log iconfont" + " " + json_id);
+  e_5.setAttribute("class", "item-hand-name");
   e_5.appendChild(document.createTextNode(json_name));
-  e_3.appendChild(e_5);
-  var e_6 = document.createElement("i");
-  e_6.setAttribute("class", "list-box-last iconfont up-circle");
-  e_3.appendChild(e_6);
-  e_1.appendChild(e_3);
-  var e_7 = document.createElement("div");
+  e_6.setAttribute("class", "item-hand-arrow iconfont up-circle");
   e_7.setAttribute("class", "item-content");
 
   var i = 0;
   json.forEach((item) => {
     var e_10 = document.createElement("a");
-    e_10.setAttribute("href", "#" + item.id);
-    var e_8 = document.createElement("div");
     var e_6 = document.createElement("span");
-    var e_9 = document.createElement("i");
-    e_9.appendChild(document.createTextNode("🍕"));
+
+    e_10.setAttribute("href", "#" + item.id);
     e_6.appendChild(document.createTextNode(item.name));
-    e_8.appendChild(e_9);
-    e_8.appendChild(e_6);
-    e_10.appendChild(e_8);
+    e_10.appendChild(e_6);
     e_7.appendChild(e_10);
     i++;
   });
-  e_1.appendChild(e_7);
-  e_7.style.height = i * 30 + "px";
+  e_7.style.height = i * 2 + "rem";
+  //#endregion
+
+  e_3.appendChild(e_4);
+  e_3.appendChild(e_5);
+  e_3.appendChild(e_6);
+  e_2.appendChild(e_3);
+  e_2.appendChild(e_7);
+  e_1.appendChild(e_2);
   e_0.appendChild(e_1);
-} //加载#mside-content的内容
+} //加载#side-content的内容
+
+function side_display_Click() {
+  let s = document.getElementById("side");
+  let sv = document.getElementById("side-vacancy");
+  if (getComputedStyle(sv, null)["width"] != "210px") {
+    sv.style.width = "210px";
+    s.style.width = "210px";
+  } else {
+    sv.style.width = "0";
+    s.style.width = "0";
+  }
+} //side-display 点击事件
+
+function side_hand_Click(e) {
+  let c = document.querySelector("#" + e.id + " ~ *");
+  let i = document.querySelectorAll("#" + e.id + " ~ * a");
+
+  if (parseInt(getComputedStyle(c, null)["height"]) > 1) {
+    c.style.height = "0rem";
+  } else {
+    c.style.height = i.length * 2 + "rem";
+  }
+} //side-display 点击事件

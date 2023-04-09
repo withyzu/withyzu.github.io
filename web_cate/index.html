@@ -12,7 +12,7 @@
       type="text/css"
       rel="stylesheet"
     />
-    <link href="/css/public.css" rel="stylesheet" type="text/css" />
+
     <link href="/css/general.css" rel="stylesheet" type="text/css" />
     <link href="/css/web_cate.css" rel="stylesheet" type="text/css" />
     <!-- #endregion -->
@@ -31,31 +31,28 @@
 
   <body>
     <div id="nav-bar"></div>
-    <div id="vacancy"></div>
-    <div id="content-body">
-      <label for="side-display-btn" class="fix-lb fix-lb-side-display"
-        ><i class="fix-i">📜</i>
-      </label>
-      <input id="side-display-btn" class="trigger-btn" type="checkbox" />
-      <label for="side-display-btn"></label>
-      <div id="side">
-        <div>
-          <a href="/"></a>
-          <h1>生于幻想，死于现实</h1>
-        </div>
-        <div class="side-content">
-          <!-- side-content content -->
-        </div>
-        <div>
-          <div></div>
-        </div>
+    <div id="side-vacancy"></div>
+    <div id="side">
+      <div id="side-hand">
+        <a href="/"></a>
+        <h1>生于幻想，死于现实</h1>
       </div>
-      <div id="main">
-        <div id="main-content"></div>
-        <div id="footer">
-          <div></div>
-        </div>
+      <div id="side-content">
+        <!-- side-content content -->
       </div>
+      <div></div>
+    </div>
+    <div id="main">
+      <div id="main-head"></div>
+      <div id="main-content"></div>
+      <div id="footer"></div>
+    </div>
+
+    <div id="fix-tool">
+      <div id="side-display" onclick="side_display_Click() ">
+        <i class="fix-i">📜</i>
+      </div>
+      <div></div>
     </div>
   </body>
 </html>
