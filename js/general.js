@@ -23,7 +23,9 @@ function load_navbar(json) {
     var a_h1 = document.createElement("h1");
     ///////////////////////////////////////////////////////
     if (!item.name.localeCompare(document.title)) {
-      a.style.backgroundColor = "var(--accent-color-no-alpha-havor)";
+      a.classList.add("current_web");
+    } else {
+      a.classList.remove("current_web");
     } //当前网页标题突出显示
     ///////////////////////////////////////////////////////当前网页标题突出显示
     a.href = item.url;

@@ -3,7 +3,7 @@ window.onload = () => {
   load_ini_content(boot_url);
 };
 
-window.addEventListener("resize", debounce(reset_js_style, 0), false); //当设备屏幕变化，令布局适配设备;
+window.addEventListener("resize", debounce(reset_js_style, 200), false); //当设备屏幕变化，令布局适配设备;
 
 function combobox_onclick() {
   let e = document.getElementById("options");

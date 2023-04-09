@@ -17,6 +17,7 @@
     ),
     #eef8f6;
   --table-border: 1px solid #88b2ff;
+  --web-bg-2: #eef8f6;
 }
 
 body,
@@ -198,7 +199,18 @@ html {
 #nav-bar-content {
   grid-column: 2/4;
 }
-/* #endregion */
+
+#nav-bar-content h1 {
+  font-family: cursive;
+}
+
+.current_web {
+  background: #49a1ffde;
+}
+
+.current_web > h1 {
+  color: var(--web-bg-2);
+} /* #endregion */
 
 /* #region #content */
 #note-content {
@@ -861,7 +873,7 @@ html {
   #content-title {
     border-radius: 0px;
     margin: 0;
-    background: #eef8f6;
+    background: var(--web-bg-2);
     border: none;
   }
 

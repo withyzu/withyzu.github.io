@@ -23,14 +23,18 @@ body {
 #nav-bar-content {
   height: 100%;
   white-space: nowrap;
-  padding: 4px 0px;
+  padding: 0px;
   overflow-y: hidden;
+}
+
+.current_web {
+  background: red;
 }
 
 #nav-bar-content > a {
   height: 100%;
+  padding: 0px 1rem;
   display: inline-flex;
-  margin: 0 0.5rem;
   text-align: center;
   place-content: center;
   text-decoration: none;
@@ -70,16 +74,13 @@ body {
 /* #endregion */
 
 /* #region 适配 */
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
 }
 
 @media only screen and (max-width: 1216px) {
-  #nav-bar-content > a {
-    color: #49a1ffde;
-  }
 }
 
 @media only screen and (min-width: 1216px) {
-}
+} */
 
 /* #endregion*/

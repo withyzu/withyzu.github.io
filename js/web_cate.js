@@ -8,7 +8,7 @@ window.onload = () => {
 async function load_catalog(url) {
   let response = await fetch(url);
   let json = await response.json();
-  console.log(json);
+
   for (var i = 0; i < json.length; i++) {
     await load_all_content(json[i].path, json[i].name, json[i].id);
   }
@@ -17,7 +17,7 @@ async function load_catalog(url) {
 async function load_all_content(url, name, id) {
   let response = await fetch(url);
   let json = await response.json();
-  console.log(json);
+
   load_MainContent(json);
   load_SideContent(json, name, id);
 } //将json内容转换为内容
@@ -102,22 +102,30 @@ async function load_SideContent(json, json_name, json_id) {
 function side_display_Click() {
   let s = document.getElementById("side");
   let sv = document.getElementById("side-vacancy");
+  let s_i = document.querySelector(".side-display-i");
   if (getComputedStyle(sv, null)["width"] != "210px") {
     sv.style.width = "210px";
     s.style.width = "210px";
+    s.style.opacity = "1";
+    s_i.style.right = "0%";
   } else {
     sv.style.width = "0";
     s.style.width = "0";
+    s.style.opacity = "0";
+    s_i.style.right = "100%";
   }
 } //side-display 点击事件
 
 function side_hand_Click(e) {
   let c = document.querySelector("#" + e.id + " ~ *");
   let i = document.querySelectorAll("#" + e.id + " ~ * a");
+  let a = document.querySelector("#" + e.id + " .item-hand-arrow");
 
   if (parseInt(getComputedStyle(c, null)["height"]) > 1) {
     c.style.height = "0rem";
+    a.style.rotate = "180deg";
   } else {
     c.style.height = i.length * 2 + "rem";
+    a.style = "";
   }
 } //side-display 点击事件
