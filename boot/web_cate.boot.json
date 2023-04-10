@@ -1,17 +1,22 @@
 [
   {
-    "id": "tofind",
-    "name": "寻找资源",
-    "path": "assets/tofind.json"
+    "id": "asset",
+    "name": "资源",
+    "path": "assets/asset.json"
   },
   {
-    "id": "onlinetools",
+    "id": "online-tool",
     "name": "在线工具",
-    "path": "assets/onlinetools.json"
+    "path": "assets/online-tool.json"
   },
   {
-    "id": "others",
+    "id": "community",
+    "name": "知名社区",
+    "path": "assets/community.json"
+  },
+  {
+    "id": "other",
     "name": "未分类",
-    "path": "assets/others.json"
+    "path": "assets/other.json"
   }
 ]

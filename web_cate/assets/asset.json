@@ -1,6 +1,6 @@
 [
     {
-        "id": "find-app",
+        "id": "app",
         "name": "应用程序",
         "website": [
             {
@@ -22,11 +22,31 @@
                 "href": "https://download.cnet.com/",
                 "name": "download",
                 "introduc": "Download.com is the place where people go to discover free-to-try legal downloads."
+            },
+            {
+                "href": "https://pesktop.com/en/zh",
+                "name": "pesktop",
+                "introduc": "Pesktop是一个完整的破解软件和操作系统下载网站"
+            },
+            {
+                "href": "https://filecr.com/",
+                "name": "filecr",
+                "introduc": "提供软件的最新版本和版本历史，记得关广告拦截器，否则无法下载"
+            },
+            {
+                "href": "https://www.52pojie.cn/",
+                "name": "52pojie",
+                "introduc": "吾爱破解 - LCG - LSG - 建立于2008年3月13日,搜索破解软件的的不二之选."
+            },
+            {
+                "href": "https://alternativeto.net/",
+                "name": "alternativeto",
+                "introduc": "没有一个软件是不可替代的！！！在这里，你可以找到你了解并想要替换的软件的替代方案"
             }
         ]
     },
     {
-        "id": "find-img",
+        "id": "img",
         "name": "图片、壁纸、Gif动图",
         "website": [
             {
@@ -35,9 +55,9 @@
                 "introduc": "通过提供免费素材图片，Pexels 帮助世界各地的数百万位创作者轻松创造美丽的产品和设计。"
             },
             {
-                "href": "https://yandex.com/",
+                "href": "https://yandex.com/images",
                 "name": "Yandex",
-                "introduc": "Yandex是俄罗斯网络拥有用户最多的网站。"
+                "introduc": "Yandex是俄罗斯网络拥有用户最多的网站。提供优质的图片搜索和海量图片"
             },
             {
                 "href": "https://giphy.com/",
@@ -58,11 +78,21 @@
                 "href": "https://tenor.com/zh-CN/",
                 "name": "tenor",
                 "introduc": "每个月有超过 3 亿人使用 Tenor，在沟通交流时借助 GIF 动画来表达他们的确切想法或感受。"
+            },
+            {
+                "href": "http://coverbox.henry-hu.com/",
+                "name": "coverbox",
+                "introduc": "音乐专辑封面图片查找。"
+            },
+            {
+                "href": "https://pixabay.com/zh/",
+                "name": "pixabay",
+                "introduc": "精彩的免版税图片和免版税库存, Pixabay拥有超过2.8百万张优质图片和视频素材，让你轻松应对各种设计场景"
             }
         ]
     },
     {
-        "id": "find-font",
+        "id": "font",
         "name": "可商用字体",
         "website": [
             {
@@ -78,7 +108,7 @@
         ]
     },
     {
-        "id": "find-icon",
+        "id": "icon",
         "name": "矢量图形",
         "website": [
             {
@@ -99,7 +129,7 @@
         ]
     },
     {
-        "id": "find-3d-assets",
+        "id": "3d-assets",
         "name": "3D 资产",
         "website": [
             {
@@ -140,7 +170,7 @@
         ]
     },
     {
-        "id": "find-desk-beautify",
+        "id": "desk-beautify",
         "name": "桌面美化",
         "website": [
             {

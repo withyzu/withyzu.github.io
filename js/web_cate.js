@@ -37,11 +37,15 @@ async function load_MainContent(json) {
       var l_b = document.createElement("div"); //链接盒子
       var lb_img = document.createElement("a");
       var lb_intro = document.createElement("p");
+      var Img = new Image();
 
-      var name = site.name.toLowerCase();
+      if (site.name != "") {
+        Img.src = "assets/img/" + site.name + ".png";
+      } else {
+        Img.src = "assets/img/" + "here-is-no-img" + ".png";
+      }
+      lb_img.style.backgroundImage = "url(" + Img.src + ")";
       lb_img.href = site.href;
-      lb_img.style.backgroundImage =
-        "url(" + "assets/img/" + name + ".png" + ")";
       lb_intro.textContent = site.introduc;
 
       l_b.appendChild(lb_img);

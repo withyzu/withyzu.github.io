@@ -1,0 +1,75 @@
+[
+    {
+        "id": "o-cg-about",
+        "name": "CG教程、资源、插件",
+        "website": [
+            {
+                "href": "http://www.iiicg.com/",
+                "name": "画忆妙妙屋",
+                "introduc": "精品CG场景资源。"
+            },
+            {
+                "href": "https://help.autodesk.com/view/ARNOL/CHS/",
+                "name": "arnold",
+                "introduc": "Arnold帮助手册。"
+            },
+            {
+                "href": "https://www.tenlonstudio.com/",
+                "name": "",
+                "introduc": "腾龙工作室，有免费，有付费。"
+            },
+            {
+                "href": "https://www.aigei.com/",
+                "name": "aigei",
+                "introduc": "网站涵盖了 声音创作、影视后期、游戏开发、3d模型、平面设计，有免费，有付费。"
+            }
+        ]
+    },
+    {
+        "id": "o-cg-about",
+        "name": "设计导航",
+        "website": [
+            {
+                "href": "https://www.bossdesign.cn/",
+                "name": "bossdesign",
+                "introduc": "推荐各种前端CSS在线制作工具、渐变色、插画、网页设计、摄影、国外设计网站...直达链接，0广告，五星级推荐 💗 ！"
+            },
+            {
+                "href": "https://chouchouweb.com/",
+                "name": "chouchouweb",
+                "introduc": "「 瞅瞅 WEB 」是「 研几CG - YanJiCG 」旗下专注于建筑 • 室内 • 景观可视化设计表现的导航网站。"
+            },
+            {
+                "href": "https://yanjicg.com/",
+                "name": "yanjicg",
+                "introduc": "研几CG - YANJiCG 创立于 2018年。专注于为建筑 • 室内 • 景观可视化设计表现机构与个人提供优质的原创的资源素材与相关服务。本站是研几 CG 旗下的整理素材更新分站点。仅仅供会员使用。"
+            },
+            {
+                "href": "https://daohang.bgteach.com/",
+                "name": "bgteach",
+                "introduc": "提供包括：软件展示及推荐、制作公司展示（智作栏目）及推荐、实用工具、macOS 苹果操作系统（软件及相关）、Linux 系统软件推荐等等！"
+            },
+            {
+                "href": "http://hao.shejidaren.com/",
+                "name": "shejidaren",
+                "introduc": "设计导航Plus ,推送好站、好资源、好工具。"
+            },
+            {
+                "href": "https://www.bjxku.com/hao123/",
+                "name": "bjxku",
+                "introduc": "提供国外第一手新鲜的平面设计，网页设计，字体，图片素材，图标等优秀设计素材。"
+            }
+        ]
+    },
+    {
+        "id": "o-have-fun",
+        "name": "小游戏",
+        "website": [
+            {
+                "href": "https://bezier.method.ac/",
+                "name": "thebeziergame",
+                "introduc": "一个钢笔工具小游戏。"
+            }
+        ]
+    }
+]

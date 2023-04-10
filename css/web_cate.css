@@ -86,7 +86,7 @@ body {
   height: auto;
   overflow-y: auto;
   overflow-x: hidden;
-  scroll-padding-top: 2rem;
+  scroll-padding-top: 1rem;
   padding: 0 5%;
 
   grid-column: 2/3;
@@ -217,7 +217,7 @@ body {
 #side > div:last-child {
   margin: 5px 5px 0px 0px;
   border-radius: 0px 0px 8px 0px;
-  min-height: 100px;
+  min-height: 15rem;
   background: var(--content-fg);
 }
 
@@ -445,8 +445,8 @@ body {
 
 .item-hand-name:hover {
   letter-spacing: 5px;
-  font-size: 1.2rem;
-  text-shadow: rgba(0, 0, 0, 0.15) 3px 3px 5px;
+  font-size: 1rem;
+  text-shadow: #688eb180 3px 3px 30px;
 
   transition-property: font-size, letter-spacing;
   transition-duration: 0.4s;
