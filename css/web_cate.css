@@ -264,7 +264,7 @@ body {
 
 .cate-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(9rem, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
   grid-gap: var(--ele-gap);
 }
 
@@ -286,7 +286,7 @@ body {
 
 .cate-content > div > a {
   display: block;
-  height: 2.5rem;
+  height: 2rem;
   margin: 0.5rem 1rem;
 
   border-radius: var(--ele-gap);
