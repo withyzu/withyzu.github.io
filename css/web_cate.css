@@ -33,7 +33,6 @@ body {
   display: grid;
   height: 3rem;
   width: 100%;
-  padding: var(--ele-gap) 0;
   grid-column: 2/3;
   grid-row: 1/2;
   grid-template-columns: auto 1fr auto;
@@ -424,6 +423,24 @@ body {
 @media only screen and (max-width: 600px) {
   #nav-bar-content {
     box-shadow: rgba(0, 0, 0, 0.25) -25px 0px 20px -20px inset;
+  }
+
+  #footer,
+  #main-content {
+    left: 0px;
+  }
+
+  #nav-bar {
+    padding-left: calc(var(--ele-gap) * 2);
+  }
+
+  #side-vacancy {
+    width: 0px;
+  }
+
+  #side {
+    width: 0px;
+    opacity: 0;
   }
 }
 
