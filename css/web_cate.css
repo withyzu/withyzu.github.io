@@ -318,9 +318,35 @@ body {
   color: var(--font-color-1);
 }
 
-#footer {
+#main-footer {
   position: relative;
-  height: 3rem;
+  display: block;
+  height: 6rem;
+  line-height: 6rem;
+  width: 95%;
+  margin: 1rem auto;
+  overflow: hidden;
+
+  background-color: var(--content-bg);
+  border-radius: var(--border-radius);
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  background-size: auto 90%;
+
+  text-decoration: none;
+  color: var(--content-fg);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: cursive;
+}
+
+#main-header {
+  position: relative;
+  display: block;
+  height: 1px;
+  width: 95%;
+  opacity: 0;
   margin: 1rem auto;
   border-radius: var(--border-radius);
   background: var(--content-bg);
@@ -425,7 +451,8 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) -25px 0px 20px -20px inset;
   }
 
-  #footer,
+  #main-header,
+  #main-footer,
   #main-content {
     left: 0px;
   }
@@ -455,7 +482,8 @@ body {
   cursor: pointer;
 }
 
-#footer,
+#main-header,
+#main-footer,
 #main-content {
   left: 6px;
 } /*scrollBar占位置 为了保持内容居中*/

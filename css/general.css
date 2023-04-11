@@ -1,16 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /*页内标签跳转，滚动条丝滑滚动*/
+}
+
 body {
   background: url(/Asset/img/pageimggrd.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth; /*页内标签跳转，滚动条丝滑滚动*/
+  min-height: -webkit-fill-available;
 }
 
 #nav-bar {
