@@ -9,9 +9,10 @@
     STHeiti, STXingkai, Arial, sans-serif;
   --content-bg: #f0f0f0c4;
   --content-fg: #a3d2cf;
-  --ele-gap: 8px;
+  --ele-gap: 5px;
   --font-color-1: #5c7fab;
   --side-hover-color-1: #a6a6edcc;
+  --border-radius: 4px;
 }
 
 /* #region 布局 */
@@ -32,14 +33,18 @@ body {
   display: grid;
   height: 3rem;
   width: 100%;
+  padding: var(--ele-gap) 0;
   grid-column: 2/3;
   grid-row: 1/2;
   grid-template-columns: auto 1fr auto;
   column-gap: 0px;
   row-gap: 0px;
+  padding: 0;
 
   z-index: 2;
   background: var(--content-bg);
+
+  transition: padding 0.5s;
 }
 
 /* #nav-bar-ico {
@@ -66,6 +71,8 @@ body {
   overflow-x: hidden;
   width: 210px;
   height: 100vh;
+  padding: var(--ele-gap);
+  padding-left: 0;
 
   background: var(--content-bg);
   opacity: 1;
@@ -98,7 +105,7 @@ body {
 
 /* #region side-content */
 #side-content {
-  margin: 5px 5px 0px 0px;
+  margin: var(--ele-gap) 0;
 }
 
 .list-box {
@@ -179,8 +186,7 @@ body {
 
 /* #region side-other */
 #side-hand {
-  border-radius: 0 8px 0px 0;
-  margin: 5px 5px 0 0;
+  border-top-right-radius: var(--border-radius);
   background: var(--content-fg);
   overflow: hidden;
   position: relative;
@@ -215,23 +221,14 @@ body {
 } /*签名*/
 
 #side > div:last-child {
-  margin: 5px 5px 0px 0px;
-  border-radius: 0px 0px 8px 0px;
+  border-bottom-right-radius: var(--border-radius);
   min-height: 15rem;
   background: var(--content-fg);
 }
 
 /* #endregion */
 
-/* #region main-content */
-/* #main-head {
-  position: relative;
-  height: 3rem;
-  margin: 1rem auto;
-  border-radius: var(--border-radius);
-  background: red;
-} */
-
+/* #region  main-content */
 #main-content {
   position: relative;
   display: block;
@@ -243,7 +240,7 @@ body {
   margin: 1rem auto;
   padding: 1rem 1rem 1rem 1rem;
 
-  border-radius: var(--ele-gap);
+  border-radius: var(--border-radius);
   background: var(--content-bg);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -265,7 +262,7 @@ body {
 .cate-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
-  grid-gap: var(--ele-gap);
+  grid-gap: calc(2 * var(--ele-gap));
 }
 
 .cate-content > div {
@@ -275,7 +272,7 @@ body {
   z-index: 2;
 
   height: 100%;
-  border-radius: var(--ele-gap);
+  border-radius: var(--border-radius);
   background: var(--content-fg);
   overflow: hidden;
   box-shadow: #00000000 0px 0px 0px 0px;
@@ -286,17 +283,27 @@ body {
 
 .cate-content > div > a {
   display: block;
-  height: 2rem;
+  height: auto;
   margin: 0.5rem 1rem;
-
-  border-radius: var(--ele-gap);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  border-radius: var(--border-radius);
+  opacity: 1;
+  overflow: hidden;
 
   box-shadow: #00000000 0px 0px 0px 0px;
-  transition-property: border-radius, box-shadow;
+  transition-property: border-radius, box-shadow, opacity;
   transition-duration: 0.5s;
+}
+
+.cate-content > div > a > img {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--font-color-1);
+  font-family: cursive;
+  text-decoration: none;
+  border: 0px;
+
+  width: 100%;
+  aspect-ratio: 32 / 9;
 }
 
 .cate-content > div > p {
@@ -316,10 +323,9 @@ body {
   position: relative;
   height: 3rem;
   margin: 1rem auto;
-  border-radius: var(--ele-gap);
+  border-radius: var(--border-radius);
   background: var(--content-bg);
 }
-
 /* #endregion */
 
 /* #region nav-bar */
@@ -328,11 +334,33 @@ body {
   display: block;
   grid-column: 2/3;
   grid-row: 1/2;
+  border-radius: var(--border-radius) var(--border-radius);
 }
 
 #nav-bar-content > a {
+  position: relative;
+  width: auto;
   font-family: var(--font-family-1);
   color: #5eaebb;
+
+  transition-property: color, background;
+  transition-duration: 0.6s;
+}
+
+#nav-bar-content > a::before {
+  content: "";
+  position: absolute;
+  border-radius: 10rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: var(--ele-gap);
+
+  width: 0px;
+  height: 5px;
+  background: var(--font-color-1);
+
+  transition-property: width, height, background;
+  transition-duration: 0.3s;
 }
 
 #fix-tool {
@@ -351,7 +379,7 @@ body {
   text-decoration: none;
   width: 3rem;
   height: 1rem;
-  border-radius: 1rem;
+  border-radius: calc(2 * var(--border-radius));
   margin: auto;
 
   background: transparent;
@@ -377,6 +405,7 @@ body {
 
   border-radius: 5rem;
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   transition: right 0.8s;
 }
 
@@ -391,8 +420,12 @@ body {
 /* #endregion */
 
 /* #region 适配 */
-/* @media only screen and (max-width: 600px) {
-} */
+
+@media only screen and (max-width: 600px) {
+  #nav-bar-content {
+    box-shadow: rgba(0, 0, 0, 0.25) -25px 0px 20px -20px inset;
+  }
+}
 
 /* #endregion */
 
@@ -411,27 +444,44 @@ body {
 } /*scrollBar占位置 为了保持内容居中*/
 
 ::-webkit-scrollbar {
-  display: block;
   width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--content-fg);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  /* background: red; */
-  border-radius: 4px;
+  border-radius: var(--border-radius);
 }
 
 #side::-webkit-scrollbar {
   width: 0px;
+  height: 0px;
+}
+
+#nav-bar-content::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
 
 /* #endregion; */
 
 /* #region  动画*/
+#nav-bar-content > a:hover:not(.current_web) {
+  background: var(--font-color-1);
+  color: var(--content-fg);
+
+  transition-property: color, background;
+  transition-duration: 0.6s;
+}
+
+#nav-bar-content > a:hover:not(.current_web)::before {
+  width: calc(100% - 2rem);
+  height: 2px;
+  background: var(--content-fg);
+
+  transition-property: width, height, background;
+  transition-duration: 0.6s;
+}
+
 #side-hand > a:hover {
   height: 6rem;
   width: 6rem;
@@ -444,7 +494,7 @@ body {
 }
 
 .item-hand-name:hover {
-  letter-spacing: 5px;
+  letter-spacing: var(--ele-gap);
   font-size: 1rem;
   text-shadow: #688eb180 3px 3px 30px;
 
@@ -464,7 +514,7 @@ body {
   top: -16px;
   left: 8px;
   z-index: 5;
-  border-radius: 4px;
+  border-radius: 6px;
   box-shadow: rgb(46, 78, 111) 0px 20px 30px -10px,
     rgba(46, 78, 111, 0.2) 0px -10px 80px -10px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;

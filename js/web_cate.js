@@ -34,23 +34,25 @@ async function load_MainContent(json) {
     category_box.id = cate.id;
 
     cate.website.forEach((site) => {
-      var l_b = document.createElement("div"); //链接盒子
-      var lb_img = document.createElement("a");
+      var l_box = document.createElement("div"); //链接盒子
+      var lb_a = document.createElement("a");
+      var lb_img = document.createElement("img");
       var lb_intro = document.createElement("p");
-      var Img = new Image();
+      lb_img.setAttribute("alt", site.name);
 
-      if (site.name != "") {
-        Img.src = "assets/img/" + site.name + ".png";
+      if (!(site.name == "" || site.name == null || site.name == undefined)) {
+        lb_img.dataset.src = "assets/img/" + site.name + ".png";
       } else {
-        Img.src = "assets/img/" + "here-is-no-img" + ".png";
+        lb_img.src = "assets/img/" + "here-is-no-img" + ".png";
       }
-      lb_img.style.backgroundImage = "url(" + Img.src + ")";
-      lb_img.href = site.href;
+      lb_img.classList.add("lazyload");
+      lb_a.href = site.href; //加载href
       lb_intro.textContent = site.introduc;
 
-      l_b.appendChild(lb_img);
-      l_b.appendChild(lb_intro);
-      c_c.appendChild(l_b);
+      lb_a.appendChild(lb_img);
+      l_box.appendChild(lb_a);
+      l_box.appendChild(lb_intro);
+      c_c.appendChild(l_box);
     });
     category_box.appendChild(c_n);
     category_box.appendChild(c_c);
@@ -107,16 +109,19 @@ function side_display_Click() {
   let s = document.getElementById("side");
   let sv = document.getElementById("side-vacancy");
   let s_i = document.querySelector(".side-display-i");
+  let n = document.getElementById("nav-bar");
   if (getComputedStyle(sv, null)["width"] != "210px") {
     sv.style.width = "210px";
     s.style.width = "210px";
     s.style.opacity = "1";
     s_i.style.right = "0%";
+    n.style = "";
   } else {
     sv.style.width = "0";
     s.style.width = "0";
     s.style.opacity = "0";
     s_i.style.right = "100%";
+    n.style.paddingLeft = "calc(var(--ele-gap) * 2)";
   }
 } //side-display 点击事件
 
