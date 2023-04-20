@@ -162,7 +162,7 @@ html {
   border-radius: var(--ele-gap);
 
   transition-property: left, opacity, margin-left;
-  background-image: url(/Asset/img/web-cat-p1.png);
+  background-image: url(/Asset/img/web-cat-p1.webp);
   background-color: var(--content-bg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -189,7 +189,7 @@ html {
 #nav-bar-ico {
   width: 3rem;
   grid-column: 1/2;
-  background: url(/Asset/img/icon.png);
+  background: url(/Asset/img/icon.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -398,7 +398,7 @@ html {
   opacity: 1;
 
   cursor: pointer;
-  background: url(/Asset/img/p3.png),
+  background: url(/Asset/img/p3.webp),
     repeating-linear-gradient(
       35deg,
       #eef8f630 0rem,
