@@ -5,30 +5,6 @@ window.onload = () => {
 
 window.addEventListener("resize", debounce(reset_js_style, 200), false); //当设备屏幕变化，令布局适配设备;
 
-function combobox_onclick() {
-  let e = document.getElementById("options");
-  let o = document.getElementById("options_close");
-
-  if (e.style.opacity != 0) {
-    e.style = "";
-    e.style.opacity = "0";
-
-    o.style = "";
-    o.style.display = "none";
-  } else {
-    if (document.documentElement.clientHeight <= 600) e.style.height = "210px";
-    else e.style.height = "420px";
-
-    e.style.width = "210px";
-    e.style.top = "35px";
-    e.style.left = "10px";
-    e.style.opacity = "1";
-
-    o.style = "";
-    o.style.display = "block";
-  }
-} //ComboBox 点击事件
-
 function option_onclick(e) {
   e_id = e.dataset.id;
   var h1 = document.querySelector("#combobox > h1");
@@ -173,6 +149,30 @@ async function load_ini_content(boot_url) {
 } // 加载初始内容
 
 // #region 其他
+function combobox_onclick() {
+  let e = document.getElementById("options");
+  let o = document.getElementById("options_close");
+
+  if (e.style.opacity != 0) {
+    e.style = "";
+    e.style.opacity = "0";
+
+    o.style = "";
+    o.style.display = "none";
+  } else {
+    if (document.documentElement.clientHeight <= 600) e.style.height = "210px";
+    else e.style.height = "420px";
+
+    e.style.width = "210px";
+    e.style.top = "35px";
+    e.style.left = "10px";
+    e.style.opacity = "1";
+
+    o.style = "";
+    o.style.display = "block";
+  }
+} //ComboBox 点击事件
+
 function catalog_close_onclick() {
   var c = document.getElementById("catalog");
   var cc = document.getElementById("catalog-close");
@@ -182,7 +182,7 @@ function catalog_close_onclick() {
     c.style.opacity = "0";
     cc.style.display = "none";
   } else console.log("catalog_close_onclick() : errer");
-}
+} //catalog 空余地方 点击事件 显示
 
 function catalog_display_onclick() {
   var c = document.getElementById("catalog");
@@ -193,11 +193,15 @@ function catalog_display_onclick() {
     if (c.style.left == "" || c.style.left == "0px") {
       c.style.left = "-210px";
       c.style.opacity = "0";
+
       d.style.width = "100%";
+      d.style.left = "calc((100% - 1200px) / 2)";
     } else {
       c.style.left = "0px";
       c.style.opacity = "1";
+
       d.style.width = "calc(1200px - 210px - var(--ele-gap))";
+      d.style.left = "calc((100% - 1200px) / 2 + 210px + var(--ele-gap))";
     }
   }
   if (document.documentElement.clientWidth < 1216) {

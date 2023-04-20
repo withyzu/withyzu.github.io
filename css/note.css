@@ -49,10 +49,8 @@ html {
 
 #note-content-box,
 #catalog {
-  transition-duration: 0.8s;
-  transition-timing-function: cubic-bezier(0.62, -0.14, 0.62, 1.25);
+  transition-duration: 0.6s;
 }
-
 /* #endregion */
 
 /* #region  特定属性 */
@@ -164,10 +162,11 @@ html {
   border-radius: var(--ele-gap);
 
   transition-property: left, opacity, margin-left;
-  background: url(/Asset/img/p8.gif), var(--content-bg);
+  background-image: url(/Asset/img/web-cat-p1.png);
+  background-color: var(--content-bg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px;
 }
 
@@ -176,7 +175,7 @@ html {
   position: absolute;
   max-width: 1200px;
 
-  transition-property: width, right;
+  transition-property: width, left;
 }
 /* #endregion */
 
@@ -204,13 +203,56 @@ html {
   font-family: cursive;
 }
 
+#nav-bar-content > a {
+  position: relative;
+  overflow: hidden;
+}
+
+#nav-bar-content > a::before {
+  content: "";
+  position: absolute;
+  border-radius: 10rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: calc(var(--ele-gap));
+
+  width: 5px;
+  height: 6px;
+
+  background-color: transparent;
+
+  transition-property: width, height, background;
+  transition-duration: 0.4s;
+}
+
+#nav-bar-content > a:hover::before {
+  background: #49a1ffde;
+  width: calc(100% - 2rem);
+  height: 2px;
+
+  transition-property: width, height, background;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.62, -0.14, 0.62, 1.25);
+}
+
+#nav-bar-content > a.current_web:hover::before {
+  background: #eef8f6;
+  width: calc(100% - 2rem);
+  height: 2px;
+
+  transition-property: width, height, background;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.62, -0.14, 0.62, 1.25);
+}
+
 .current_web {
   background: #49a1ffde;
 }
 
 .current_web > h1 {
   color: var(--web-bg-2);
-} /* #endregion */
+}
+/* #endregion */
 
 /* #region #content */
 #note-content {
@@ -371,14 +413,14 @@ html {
       #898bbc30 3rem,
       #898bbc30 5rem
     ),
-    white;
+    var(--web-bg-2);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 
   transition-property: width, height, opacity, top, left, background;
   transition-duration: 0.4s;
@@ -492,7 +534,7 @@ html {
   -webkit-backdrop-filter: blur(6px);
 
   transition-property: font-size, height, line-height;
-  transition-duration: 0.2s;
+  transition-duration: 0.3s;
 } /*被点击的note样式*/
 
 #note-list *:last-child {
@@ -846,7 +888,7 @@ html {
 
   #note-content-box {
     width: 100%;
-    right: 0;
+    left: 0;
   }
 
   #fix-tool {
@@ -899,7 +941,7 @@ html {
 
   #note-content-box {
     width: calc(1200px - 210px - var(--ele-gap));
-    right: calc((100% - 1200px) / 2);
+    left: calc((100% - 1200px) / 2 + 210px + var(--ele-gap));
   }
 
   #fix-tool {

@@ -360,6 +360,8 @@ body {
   grid-column: 2/3;
   grid-row: 1/2;
   border-radius: var(--border-radius) var(--border-radius);
+
+  padding: var(--ele-gap) 0;
 }
 
 #nav-bar-content > a {
@@ -458,7 +460,7 @@ body {
   }
 
   #nav-bar {
-    padding-left: calc(var(--ele-gap) * 2);
+    padding-left: var(--ele-gap);
   }
 
   #side-vacancy {
