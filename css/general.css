@@ -193,6 +193,7 @@ html {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
+#note-content::-webkit-scrollbar,
 #outline::-webkit-scrollbar,
 #main::-webkit-scrollbar,
 #header-content::-webkit-scrollbar {
