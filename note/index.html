@@ -29,25 +29,26 @@
   </head>
 
   <body>
-    <div id="nav-bar-vacancy"></div>
-    <div id="nav-bar">
-      <div id="nav-bar-ico"></div>
-    </div>
-    <div id="catalog-close" onclick="catalog_close_onclick() "></div>
-    <div id="catalog">
-      <div id="combobox" onclick="combobox_onclick()">
-        <h1>笔记列表</h1>
-      </div>
-      <div id="note-list"></div>
-    </div>
-    <div id="note-content-box">
-      <div id="note-content">
-        <div id="content-title">
-          <h1></h1>
-          <span></span>
+    <div id="grid-layout">
+      <div id="header"></div>
+
+      <div id="outline">
+        <div id="combobox" onclick="combobox_onclick()">
+          <h1>笔记列表</h1>
         </div>
-        <div id="content"></div>
-        <a class="content-end" href="#content-title">😅 到 底 了 . . .</a>
+        <div id="note-list"></div>
+      </div>
+      <div id="split-line"></div>
+
+      <div id="main">
+        <div id="note-content">
+          <div id="content-title">
+            <h1></h1>
+            <span></span>
+          </div>
+          <div id="content"></div>
+          <a class="content-end" href="#content-title">😅 到 底 了 . . .</a>
+        </div>
       </div>
     </div>
 
@@ -55,9 +56,9 @@
       <a id="to-top" href="#content-title">
         <i class="fix-i">🌵</i>
       </a>
-      <div id="catalog-display" onclick="catalog_display_onclick()">
+      <a id="outline-display" onclick="outline_display_onclick()">
         <i class="fix-i">📄</i>
-      </div>
+      </a>
     </div>
   </body>
 </html>

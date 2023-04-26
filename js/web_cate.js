@@ -1,11 +1,11 @@
 window.onload = () => {
   var url = "/boot/web_cate.boot.json";
-  load_catalog(url).catch((e) => {
+  load_outline(url).catch((e) => {
     console.log("err: " + e.message);
   });
 };
 
-async function load_catalog(url) {
+async function load_outline(url) {
   let response = await fetch(url);
   let json = await response.json();
 
@@ -19,7 +19,7 @@ async function load_all_content(url, name, id) {
   let json = await response.json();
 
   load_MainContent(json);
-  load_SideContent(json, name, id);
+  load_outlineContent(json, name, id);
 } //将json内容转换为内容
 
 async function load_MainContent(json) {
@@ -60,26 +60,26 @@ async function load_MainContent(json) {
   });
 } //加载#main-content的内容
 
-async function load_SideContent(json, json_name, json_id) {
-  var e_0 = document.getElementById("side-content");
+async function load_outlineContent(json, json_name, json_id) {
+  var e_0 = document.getElementById("outline-content");
   var e_1 = document.createElement("div"); //list-box
   var e_2 = document.createElement("div"); //list-item-box
-  var e_3 = document.createElement("div"); //item-hand
-  var e_4 = document.createElement("i"); // item-hand log-ico
-  var e_5 = document.createElement("span"); //item-hand name
-  var e_6 = document.createElement("i"); //item-hand arrow-ico
+  var e_3 = document.createElement("div"); //item-head
+  var e_4 = document.createElement("i"); // item-head log-ico
+  var e_5 = document.createElement("span"); //item-head name
+  var e_6 = document.createElement("i"); //item-head arrow-ico
   var e_7 = document.createElement("div"); //item-content
 
   // #region 设置class 加载内容
   e_1.setAttribute("class", "list-box");
   e_2.setAttribute("class", "list-item-box");
-  e_3.setAttribute("class", "item-hand");
-  e_3.setAttribute("onclick", "side_hand_Click(this)");
+  e_3.setAttribute("class", "item-head");
+  e_3.setAttribute("onclick", "outline_head_Click(this)");
   e_3.setAttribute("id", json_id);
-  e_4.setAttribute("class", "item-hand-log iconfont" + " " + json_id);
-  e_5.setAttribute("class", "item-hand-name");
+  e_4.setAttribute("class", "item-head-log iconfont" + " " + json_id);
+  e_5.setAttribute("class", "item-head-name");
   e_5.appendChild(document.createTextNode(json_name));
-  e_6.setAttribute("class", "item-hand-arrow iconfont up-circle");
+  e_6.setAttribute("class", "item-head-arrow iconfont up-circle");
   e_7.setAttribute("class", "item-content");
 
   var i = 0;
@@ -103,32 +103,12 @@ async function load_SideContent(json, json_name, json_id) {
   e_2.appendChild(e_7);
   e_1.appendChild(e_2);
   e_0.appendChild(e_1);
-} //加载#side-content的内容
+} //加载#outline-content的内容
 
-function side_display_Click() {
-  let s = document.getElementById("side");
-  let sv = document.getElementById("side-vacancy");
-  let s_i = document.querySelector(".side-display-i");
-  let n = document.getElementById("nav-bar");
-  if (getComputedStyle(sv, null)["width"] != "210px") {
-    sv.style.width = "210px";
-    s.style.width = "210px";
-    s.style.opacity = "1";
-    s_i.style.right = "0%";
-    n.style = "";
-  } else {
-    sv.style.width = "0";
-    s.style.width = "0";
-    s.style.opacity = "0";
-    s_i.style.right = "100%";
-    n.style.paddingLeft = "calc(var(--ele-gap) * 2)";
-  }
-} //side-display 点击事件
-
-function side_hand_Click(e) {
+function outline_head_Click(e) {
   let c = document.querySelector("#" + e.id + " ~ *");
   let i = document.querySelectorAll("#" + e.id + " ~ * a");
-  let a = document.querySelector("#" + e.id + " .item-hand-arrow");
+  let a = document.querySelector("#" + e.id + " .item-head-arrow");
 
   if (parseInt(getComputedStyle(c, null)["height"]) > 1) {
     c.style.height = "0rem";
@@ -137,4 +117,4 @@ function side_hand_Click(e) {
     c.style.height = i.length * 2 + "rem";
     a.style = "";
   }
-} //side-display 点击事件
+} //outline-display 点击事件

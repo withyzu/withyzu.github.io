@@ -8,5 +8,10 @@
         "id": "mynote",
         "name": "我的笔记",
         "url": "/note"
+    },
+    {
+        "id": "about_me",
+        "name": "About Me",
+        "url": "/"
     }
 ]

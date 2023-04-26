@@ -4,57 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网站导航</title>
 
-    <!-- #region Link -->
     <link href="/favicon.ico" rel="shortcut icon" />
     <link
       href="/Asset/iconfont/iconfont.css"
       type="text/css"
       rel="stylesheet"
     />
-
     <link href="/css/general.css" rel="stylesheet" type="text/css" />
     <link href="/css/web_cate.css" rel="stylesheet" type="text/css" />
-    <!-- #endregion -->
 
-    <title>网站导航</title>
-
-    <!-- #region Style-->
-    <!-- #endregion -->
-
-    <!-- #region Script -->
     <script src="/js/lazysizes.min.js" async=""></script>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/general.js"></script>
     <script type="text/javascript" src="/js/web_cate.js"></script>
-    <!-- #endregion -->
   </head>
 
   <body>
-    <div id="nav-bar">
-      <div id="nav-bar-ico"></div>
-      <div id="fix-tool">
-        <div id="side-display" onclick="side_display_Click() ">
-          <i class="side-display-i">📜</i>
+    <div id="grid-layout">
+      <div id="header">
+        <div id="nav-bar-ico"></div>
+        <div id="fix-tool">
+          <div id="outline-display" onclick="outline_display_onclick() ">
+            <i class="outline-display-i">📜</i>
+          </div>
+          <div></div>
         </div>
-        <div></div>
       </div>
-    </div>
-    <div id="side-vacancy"></div>
-    <div id="side">
-      <div id="side-hand">
-        <a href="/"></a>
-        <h1>生于幻想，死于现实</h1>
+      <div id="split-line"></div>
+      <div id="outline">
+        <div id="outline-head">
+          <a href="/"></a>
+          <h1>生于幻想，死于现实</h1>
+        </div>
+        <div id="outline-content">
+          <!-- outline-content content -->
+        </div>
+        <div id="outline-footer"></div>
       </div>
-      <div id="side-content">
-        <!-- side-content content -->
+      <div id="main">
+        <div id="main-header"></div>
+        <div id="main-content"></div>
+        <a id="main-footer" href="#main-header">--- 回到顶部 ---</a>
       </div>
-      <div></div>
-    </div>
-    <div id="main">
-      <div id="main-header"></div>
-      <div id="main-content"></div>
-      <a id="main-footer" href="#main-header">--- 回到顶部 ---</a>
     </div>
   </body>
 </html>

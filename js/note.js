@@ -3,7 +3,7 @@ window.onload = () => {
   load_ini_content(boot_url);
 };
 
-window.addEventListener("resize", debounce(reset_js_style, 200), false); //当设备屏幕变化，令布局适配设备;
+// window.addEventListener("resize", debounce(reset_js_style, 200), false); //当设备屏幕变化，令布局适配设备;
 
 function option_onclick(e) {
   e_id = e.dataset.id;
@@ -40,13 +40,13 @@ function note_onclick(e) {
   document.getElementById("content").innerHTML = "";
 
   load_note_content(e1.dataset.id + "/" + e.dataset.id + ".md");
-  // var c = document.querySelector("#catalog");
+  // var c = document.querySelector("#outline");
   // if (document.documentElement.clientWidth < 600) {
   //   if (getComputedStyle(c, null)["left"] != "-210px") {
   //     c.style.left = "-210px";
   //   }
   // }
-} //Note 点击事件 先note-content-box添加内容
+} //Note 点击事件 main添加内容
 
 async function load_notebook_list(json) {
   var box = document.getElementById("combobox");
@@ -150,111 +150,71 @@ async function load_ini_content(boot_url) {
 
 // #region 其他
 function combobox_onclick() {
-  let e = document.getElementById("options");
-  let o = document.getElementById("options_close");
+  let o = document.getElementById("options");
+  let o_c = document.getElementById("options_close");
 
-  if (e.style.opacity != 0) {
-    e.style = "";
-    e.style.opacity = "0";
+  if (o.style.opacity != 0) {
+    o.style.height = "";
+    o.style.visibility = "";
+    o.style.opacity = "";
 
-    o.style = "";
-    o.style.display = "none";
+    o_c.style.display = "";
   } else {
-    if (document.documentElement.clientHeight <= 600) e.style.height = "210px";
-    else e.style.height = "420px";
+    o.style.height = "420px";
+    o.style.visibility = "visible";
+    o.style.opacity = "1";
 
-    e.style.width = "210px";
-    e.style.top = "35px";
-    e.style.left = "10px";
-    e.style.opacity = "1";
-
-    o.style = "";
-    o.style.display = "block";
+    o_c.style.display = "block";
   }
 } //ComboBox 点击事件
 
-function catalog_close_onclick() {
-  var c = document.getElementById("catalog");
-  var cc = document.getElementById("catalog-close");
+// function outline_close_onclick() {
+//   var c = document.getElementById("outline");
+//   var cc = document.getElementById("outline-close");
 
-  if (document.documentElement.clientWidth < 1216) {
-    c.style.left = "-210px";
-    c.style.opacity = "0";
-    cc.style.display = "none";
-  } else console.log("catalog_close_onclick() : errer");
-} //catalog 空余地方 点击事件 显示
+//   if (document.documentElement.clientWidth < 1216) {
+//     c.style.left = "-210px";
+//     c.style.opacity = "0";
+//     cc.style.display = "none";
+//   } else console.log("outline_close_onclick() : errer");
+// } //outline 空余地方 点击事件 显示
 
-function catalog_display_onclick() {
-  var c = document.getElementById("catalog");
-  var cc = document.getElementById("catalog-close");
-  var d = document.getElementById("note-content-box");
-
-  if (document.documentElement.clientWidth >= 1216) {
-    if (c.style.left == "" || c.style.left == "0px") {
-      c.style.left = "-210px";
-      c.style.opacity = "0";
-
-      d.style.width = "100%";
-      d.style.left = "calc((100% - 1200px) / 2)";
-    } else {
-      c.style.left = "0px";
-      c.style.opacity = "1";
-
-      d.style.width = "calc(1200px - 210px - var(--ele-gap))";
-      d.style.left = "calc((100% - 1200px) / 2 + 210px + var(--ele-gap))";
-    }
-  }
-  if (document.documentElement.clientWidth < 1216) {
-    if (getComputedStyle(c, null)["left"] == "-210px") {
-      c.style.left = "0px";
-      c.style.opacity = "1";
-      cc.style.display = "block";
-    } else {
-      c.style.left = "-210px";
-      c.style.opacity = "0";
-      cc.style.display = "none";
-    }
-  }
-} //catalog 点击事件 显示
-
-function debounce(operate, delay) {
-  let data = null;
-  let datar = null;
-  let newTime = null;
-  function task() {
-    newTime = +new Date();
-    if (newTime - data < delay) {
-      datar = setTimeout(task, delay);
-    } else {
-      operate();
-      datar = null;
-    }
-    data = newTime;
-  }
-  return function () {
-    // 更新时间戳
-    data = +new Date();
-    if (!datar) {
-      datar = setTimeout(task, delay);
-    }
-  };
-}
+// function debounce(operate, delay) {
+//   let data = null;
+//   let datar = null;
+//   let newTime = null;
+//   function task() {
+//     newTime = +new Date();
+//     if (newTime - data < delay) {
+//       datar = setTimeout(task, delay);
+//     } else {
+//       operate();
+//       datar = null;
+//     }
+//     data = newTime;
+//   }
+//   return function () {
+//     data = +new Date();
+//     if (!datar) {
+//       datar = setTimeout(task, delay);
+//     }
+//   };
+// }
 //防抖
 
-function reset_js_style() {
-  var c = document.getElementById("catalog");
-  var d = document.getElementById("note-content-box");
-  var o = document.getElementById("options");
-  var os = document.getElementById("options_close");
-  var cc = document.getElementById("catalog-close");
+// function reset_js_style() {
+//   var c = document.getElementById("outline");
+//   var o = document.getElementById("options");
+//   var os = document.getElementById("options_close");
+//   var cc = document.getElementById("outline-close");
 
-  c.style = "";
-  d.style = "";
-  o.style = "";
-  os.style = "";
-  cc.style = "";
+//   c.style = "";
+//   d.style = "";
+//   o.style = "";
+//   os.style = "";
+//   cc.style = "";
 
-  o.style.opacity = "0";
-} //令布局适配设备
+//   o.style.opacity = "0";
+// } //令布局适配设备
 
 // #endregion
