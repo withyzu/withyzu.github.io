@@ -65,11 +65,6 @@
                 "introduc": "提供Gif动图的平台。GIPHY不仅仅是动图…我们是贴纸，涂鸦等等。每天，我们为7亿多用户提供100多亿条GIPHY内容，帮助他们表达自我，让他们的日常对话更加有趣。"
             },
             {
-                "href": "https://www.todaybing.com/",
-                "name": "必应壁纸",
-                "introduc": "必应壁纸网，一图，一故事，探索一个神奇的世界。"
-            },
-            {
                 "href": "https://wallhaven.cc/",
                 "name": "wallhaven",
                 "introduc": "Wallhaven是一个由喜欢壁纸的人创建的网站。巨好用！！！"
@@ -163,7 +158,7 @@
                 "introduc": "substance官方3D社区资源，需要梯子，需要登录！"
             },
             {
-                "href": "https://www.myminifactory.com/scantheworld/full-collection?sort:popularity",
+                "href": "www.myminifactory.com/scantheworld/",
                 "name": "ScanTheWorld",
                 "introduc": "大量的3D扫描模型，且免费下载。"
             },
@@ -171,11 +166,6 @@
                 "href": "https://www.turbosquid.com/zh_cn/",
                 "name": "TurboSquid",
                 "introduc": "提供专业版 3D 模型，部分免费。"
-            },
-            {
-                "href": "https://www.yuzhouyuan.world/",
-                "name": "宇宙元",
-                "introduc": "3D扫描，倾斜摄影测量，3D建模，3D模型格式转换，3D模型数据轻量化，3D模型数据修复，3D降维视频展示，3D全息展示，3D/XR互动，3D打印，3D可视化数据集成。"
             }
         ]
     },
