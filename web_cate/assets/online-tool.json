@@ -7,11 +7,6 @@
                     "href": "https://vectr.com/",
                     "name": "Vectr",
                     "introduc": "免费、在线的矢量图形编辑器。"
-                },
-                {
-                    "href": "https://zh.vectormagic.com/",
-                    "name": "vector-magic",
-                    "introduc": "轻轻松松 把 JPG、PNG、GIF 文件 转换成 PDF、SVG、EPS 矢量图像"
                 }
             ]
         },
@@ -43,6 +38,11 @@
                     "href": "https://www.photopea.com/",
                     "name": "photopea",
                     "introduc": "在线PS，免费的在线图像编辑器，支持 PSD、XCF、Sketch、XD、CDR 等格式，但有侧栏广告，可付费购买去广告"
+                },
+                {
+                    "href": "https://zh.vectormagic.com/",
+                    "name": "vector-magic",
+                    "introduc": "轻轻松松 把 JPG、PNG、GIF 文件 转换成 PDF、SVG、EPS 矢量图像"
                 }
             ]
         },

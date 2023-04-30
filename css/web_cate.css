@@ -198,7 +198,6 @@
   height: 100%;
   border-radius: var(--border-radius);
   background: var(--content-fg);
-  overflow: hidden;
   box-shadow: #00000000 0px 0px 0px 0px;
 
   transition-property: top, left, z-index, box-shadow, border-radius;
@@ -356,8 +355,8 @@
 }
 
 .cate-content > div:hover {
-  top: -16px;
-  left: 8px;
+  top: -12px;
+  left: 6px;
   z-index: 5;
   border-radius: 6px;
   box-shadow: rgb(46, 78, 111) 0px 20px 30px -10px,
