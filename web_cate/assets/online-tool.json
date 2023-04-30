@@ -1,6 +1,6 @@
     [
         {
-            "id": "icon-tool",
+            "id": "ot-icon-tool",
             "name": "矢量图制作",
             "website": [
                 {
@@ -11,7 +11,7 @@
             ]
         },
         {
-            "id": "img-tool",
+            "id": "ot-img-tool",
             "name": "图片处理",
             "website": [
                 {
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "id": "format-convert",
+            "id": "ot-format-convert",
             "name": "格式转换",
             "website": [
                 {
@@ -68,7 +68,7 @@
             ]
         },
         {
-            "id": "other-tool",
+            "id": "ot-other-tool",
             "name": "其他",
             "website": [
                 {

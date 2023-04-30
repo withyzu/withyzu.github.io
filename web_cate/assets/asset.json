@@ -1,6 +1,6 @@
 [
     {
-        "id": "app",
+        "id": "a-app",
         "name": "应用程序",
         "website": [
             {
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "id": "img",
+        "id": "a-img",
         "name": "图片、壁纸、Gif动图",
         "website": [
             {
@@ -97,7 +97,7 @@
         ]
     },
     {
-        "id": "font",
+        "id": "a-font",
         "name": "可商用字体",
         "website": [
             {
@@ -113,7 +113,7 @@
         ]
     },
     {
-        "id": "icon",
+        "id": "a-icon",
         "name": "矢量图形",
         "website": [
             {
@@ -134,7 +134,7 @@
         ]
     },
     {
-        "id": "3d-assets",
+        "id": "a-3d-assets",
         "name": "3D 资产",
         "website": [
             {
@@ -170,7 +170,7 @@
         ]
     },
     {
-        "id": "music",
+        "id": "a-music",
         "name": "音乐",
         "website": [
             {
@@ -181,7 +181,7 @@
         ]
     },
     {
-        "id": "desk-beautify",
+        "id": "a-desk-beautify",
         "name": "桌面美化",
         "website": [
             {
