@@ -159,7 +159,7 @@ function use_loacal_stroage() {
       }
     }, 800);
   }
-} //使用本地存储
+} //使用本地存储 stroage
 
 function save_loacal_stroage() {
   if (!window.localStorage) {
@@ -172,7 +172,7 @@ function save_loacal_stroage() {
     storage.setItem("outline_d", parseInt(getComputedStyle(o, null)["width"]));
     storage.setItem("a_scrollview", m.scrollTop.toFixed(2));
   }
-} //保存本地存储
+} //保存本地存储 stroage
 
 function goto_aim_on_page(e) {
   document
