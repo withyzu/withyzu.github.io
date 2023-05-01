@@ -148,7 +148,6 @@ async function load_ini_content(boot_url) {
   } //已打开笔记本 option的样式
 } // 加载初始内容
 
-// #region 其他
 function combobox_onclick() {
   let o = document.getElementById("options");
   let o_c = document.getElementById("options_close");
@@ -168,53 +167,39 @@ function combobox_onclick() {
   }
 } //ComboBox 点击事件
 
-// function outline_close_onclick() {
-//   var c = document.getElementById("outline");
-//   var cc = document.getElementById("outline-close");
+function debounce(operate, delay) {
+  let data = null;
+  let datar = null;
+  let newTime = null;
+  function task() {
+    newTime = +new Date();
+    if (newTime - data < delay) {
+      datar = setTimeout(task, delay);
+    } else {
+      operate();
+      datar = null;
+    }
+    data = newTime;
+  }
+  return function () {
+    data = +new Date();
+    if (!datar) {
+      datar = setTimeout(task, delay);
+    }
+  };
+} // 防抖;
 
-//   if (document.documentElement.clientWidth < 1216) {
-//     c.style.left = "-210px";
-//     c.style.opacity = "0";
-//     cc.style.display = "none";
-//   } else console.log("outline_close_onclick() : errer");
-// } //outline 空余地方 点击事件 显示
+function reset_js_style() {
+  var c = document.getElementById("outline");
+  var o = document.getElementById("options");
+  var os = document.getElementById("options_close");
+  var cc = document.getElementById("outline-close");
 
-// function debounce(operate, delay) {
-//   let data = null;
-//   let datar = null;
-//   let newTime = null;
-//   function task() {
-//     newTime = +new Date();
-//     if (newTime - data < delay) {
-//       datar = setTimeout(task, delay);
-//     } else {
-//       operate();
-//       datar = null;
-//     }
-//     data = newTime;
-//   }
-//   return function () {
-//     data = +new Date();
-//     if (!datar) {
-//       datar = setTimeout(task, delay);
-//     }
-//   };
-// }
-//防抖
+  c.style = "";
+  d.style = "";
+  o.style = "";
+  os.style = "";
+  cc.style = "";
 
-// function reset_js_style() {
-//   var c = document.getElementById("outline");
-//   var o = document.getElementById("options");
-//   var os = document.getElementById("options_close");
-//   var cc = document.getElementById("outline-close");
-
-//   c.style = "";
-//   d.style = "";
-//   o.style = "";
-//   os.style = "";
-//   cc.style = "";
-
-//   o.style.opacity = "0";
-// } //令布局适配设备
-
-// #endregion
+  o.style.opacity = "0";
+} //令布局适配设备
