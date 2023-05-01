@@ -1,18 +1,18 @@
 window.onload = () => {
   var url = "/boot/web_cate.boot.json";
-  load_outline(url).catch((e) => {
+  load_webcat_boot(url).catch((e) => {
     console.log("err: " + e.message);
   });
 };
 
-async function load_outline(url) {
+async function load_webcat_boot(url) {
   let response = await fetch(url);
   let json = await response.json();
 
   for (var i = 0; i < json.length; i++) {
     await load_all_content(json[i].path, json[i].name, json[i].id);
   }
-} //加载分类网站目录
+} //加载 boot.json
 
 async function load_all_content(url, name, id) {
   let response = await fetch(url);
@@ -20,7 +20,7 @@ async function load_all_content(url, name, id) {
 
   load_MainContent(json);
   load_outlineContent(json, name, id);
-} //将json内容转换为内容
+} //将 json内容转换为内容
 
 async function load_MainContent(json) {
   json.forEach((cate) => {
@@ -70,7 +70,7 @@ async function load_outlineContent(json, json_name, json_id) {
   var e_6 = document.createElement("i"); //item-head arrow-ico
   var e_7 = document.createElement("div"); //item-content
 
-  // #region 设置class 加载内容
+  // #region json-->outline内容
   e_1.setAttribute("class", "list-box");
   e_2.setAttribute("class", "list-item-box");
   e_3.setAttribute("class", "item-head");

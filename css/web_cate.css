@@ -301,8 +301,8 @@
 .outline-display-i {
   position: absolute;
   top: -50%;
-  right: 0%;
-  transform: translate(50%, 0);
+  left: 100%;
+  transform: translate(-50%, 0);
   display: block;
   font-style: normal;
   letter-spacing: 0px;
@@ -317,7 +317,7 @@
   border-radius: 5rem;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  transition: right 0.8s;
+  transition: left 0.8s;
 }
 
 /* #endregion */
@@ -380,6 +380,9 @@
 
 /* #region 适配 */
 @media only screen and (max-width: 600px) {
+  .outline-display-i {
+    left: 0%;
+  }
   /* #region outline 美化 */
   #outline {
     background: #efdfc0;

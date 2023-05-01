@@ -85,11 +85,6 @@
   border-radius: 4px;
 }
 
-/* #options::-webkit-scrollbar {
-  display: block;
-  height: 0px;
-  width: 0px;
-} */
 /* #endregion */
 
 /* #region layout */
@@ -274,7 +269,7 @@
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
   transition-property: height, opacity, visibility;
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
 }
 
 #options_close {
@@ -727,7 +722,9 @@
 /* #region 适配 */
 @media only screen and (max-width: 600px) {
   #options {
-    max-height: 350px;
+    max-height: 240px;
+    transition-property: height, opacity, visibility;
+    transition-duration: 1s;
   }
 
   #options_close {

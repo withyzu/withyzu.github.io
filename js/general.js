@@ -1,8 +1,10 @@
 $(document).ready(() => {
   var header_boot = "/boot/boot.json";
   json_to_header(header_boot);
-  load_outline_bg();
+  creat_outline_bg();
 });
+
+window.addEventListener("resize", debounce(reset_js_style, 200), false); //当设备屏幕变化，令布局适配设备;
 
 async function json_to_header(url) {
   async function run() {
@@ -54,34 +56,93 @@ function load_header(json) {
 function outline_display_onclick() {
   var o = document.getElementById("outline");
   var s = document.getElementById("split-line");
-  let o_i = document.querySelector(".outline-display-i"); //web_site 元素
+  let o_i = document.querySelector(".outline-display-i"); //web_site的独有元素
   let o_b = document.querySelector(".outline-bg");
 
-  if (parseInt(getComputedStyle(o, null)["width"]) > 0) {
-    o.style.width = "0";
-    o.style.opacity = "0";
-    o_b.style.display = "none";
-    s.style.width = "0";
+  if (document.body.clientWidth > 600) {
+    if (parseInt(getComputedStyle(o, null)["width"]) > 0) {
+      o.style.width = "0";
+      o.style.opacity = "0";
+      s.style.width = "0";
+      if (o_i) {
+        o_i.style.left = "0";
+      }
+    } else {
+      o.style.width = "";
+      o.style.opacity = "";
 
-    if (o_i) {
-      o_i.style.right = "100%";
+      s.style.width = "";
+      if (o_i) {
+        o_i.style.left = "";
+      }
     }
   } else {
-    o.style.width = "";
-    o.style.opacity = "";
-    o_b.style.display = "";
-    s.style.width = "";
+    if (parseInt(getComputedStyle(o, null)["width"]) > 0) {
+      o.style.width = "";
+      o.style.opacity = "";
+      o.style.visibility = "";
 
-    if (o_i) {
-      o_i.style.right = "";
+      o_b.style.display = "";
+      o_b.style.display = "";
+      if (o_i) {
+        o_i.style.left = "";
+      }
+    } else {
+      o.style.width = "300px";
+      o.style.opacity = "1";
+      o.style.visibility = "visible";
+
+      o_b.style.display = "block";
+      o_b.style.background = "#282c34a0";
+
+      if (o_i) {
+        o_i.style.left = "100%";
+      }
     }
   }
 } //outline display onclick 事件
 
-function load_outline_bg() {
-  let o_b = document.createElement("div");
+function creat_outline_bg() {
+  var o_b = document.createElement("div");
   o_b.classList.add("outline-bg");
   o_b.setAttribute("onclick", "outline_display_onclick()");
-
   document.getElementById("grid-layout").appendChild(o_b);
-} //加载outline 的关闭功能背景
+} //创建 outline黑色背景
+
+function debounce(operate, delay) {
+  let data = null;
+  let datar = null;
+  let newTime = null;
+  function task() {
+    newTime = +new Date();
+    if (newTime - data < delay) {
+      datar = setTimeout(task, delay);
+    } else {
+      operate();
+      datar = null;
+    }
+    data = newTime;
+  }
+  return function () {
+    data = +new Date();
+    if (!datar) {
+      datar = setTimeout(task, delay);
+    }
+  };
+} // 防抖;
+
+function reset_js_style() {
+  var o = document.getElementById("outline");
+  var s = document.getElementById("split-line");
+  let o_b = document.querySelector(".outline-bg");
+
+  o.style = "";
+  s.style = "";
+  o_b.style = "";
+
+  var o_i = document.querySelector(".outline-display-i");
+  if (o_i) {
+    let o_i = document.querySelector(".outline-display-i");
+    o_i.style = "";
+  } //web_site的独有元素
+} //令布局适配设备
