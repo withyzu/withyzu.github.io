@@ -159,7 +159,7 @@ function combobox_onclick() {
 
     o_c.style.display = "";
   } else {
-    o.style.height = "420px";
+    o.style.height = "calc(30% + var(--header-height) + var(--ele-gap) * 3)";
     o.style.visibility = "visible";
     o.style.opacity = "1";
 

@@ -228,7 +228,7 @@ html {
 
     height: 80%;
     width: 0px;
-    max-height: calc(100% - var(--header-height));
+    max-height: calc(100% - var(--header-height) - var(--ele-gap) * 3);
     max-width: 70%;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
