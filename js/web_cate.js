@@ -1,9 +1,15 @@
 window.onload = () => {
   var url = "/boot/web_cate.boot.json";
-  load_webcat_boot(url).catch((e) => {
-    console.log("err: " + e.message);
-  });
-};
+  load_webcat_boot(url);
+  // load_webcat_boot(url).catch ((e) => {
+  //   console.log("err: " + e.message);
+  // });
+  use_loacal_stroage();
+}; //当html加载完成
+
+window.onbeforeunload = () => {
+  save_loacal_stroage();
+}; //当窗口关闭
 
 async function load_webcat_boot(url) {
   let response = await fetch(url);
@@ -31,7 +37,7 @@ async function load_MainContent(json) {
     c_n.className = "cate-name"; //
     c_c.className = "cate-content"; //
     c_n.textContent = cate.name;
-    category_box.id = cate.id;
+    category_box.dataset.aimId = cate.id;
 
     cate.website.forEach((site) => {
       var l_box = document.createElement("div"); //链接盒子
@@ -86,8 +92,8 @@ async function load_outlineContent(json, json_name, json_id) {
   json.forEach((item) => {
     var e_10 = document.createElement("a");
     var e_6 = document.createElement("span");
-
-    e_10.setAttribute("href", "#" + item.id);
+    e_10.setAttribute("onclick", "goto_aim_on_page(this)");
+    e_10.dataset.pointId = item.id;
     e_6.appendChild(document.createTextNode(item.name));
     e_10.appendChild(e_6);
     e_7.appendChild(e_10);
@@ -118,3 +124,60 @@ function outline_head_Click(e) {
     a.style = "";
   }
 } //outline-display 点击事件
+
+function use_loacal_stroage() {
+  if (!window.localStorage) {
+    alert("浏览器不支持localstorage");
+    return false;
+  } else {
+    var s = window.localStorage;
+    outline_display(); //控制outline display
+    last_scrollview(); //自动跳转到上次的位置
+  }
+
+  function outline_display() {
+    if (document.documentElement.clientWidth > 600) {
+      if (s.outline_d <= 0) {
+        outline_display_onclick();
+      }
+    } else {
+      if (s.outline_d > 0) {
+        outline_display_onclick();
+      }
+    }
+  }
+
+  function last_scrollview() {
+    window.setTimeout(() => {
+      var s = window.localStorage;
+      var e = document.getElementById("main");
+
+      if (e) {
+        e.scrollTop = s.a_scrollview;
+      } else {
+        console.log("i no fing aim-element");
+      }
+    }, 800);
+  }
+} //使用本地存储
+
+function save_loacal_stroage() {
+  if (!window.localStorage) {
+    alert("浏览器不支持localstorage");
+    return false;
+  } else {
+    var storage = window.localStorage;
+    var o = document.getElementById("outline");
+    let m = document.getElementById("main");
+    storage.setItem("outline_d", parseInt(getComputedStyle(o, null)["width"]));
+    storage.setItem("a_scrollview", m.scrollTop.toFixed(2));
+  }
+} //保存本地存储
+
+function goto_aim_on_page(e) {
+  document
+    .querySelector(
+      ".category-box[data-aim-id = " + "'" + e.dataset.pointId + "'" + "]"
+    )
+    .scrollIntoView(true); //实现页内跳转
+} //实现页内跳转

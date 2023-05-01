@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth; /*页内标签跳转，滚动条丝滑滚动*/
+  -webkit-overflow-scrolling: touch; /*解决IOS设备局部滚动不顺畅(粘手)*/
 }
 
 body {
