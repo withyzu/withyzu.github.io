@@ -15,7 +15,6 @@
     ),
     #eef8f6;
 }
-
 /* #region  动画*/
 @keyframes bgAnimation {
   0% {
@@ -372,7 +371,7 @@
   text-indent: calc(2 * var(--ele-gap));
 }
 
-#clicked_note {
+.clicked_note {
   margin: 0 var(--ele-gap);
 
   font-size: 1rem;

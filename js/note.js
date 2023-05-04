@@ -1,52 +1,63 @@
-var boot_url = "/boot/note.boot.json";
 window.onload = () => {
+  var boot_url = "/boot/note.boot.json";
   load_ini_content(boot_url);
-};
+  // use_loacal_stroage();
+}; //当html加载完成
+
+// window.onbeforeunload = () => {
+//   save_loacal_stroage();
+// }; //当窗口关闭
 
 // window.addEventListener("resize", debounce(reset_js_style, 200), false); //当设备屏幕变化，令布局适配设备;
 
-function option_onclick(e) {
-  e_id = e.dataset.id;
+async function option_onclick(e) {
+  let ntbkId = e.dataset.ntbkId;
   var h1 = document.querySelector("#combobox > h1");
-  h1.textContent = e.textContent; //更换 h1 文本内容
   var note_list = document.getElementById("note-list");
-  note_list.setAttribute("data-id", e_id); //设置 note-list 的 data-id
-  note_list.innerHTML = "";
 
-  var url = e_id + "/" + e_id + ".json";
-  load_note_list(url);
+  h1.textContent = e.textContent; //更换 h1 文本内容
+  note_list.dataset.ntbkId = ntbkId;
+  await load_note_list(ntbkId + "/" + ntbkId + ".json");
+  let ntId = document.querySelector("#note-list .note:nth-of-type(1)").dataset
+    .ntId;
+  await load_note_content(ntbkId + "/" + ntId + ".md");
 
-  if (document.querySelector(".option.option-checked")) {
-    let p3 = document.querySelector(".option.option-checked");
-    // console.log(p3);
-    p3.classList.remove("option-checked");
-  } //是否存在 已打开笔记本 option的样式
-
-  // console.log(p.dataset.id);
-  var p1 = document.querySelector(
-    '.option[data-id="' + note_list.dataset.id + '"]'
-  );
-  p1.classList.add("option-checked"); //已打开笔记本 option的样式
-} //option 点击事件 向note-list添加内容
+  let tc = document.querySelector(".option-checked");
+  if (tc) tc.classList.remove("option-checked");
+  e.classList.add("option-checked"); //已打开笔记本 option的样式
+} //option点击事件
+//向note - list添加内容
 
 function note_onclick(e) {
-  if (document.getElementById("clicked_note")) {
-    var e3 = document.getElementById("clicked_note");
-    e3.removeAttribute("id");
-  }
-  e.setAttribute("id", "clicked_note");
+  let tc = document.querySelector(".clicked_note");
+  if (tc) tc.classList.remove("clicked_note");
+  e.classList.add("clicked_note");
 
-  var e1 = document.getElementById("note-list");
-  document.getElementById("content").innerHTML = "";
+  var a = document.getElementById("note-list").dataset.ntbkId;
+  load_note_content(a + "/" + e.dataset.ntId + ".md");
+} //Note 点击事件
+//向main添加内容
 
-  load_note_content(e1.dataset.id + "/" + e.dataset.id + ".md");
-  // var c = document.querySelector("#outline");
-  // if (document.documentElement.clientWidth < 600) {
-  //   if (getComputedStyle(c, null)["left"] != "-210px") {
-  //     c.style.left = "-210px";
-  //   }
-  // }
-} //Note 点击事件 main添加内容
+async function load_note_content(url) {
+  let response = await fetch(url);
+  let md_str = await response.text();
+  let content = md_str.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""); //从文件开头删除最常见的零宽度字符,为marked做准备
+  let c = document.getElementById("content");
+  var fileName = url.replace(/(.*\/)*([^.]+).*/gi, "$2"); //获取ntId
+  var n = document.querySelector('.note[data-nt-id="' + fileName + '"]');
+
+  document.querySelector("#content-title > h1").textContent = n.textContent;
+  document.querySelector("#content-title > span").textContent =
+    n.dataset.ntDate;
+  marked.setOptions({
+    highlight: function (code) {
+      return hljs.highlightAuto(code).value;
+    }, //hljs.function用法: https://highlightjs.readthedocs.io/en/latest/api.html#highlightauto
+  });
+  marked.use(customHeadingId());
+  c.innerHTML = "";
+  c.innerHTML = marked.parse(content);
+} //将md转为内容
 
 async function load_notebook_list(json) {
   var box = document.getElementById("combobox");
@@ -65,87 +76,64 @@ async function load_notebook_list(json) {
   json.forEach((item) => {
     var e = document.createElement("div");
     e.setAttribute("class", "option");
-    e.setAttribute("data-id", item.id);
+    e.dataset.ntbkId = item.id;
     e.setAttribute("onclick", "option_onclick(this)");
     e.appendChild(document.createTextNode(item.name));
     options.appendChild(e);
   });
+
+  let tc = document.querySelector(".option-checked");
+  if (tc) tc.classList.remove("option-checked");
+  document
+    .querySelector(".option:nth-of-type(1)")
+    .classList.add("option-checked");
 } //加载笔记本列表
 
 async function load_note_list(url) {
   let response = await fetch(url);
   let note_list = await response.json();
-
-  var p = document.getElementById("note-list");
+  let n = document.getElementById("note-list");
+  n.innerHTML = "";
 
   note_list.forEach((item) => {
     var e1 = document.createElement("span");
     e1.setAttribute("class", "note");
-    e1.setAttribute("data-id", item.id);
+    e1.dataset.ntId = item.id;
     e1.setAttribute("onclick", "note_onclick(this)");
     e1.appendChild(document.createTextNode(item.name));
-    e1.setAttribute("data-data", item.data);
-    p.appendChild(e1);
+    e1.dataset.ntDate = item.date;
+    n.appendChild(e1);
   });
+  let e2 = document.createElement("div");
+  n.appendChild(e2);
 
-  var e2 = document.createElement("div");
-  p.appendChild(e2);
-
-  if (document.getElementById("clicked_note")) {
-    var e13 = document.getElementById("clicked_note");
-    e13.removeAttribute("id");
-  }
-  var e11 = document.querySelector("#note-list span:nth-of-type(1)");
-  e11.setAttribute("id", "clicked_note"); //默认 notelist 第一个 span 为 clicked note样式
+  let tc = document.querySelector(".clicked_note");
+  if (tc) tc.classList.remove("clicked_note");
+  document
+    .querySelector("#note-list span:nth-of-type(1)")
+    .classList.add("clicked_note");
 } //加载笔记目录
-
-async function load_note_content(url) {
-  document.getElementById("content").innerHTML = "";
-
-  var fileName = url.replace(/(.*\/)*([^.]+).*/gi, "$2");
-  var p1 = document.querySelector('.note[data-id="' + fileName + '"]');
-  document.querySelector("#content-title > h1 ").textContent = p1.textContent;
-  document.querySelector("#content-title > span ").textContent =
-    p1.dataset.data;
-
-  let response = await fetch(url);
-  let md_str = await response.text();
-  let content = md_str.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""); //从文件开头删除最常见的零宽度字符
-
-  marked.setOptions({
-    highlight: function (code) {
-      return hljs.highlightAuto(code).value;
-    }, //hljs.function用法: https://highlightjs.readthedocs.io/en/latest/api.html#highlightauto
-  });
-
-  marked.use(customHeadingId());
-  document.getElementById("content").innerHTML = marked.parse(content);
-} //将md转为内容
 
 async function load_ini_content(boot_url) {
   let response = await fetch(boot_url);
   let json = await response.json();
+
   //加载笔记本列表
   await load_notebook_list(json);
   var op = document.querySelector(".option");
   var h1 = document.querySelector("#combobox h1");
   h1.textContent = op.textContent;
-  var note_list = document.getElementById("note-list");
-  note_list.setAttribute("data-id", op.dataset.id); //设置 note-list 的 data-id
+  let nl = document.getElementById("note-list");
+  let ntbkId = op.dataset.ntbkId;
+  nl.dataset.ntbkId = ntbkId;
+
   //加载笔记列表
-  var url = op.dataset.id + "/" + op.dataset.id + ".json";
-  await load_note_list(url);
+  await load_note_list(ntbkId + "/" + ntbkId + ".json");
 
   //加载笔记内容
-  var e2 = document.querySelector("#note-list .note:nth-of-type(1)");
-  await load_note_content(op.dataset.id + "/" + e2.dataset.id + ".md");
-
-  if (!document.querySelector(".option.option-checked")) {
-    var p1 = document.querySelector(
-      '.option[data-id="' + note_list.dataset.id + '"]'
-    );
-    p1.classList.add("option-checked");
-  } //已打开笔记本 option的样式
+  let ntId = document.querySelector("#note-list .note:nth-of-type(1)").dataset
+    .ntId;
+  await load_note_content(ntbkId + "/" + ntId + ".md");
 } // 加载初始内容
 
 function combobox_onclick() {
@@ -167,39 +155,88 @@ function combobox_onclick() {
   }
 } //ComboBox 点击事件
 
-function debounce(operate, delay) {
-  let data = null;
-  let datar = null;
-  let newTime = null;
-  function task() {
-    newTime = +new Date();
-    if (newTime - data < delay) {
-      datar = setTimeout(task, delay);
-    } else {
-      operate();
-      datar = null;
-    }
-    data = newTime;
-  }
-  return function () {
-    data = +new Date();
-    if (!datar) {
-      datar = setTimeout(task, delay);
-    }
-  };
-} // 防抖;
+// function debounce(operate, delay) {
+//   let data = null;
+//   let datar = null;
+//   let newTime = null;
+//   function task() {
+//     newTime = +new Date();
+//     if (newTime - data < delay) {
+//       datar = setTimeout(task, delay);
+//     } else {
+//       operate();
+//       datar = null;
+//     }
+//     data = newTime;
+//   }
+//   return function () {
+//     data = +new Date();
+//     if (!datar) {
+//       datar = setTimeout(task, delay);
+//     }
+//   };
+// } // 防抖;
 
-function reset_js_style() {
-  var c = document.getElementById("outline");
-  var o = document.getElementById("options");
-  var os = document.getElementById("options_close");
-  var cc = document.getElementById("outline-close");
+// function reset_js_style() {
+//   var c = document.getElementById("outline");
+//   var o = document.getElementById("options");
+//   var os = document.getElementById("options_close");
+//   var cc = document.getElementById("outline-close");
 
-  c.style = "";
-  d.style = "";
-  o.style = "";
-  os.style = "";
-  cc.style = "";
+//   c.style = "";
+//   d.style = "";
+//   o.style = "";
+//   os.style = "";
+//   cc.style = "";
 
-  o.style.opacity = "0";
-} //令布局适配设备
+//   o.style.opacity = "0";
+// } //令布局适配设备
+
+// function use_loacal_stroage() {
+//   if (!window.localStorage) {
+//     alert("浏览器不支持localstorage");
+//     return false;
+//   } else {
+//     // var s = window.localStorage;
+//     // outline_display(); //控制outline display
+//     last_scrollview(); //自动跳转到上次的位置
+//   }
+
+//   function outline_display() {
+//     if (document.documentElement.clientWidth > 600) {
+//       if (s.outline_d <= 0) {
+//         outline_display_onclick();
+//       }
+//     } else {
+//       if (s.outline_d > 0) {
+//         outline_display_onclick();
+//       }
+//     }
+//   }
+
+//   function last_scrollview() {
+//     window.setTimeout(() => {
+//       var s = window.localStorage;
+//       var e = document.getElementById("note-content");
+
+//       if (e) {
+//         e.scrollTop = s.a_scrollview;
+//       } else {
+//         console.log("i no fing aim-element");
+//       }
+//     }, 800);
+//   }
+// } //使用本地存储 stroage
+
+// function save_loacal_stroage() {
+//   if (!window.localStorage) {
+//     alert("浏览器不支持localstorage");
+//     return false;
+//   } else {
+//     var storage = window.localStorage;
+//     var o = document.getElementById("outline");
+//     let m = document.getElementById("main");
+//     storage.setItem("outline_d", parseInt(getComputedStyle(o, null)["width"]));
+//     storage.setItem("a_scrollview", m.scrollTop.toFixed(2));
+//   }
+// } //保存本地存储 stroage
