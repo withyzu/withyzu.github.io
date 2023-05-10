@@ -1,4 +1,10 @@
 :root {
+  --web-header-color: #49a1ffde;
+  --web-color: #eef8f6;
+  --main-bg: #eee;
+
+  --border-radius: 6px;
+
   --main-bg: repeating-linear-gradient(
       0deg,
       #caebfd,
@@ -116,7 +122,6 @@
   background: var(--main-bg);
   padding: var(--ele-gap) 2.5rem 4px 2.5rem;
   border-radius: var(--ele-gap);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 #content-title > h1 {
@@ -157,7 +162,6 @@
   position: relative;
   border-radius: var(--ele-gap);
   padding: var(--ele-gap);
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
   margin: var(--ele-gap) auto;
   background: var(--main-bg);
 
@@ -174,7 +178,6 @@
   width: 100%;
   line-height: var(--header-height);
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px;
   border-radius: var(--ele-gap);
   margin: var(--ele-gap) 0 0 0;
   background: var(--main-bg);
@@ -232,8 +235,7 @@
 
 #options {
   position: fixed;
-  top: calc(var(--header-height) + var(--ele-gap) * 2 + 2.5rem);
-  left: 1rem;
+  transform: translate(var(--ele-gap), calc(var(--ele-gap) * 2));
   height: 0rem;
   max-height: calc(100% - var(--header-height) - var(--ele-gap) * 4 - 2.5rem);
   width: var(--outline-width);
@@ -674,10 +676,8 @@
 #content img {
   width: 100%;
   max-width: 600px;
-  border-radius: var(--ele-gap);
+  border-radius: 4px;
   display: block;
-  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
-    rgb(60 64 67 / 15%) 0px 1px 3px 1px;
 }
 
 /*img*/
@@ -722,8 +722,7 @@
 /* #region 适配 */
 @media only screen and (max-width: 600px) {
   #options {
-    left: 0;
-    right: 0;
+    transform: translate(var(--ele-gap), calc(var(--ele-gap) * 2));
     margin: auto;
   }
 
