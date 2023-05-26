@@ -72,27 +72,27 @@
             "name": "文字相关",
             "website": [
                 {
-                    "href": "zisea.com",
+                    "href": "http://rendao.com/",
                     "name": "zisea",
                     "introduc": "方便查询生僻字、繁体字。"
                 },
                 {
-                    "href": "cheonhyeong.com",
+                    "href": "http://cheonhyeong.com/",
                     "name": "cheonhyeong",
                     "introduc": "免费的天珩全字庫。"
                 },
                 {
-                    "href": "ocr.gj.cool",
+                    "href": "https://ocr.gj.cool/",
                     "name": "gj-cool",
                     "introduc": "中文古籍OCR、自动标点、文言文翻译。"
                 },
                 {
-                    "href": "name.vurls.cn",
+                    "href": "https://name.vurls.cn/",
                     "name": "name-vurls",
                     "introduc": "姓名生僻字处理平台主要致力于解决姓名生僻字的社会应用问题。"
                 },
                 {
-                    "href": "http: //www.guoxuedashi.net/",
+                    "href": "http://www.guoxuedashi.net/",
                     "name": "guoxuedashi",
                     "introduc": "古籍书目可查约55万种古籍;部件查字可查20万个汉字，支持Unicode的CJK扩展A、B、C、D、E区;书法字典累计收集1.1万字，115万个书法图片"
                 }
