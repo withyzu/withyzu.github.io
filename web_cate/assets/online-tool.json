@@ -4,7 +4,7 @@
             "name": "矢量图制作",
             "website": [
                 {
-                    "href": "https://vectr.com/",
+                    "domain": "vectr.com",
                     "name": "Vectr",
                     "introduc": "免费、在线的矢量图形编辑器。"
                 }
@@ -15,29 +15,29 @@
             "name": "图片处理",
             "website": [
                 {
-                    "href": "https://www.remove.bg/zh",
+                    "domain": "remove.bg/zh",
                     "name": "remove",
                     "introduc": "图片背景消除、全自动且免费。建议有时间的话就用用PS。"
                 },
                 {
-                    "href": "https://www.iloveimg.com/",
+                    "domain": "iloveimg.com",
                     "name": "Iloveimg",
                     "introduc": "可批量编辑图片的所有工具,你的在线图片编辑器就在这里,而且永远免费！💗💗💗"
                 },
                 {
-                    "href": "https://tinypng.com/",
+                    "domain": "tinypng.com",
                     "name": "TinyPNG",
                     "introduc": "TinyPNG使用智能有损压缩技术来减少您的WEBP, JPEG和PNG文件的文件大小。通过选择性地减少图像中的颜色数量，存储数据所需的字节更少。这种效果几乎是看不见的，但它在文件大小上有很大的不同!"
                 },
                 {
-                    "href": "https://photokit.com/?lang=zh",
+                    "domain": "photokit.com",
                     "name": "photokit",
                     "introduc": "PhotoKit集成了强大的在线图片编辑器，支持一键抠图、智能笔刷、等修图操作。拥有免费正版高清图片素材库拥有超过2.2百万张优质照片、插图和矢量图素材。"
                 },
                 {
-                    "href": "https://zh.vectormagic.com/",
+                    "domain": "vectormagic.com",
                     "name": "vector-magic",
-                    "introduc": "轻轻松松 把 JPG、PNG、GIF 文件 转换成 PDF、SVG、EPS 矢量图像"
+                    "introduc": "轻轻松松 把 JPG、PNG、GIF 文件 转换成 PDF、SVG、EPS 矢量图像。"
                 }
             ]
         },
@@ -46,22 +46,22 @@
             "name": "格式转换",
             "website": [
                 {
-                    "href": "https://convertio.co/zh",
+                    "domain": "convertio.co/zh",
                     "name": "Convertio",
                     "introduc": "我们支持超过 300 种不同的文件格式间超过 25600 种不同的转换方式。数量全面超越其他任何转换器。"
                 },
                 {
-                    "href": "https://www.lrccon.com/convert.php",
+                    "domain": "lrccon.com",
                     "name": "lrccon",
                     "introduc": "在线歌词字幕转换支持LRC、SRT、UTF、KSC、SSA、ASS、VTT、SMI、SNC、TXT格式之间的互转。"
                 },
                 {
-                    "href": "https://jianwai.youdao.com",
+                    "domain": "jianwai.youdao.com",
                     "name": "网易见外工作台",
                     "introduc": "视频翻译、视频转写、字幕翻译、文档翻译、语音翻译、语音转写、会议同传、图片翻译。"
                 },
                 {
-                    "href": "https://products.aspose.app",
+                    "domain": "aspose.app/zh",
                     "name": "ASPOSE",
                     "introduc": "在线文件处理PDF, Word, Excel, PowerPoint, Visio，项目，OneNote, OpenOffice, CAD, 3D格式。"
                 }
@@ -72,27 +72,27 @@
             "name": "文字相关",
             "website": [
                 {
-                    "href": "http://rendao.com/",
+                    "domain": "http://rendao.com",
                     "name": "zisea",
                     "introduc": "方便查询生僻字、繁体字。"
                 },
                 {
-                    "href": "http://cheonhyeong.com/",
+                    "domain": "http://cheonhyeong.com",
                     "name": "cheonhyeong",
                     "introduc": "免费的天珩全字庫。"
                 },
                 {
-                    "href": "https://ocr.gj.cool/",
+                    "domain": "gj.cool",
                     "name": "gj-cool",
                     "introduc": "中文古籍OCR、自动标点、文言文翻译。"
                 },
                 {
-                    "href": "https://name.vurls.cn/",
+                    "domain": "name.vurls.cn",
                     "name": "name-vurls",
                     "introduc": "姓名生僻字处理平台主要致力于解决姓名生僻字的社会应用问题。"
                 },
                 {
-                    "href": "http://www.guoxuedashi.net/",
+                    "domain": "http://guoxuedashi.net",
                     "name": "guoxuedashi",
                     "introduc": "古籍书目可查约55万种古籍;部件查字可查20万个汉字，支持Unicode的CJK扩展A、B、C、D、E区;书法字典累计收集1.1万字，115万个书法图片"
                 }
@@ -103,7 +103,7 @@
             "name": "其他",
             "website": [
                 {
-                    "href": "https://www.convertworld.com/",
+                    "domain": "convertworld.com",
                     "name": "convertworld",
                     "introduc": "单位换算"
                 }

@@ -46,13 +46,22 @@ async function load_MainContent(json) {
       var lb_intro = document.createElement("p");
       lb_img.setAttribute("alt", site.name);
 
+      //图片加载
       if (!(site.name == "" || site.name == null || site.name == undefined)) {
         lb_img.dataset.src = "assets/img/" + site.name + ".png";
       } else {
         lb_img.src = "assets/img/" + "here-is-no-img" + ".png";
       }
       lb_img.classList.add("lazyload");
-      lb_a.href = site.href; //加载href
+
+      //href, introduction加载
+      var d = site.domain;
+      reg = eval("/http/ig");
+      if (site.domain.match(reg)) {
+        lb_a.href = d;
+      } else {
+        lb_a.href = "https://" + site.domain;
+      }
       lb_intro.textContent = site.introduc;
 
       lb_a.appendChild(lb_img);
