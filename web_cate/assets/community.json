@@ -16,7 +16,7 @@
             {
                 "href": "https://www.udongman.cn/",
                 "name": "udongman",
-                "introduc": "提供分享&学习分享原创作品，"
+                "introduc": "提供分享&学习分享原创作品。"
             },
             {
                 "href": "https://stackoverflow.com/",
@@ -26,7 +26,12 @@
             {
                 "href": "www.myminifactory.com",
                 "name": "myminifactory",
-                "introduc": "帮助创作者、设计师、3D扫描仪、制造商、画家、插画家和讲故事的人与志同道合的非凡人士分享他们非凡的创意内容,拥有自己的店铺"
+                "introduc": "帮助创作者、设计师、3D扫描仪、制造商、画家、插画家和讲故事的人与志同道合的非凡人士分享他们非凡的创意内容,拥有自己的店铺。"
+            },
+            {
+                "href": "nga.cn",
+                "name": "nga",
+                "introduc": "NGA是国内最专业的玩家社区，提供各类游戏评分社区，以及其他热门游戏玩家社区。"
             }
         ]
     }

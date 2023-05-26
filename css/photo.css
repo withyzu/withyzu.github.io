@@ -70,7 +70,8 @@
   right: calc(10% - var(--fix-icon-w-h) * 1.5);
   visibility: hidden;
   opacity: 0;
-  transition: opacity var(--transiton-double-time), right var(--transiton-double-time);
+  transition: opacity var(--transiton-double-time),
+    right var(--transiton-double-time);
   bottom: calc(100px - var(--fix-icon-w-h) * 0.5);
 }
 
