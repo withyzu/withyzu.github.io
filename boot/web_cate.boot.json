@@ -5,9 +5,9 @@
     "path": "assets/asset.json"
   },
   {
-    "id": "online-tool",
-    "name": "在线工具",
-    "path": "assets/online-tool.json"
+    "id": "good-tool",
+    "name": "实用工具",
+    "path": "assets/good-tool.json"
   },
   {
     "id": "community",

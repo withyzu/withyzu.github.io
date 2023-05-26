@@ -1,6 +1,6 @@
     [
         {
-            "id": "ot-icon-tool",
+            "id": "gt-icon-tool",
             "name": "矢量图制作",
             "website": [
                 {
@@ -11,7 +11,7 @@
             ]
         },
         {
-            "id": "ot-img-tool",
+            "id": "gt-img-tool",
             "name": "图片处理",
             "website": [
                 {
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "id": "ot-format-convert",
+            "id": "gt-format-convert",
             "name": "格式转换",
             "website": [
                 {
@@ -68,8 +68,8 @@
             ]
         },
         {
-            "id": "ot-word",
-            "name": "文字相关",
+            "id": "gt-word",
+            "name": "文字 OCR",
             "website": [
                 {
                     "domain": "http://rendao.com",
@@ -94,12 +94,17 @@
                 {
                     "domain": "http://guoxuedashi.net",
                     "name": "guoxuedashi",
-                    "introduc": "古籍书目可查约55万种古籍;部件查字可查20万个汉字，支持Unicode的CJK扩展A、B、C、D、E区;书法字典累计收集1.1万字，115万个书法图片"
+                    "introduc": "古籍书目可查约55万种古籍;部件查字可查20万个汉字，支持Unicode的CJK扩展A、B、C、D、E区;书法字典累计收集1.1万字，115万个书法图片。"
+                },
+                {
+                    "domain": "http://spf.cn/ocr",
+                    "name": "qianbai-ocr",
+                    "introduc": "千百OCR 体积小免安装免费绿色版。高效识别简体，繁体竖排，日文韩文俄文等多国文字，并额外优化繁体竖排文字的识别。快捷繁简转换。还能在识别后进行翻译，支持28种语言."
                 }
             ]
         },
         {
-            "id": "ot-other-tool",
+            "id": "gt-other-tool",
             "name": "其他",
             "website": [
                 {

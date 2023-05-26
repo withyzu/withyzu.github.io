@@ -63,6 +63,7 @@ async function load_MainContent(json) {
         lb_a.href = "https://" + site.domain;
       }
       lb_intro.textContent = site.introduc;
+      lb_a.setAttribute("target", "_blank");
 
       lb_a.appendChild(lb_img);
       l_box.appendChild(lb_a);
