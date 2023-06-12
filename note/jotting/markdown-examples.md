@@ -1,39 +1,46 @@
-# <center> Top {#top}
-# <center> [To Bottom](#bottom)
-# 一、标题 的 Styles
-> \# 一级标题  
-> \## 二级标题  
-> \### 三级标题  
-> \#### 四级标题  
-> \##### 五级标题  
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题      
-# 二、段落 的 Styles
->Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。    
->
->千万不要被「标记」、「语言」吓到，Markdown的语法十分简单，常用的标记符号不超过十个，用于日常写作记录绰绰有余，不到半小时就能完全掌握。
 
-Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。  
-千万不要被「标记」、「语言」吓到，Markdown的语法十分简单，常用的标记符号不超过十个，用于日常写作记录绰绰有余，不到半小时就能完全掌握。
+# 标题 & 段落 Styles
+什么是标题？什么是段落？ 
 
-# 三、表格 的 Styles
+## 标题
+标题（title，head），读音为：biāotí。是标明文章、作品等内容的简短语句，一般分为总标题、副标题、分标题。常言道：看书先看皮，看报先看题。标题可以使读者了解到文章的主要内容和主旨。<h2-p>
+
+### 标题的定义
+理论上来说标题应该注意准确美、鲜明美、简洁美、形式美、韵律等。过去写的标题，确实工整、优美，文学性强，21世纪的新闻标题更加口语化、标新立异的特点也很突出，而且不大讲究工整对称，引主副三标齐全也比较少见。总之，较准确表达了新闻事实，有一定的文学性，比较有吸引力。<h3-p>
+
+### 标题的分类
+总标题是文章总体内容的体现。常见的写法有：<h3-p> 
+* 揭示课题的实。
+* 交代内容范围。
+* 用判断句式。
+* 用形象化的语句。  <h3-p> 
+
+
+othe...<h3-p>
+## 段落
+段落，读音是duàn luò。<h2-p>  
+### 解释
+1. (文章、事情)根据内容划分成的部分。     
+2. (文章、事情)停顿或结束处。<h3-p>
+
+以上，就是标题I、II、III，以及段落的样式。
+
+
+# 表格 的 Styles
 > \|      ShotKey       |               US_en               |         CN_zh          |  
 > \| :----------------: | :-------------------------------: | :--------------------: |  
 > \|      Ctrl + S      |               Save                |          保存          |  
 > \|      Ctrl + B      |      Close the main sidebar       |       关闭主侧栏       |  
 > \| Ctrl + K，Ctrl + C | Comment the selected line of code | 对选择的代码行进行注释 |  
 > \| Ctrl + K，Ctrl + U |    Uncomment the selected line    | 对选择的代码行取消注释 |   
-
+> 
 |      ShotKey       |               US_en               |         CN_zh          |
 | :----------------: | :-------------------------------: | :--------------------: |
 |      Ctrl + S      |               Save                |          保存          |
 |      Ctrl + B      |      Close the main sidebar       |       关闭主侧栏       |
 | Ctrl + K，Ctrl + C | Comment the selected line of code | 对选择的代码行进行注释 |
 | Ctrl + K，Ctrl + U |    Uncomment the selected line    | 对选择的代码行取消注释 |
-# 四、图片、链接 的 Styles
+# 图片、链接 的 Styles
 > 简单的图片:  
 > \![alt img]\(https:\/\/w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg)  
   
@@ -47,9 +54,9 @@ Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地
  > 链接:  
  > \[这是一个链接]\(https:\/\/www\.example\.com\)    
 
-[这是一个链接](https://www.example.com)
+这是一个链接[这是一个链接](https://www.example.com)这是一个链接
 
-# 五、代码 的 Styles
+# 代码 的 Styles
 
 > \```json  
 > {     
@@ -118,7 +125,7 @@ function customHeadingId() {
   };
 }
 ```
-# 六、其他 的 Styles
+# 其他 的 Styles
 
 > \<p>这是一个普通的文本- \<b>这是一个加粗文本\</b>。\</p>   
 > \<em>强调文本\</em>   
@@ -155,5 +162,7 @@ K<sub>1</sub><br>
 X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
 18&ordm;C  &quot;  &apos;  
 
-# <center> [To Top](#top)       
-# <center> bottom {#bottom}
+##### <center> [To Bottom](#bottom)
+##### <center> Top {#top}
+###### <center> bottom {#bottom}
+###### <center> [To Top](#top)   

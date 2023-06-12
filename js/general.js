@@ -79,8 +79,12 @@ function outline_display_onclick() {
   } else {
     if (parseInt(getComputedStyle(o, null)["width"]) > 0) {
       o.style.width = "";
+      o.style.height = "";
       o.style.opacity = "";
       o.style.visibility = "";
+
+      o.style.left = "";
+      o.style.top = "";
 
       o_b.style.display = "";
       o_b.style.display = "";
@@ -88,9 +92,13 @@ function outline_display_onclick() {
         o_i.style.left = "";
       }
     } else {
-      o.style.width = "300px";
+      o.style.width = "var(--outline-width)";
+      o.style.height = "80%";
       o.style.opacity = "1";
       o.style.visibility = "visible";
+
+      o.style.left = "1rem";
+      o.style.top = "calc(var(--header-height) + var(--ele-gap) * 2)";
 
       o_b.style.display = "block";
       o_b.style.background = "#282c34a0";

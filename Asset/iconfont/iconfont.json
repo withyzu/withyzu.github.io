@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "836525",
+      "name": "external-link-square",
+      "font_class": "externallinksquare",
+      "unicode": "e6d8",
+      "unicode_decimal": 59096
+    },
+    {
       "icon_id": "34190685",
       "name": "下拉-copy",
       "font_class": "down_arrow",
@@ -13,32 +20,11 @@
       "unicode_decimal": 59551
     },
     {
-      "icon_id": "34170422",
-      "name": "空气清新-copy",
-      "font_class": "others",
-      "unicode": "e89e",
-      "unicode_decimal": 59550
-    },
-    {
-      "icon_id": "1445277",
-      "name": "shovel",
-      "font_class": "onlinetools",
-      "unicode": "e89d",
-      "unicode_decimal": 59549
-    },
-    {
       "icon_id": "4765745",
       "name": "up-circle",
       "font_class": "up-circle",
       "unicode": "e785",
       "unicode_decimal": 59269
-    },
-    {
-      "icon_id": "10139853",
-      "name": "outdoors-tree-valley",
-      "font_class": "tofind",
-      "unicode": "e698",
-      "unicode_decimal": 59032
     }
   ]
 }
