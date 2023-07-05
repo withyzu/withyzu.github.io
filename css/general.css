@@ -7,7 +7,7 @@
 }
 
 body {
-  background: url(/Asset/img/p9.png) no-repeat fixed center #ffffff;
+  /* background: url(/Asset/img/p9.png) no-repeat fixed center #ffffff; */
 
   -o-background-size: cover;
   -moz-background-size: cover;

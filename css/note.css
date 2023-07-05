@@ -1,9 +1,9 @@
 body {
-  background: var(--web-col-0);
+  background: var(--main-bg);
 }
 
 :root {
-  --table-border: 1px solid #ccccccc0;
+  --table-border: 1px solid #98989849;
   --border-radius: 6px;
   --web-family-1: "Chinese Quote", "Segoe UI", Roboto, RobotoNum, "PingFang SC",
     -apple-system, "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
@@ -23,11 +23,11 @@ body {
     -apple-system, "Microsoft YaHei", 华文细黑, 微软雅黑, "MicrosoftJhengHei",
     STHeiti, MingLiu;
 
-  --main-bg: #e9eae2;
-  --web-col-0: #fff;
+  --main-bg: #f5f5fa;
+  --web-col-0: #ffffff;
   --web-col-1: #687cb8;
   --fg-0: #687cb8;
-  --fg-1: #687cb880;
+  --fg-1: #687cb870;
 }
 
 /* #region  特定属性 */
@@ -55,6 +55,9 @@ body {
   text-overflow: ellipsis;
 } /*字符串 超出变成省略号*/
 
+#content h1,
+#content h2,
+#content h3,
 #combobox > h1,
 .options,
 .fix-i,
@@ -62,16 +65,19 @@ body {
   user-select: none;
 } /*不可选择*/
 
+/* #region  #options, #note-list, #content pre ,.div-table*/
 #options,
-#note-list {
+#note-list,
+#note-content,
+.div-table {
   overscroll-behavior: contain;
   -ms-scroll-chaining: contain;
 } /*让滚动嵌套时父滚动不触发*/
 
 #options::-webkit-scrollbar,
 #note-list::-webkit-scrollbar,
-#content blockquote::-webkit-scrollbar,
-#content pre::-webkit-scrollbar {
+#content pre::-webkit-scrollbar,
+.div-table::-webkit-scrollbar {
   display: block;
   height: 0.6rem;
   width: 0.6rem;
@@ -79,12 +85,14 @@ body {
 
 #options::-webkit-scrollbar-thumb,
 #note-list::-webkit-scrollbar-thumb,
-#content blockquote::-webkit-scrollbar-thumb,
-#content pre::-webkit-scrollbar-thumb {
-  background: var(--web-col-1);
+#content pre::-webkit-scrollbar-thumb,
+.div-table::-webkit-scrollbar-thumb {
+  background: #bac1ff3e;
   border-radius: 2px;
 }
+/* #endregion */
 
+/* #region  #note-content*/
 #note-content::-webkit-scrollbar-thumb {
   background-color: var(--web-col-1);
   border-radius: 2px;
@@ -98,6 +106,19 @@ body {
   width: 0.6rem;
   background-color: transparent;
 }
+/* #endregion */
+
+/* #region  blockquote*/
+#content blockquote::-webkit-scrollbar {
+  display: block;
+  height: 8px;
+  width: 8px;
+}
+#content blockquote::-webkit-scrollbar-thumb {
+  background: #a3a3a322;
+  border-radius: 2px;
+}
+/* #endregion */
 
 /* #endregion */
 
@@ -105,13 +126,12 @@ body {
 #main,
 #header,
 #outline {
-  box-shadow: rgba(0, 0, 0, 0.09) 2px 2px 3px;
-  outline: var(--table-border);
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px, rgba(0, 0, 0, 0.1) -1px -1px 2px;
+  background: var(--web-col-0);
 }
 
 #outline {
   border-radius: var(--border-radius);
-  background-color: var(--main-bg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -152,20 +172,21 @@ body {
   line-height: 2.5rem;
   color: var(--fg-0);
   text-align: center;
+  margin-top: 1rem;
 }
 
 #content-title > span {
   display: block;
   position: absolute;
   padding: 0 1rem;
-  left: 8px;
-  top: 8px;
+  left: 1rem;
+  top: 1rem;
   transform-origin: left top;
   transform: scale(70%);
 
-  font-size: 0.5rem;
-  height: 1.6rem;
-  line-height: 1.6rem;
+  font-size: 1rem;
+  height: 2rem;
+  line-height: 2rem;
   font-weight: 400;
   color: #767676;
   outline: 1px #767676 solid;
@@ -433,17 +454,20 @@ body {
 
 /* #region markdown style */
 /* #region 表格 */
-#content table {
-  overflow: hidden;
-  margin: var(--ele-gap) 0;
+.div-table {
+  overflow: auto;
+  width: 100%;
+  padding: 1px;
+} /*table 父元素*/
 
+#content table {
   border-collapse: separate;
   border-spacing: 0;
 }
 
 #content tbody tr:nth-child(even),
 #content table thead {
-  background: #f1f2ef;
+  background: #efefefaa;
 }
 
 #content tbody tr:nth-child(odd) {
@@ -452,8 +476,13 @@ body {
 
 #content thead tr th {
   font-size: 1rem;
+  font-weight: 500;
   line-height: 2.5rem;
   height: 2.5rem;
+  padding: 0px var(--ele-gap);
+  text-align: center;
+  color: #43443f;
+  font-family: var(--web-family-yahei);
 }
 
 #content tbody tr td {
@@ -462,12 +491,15 @@ body {
   line-height: 1.6rem;
   height: 1.6rem;
   padding: 0px var(--ele-gap);
+  text-align: left;
+  color: #43443f;
 }
 
 #content td,
 #content th {
   border-top: var(--table-border);
   border-left: var(--table-border);
+  white-space: nowrap;
 }
 
 #content tr:last-child td {
@@ -488,10 +520,10 @@ body {
   overflow-y: hidden;
 
   margin: var(--ele-gap) 0;
-  padding: var(--ele-gap);
+  padding: 1rem;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   border: 1px var(--main-bg) solid;
-  background-color: #f6f6f6aa;
+  background-color: #e6f0e8a0;
 }
 
 #content code {
@@ -503,7 +535,7 @@ body {
   font-size: 0.8rem;
   font-weight: 400;
 
-  width: auto;
+  width: max-content;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
@@ -526,41 +558,65 @@ body {
 /* #region 标题 段落 */
 #content p,
 #content ul,
-#content ol,
-#content h1,
-#content h2,
-#content h3 {
-  font-size: 16px;
+#content ol {
+  font-size: 1rem;
   font-family: cursive;
   width: 100%;
   font-weight: normal;
   color: #24251f;
+  text-indent: 0rem;
+  line-height: 200%;
+}
+
+#content h1,
+#content h2,
+#content h3 {
+  font-family: cursive;
+  width: max-content;
+  font-weight: normal;
+  color: #24251f;
+  z-index: 2;
+
+  mask: url(/Asset/img/11p11.png) 100% 100%;
+  -webkit-mask: url(/Asset/img/11p11.png) left / 100% 100% no-repeat;
+}
+
+#content h1::after,
+#content h2::after,
+#content h3::after {
+  content: "\00A0\00A0";
+  position: relative;
 }
 
 #content h1 {
-  margin-left: 0rem;
+  position: relative;
+  font-size: 1.6rem;
+  line-height: 200%;
+  font-weight: 700;
+  color: #ca4242;
 }
 
 #content h2 {
-  margin-left: 1rem;
+  font-size: 1.2rem;
+  line-height: 200%;
+  text-indent: 0rem;
+  font-weight: 700;
+  color: #3eaec7;
 }
 
 #content h3 {
-  margin-left: 2rem;
+  font-size: 1rem;
+  line-height: 200%;
+  text-indent: 0rem;
+  color: #3a93ef;
+  font-weight: 500;
 }
 
-#content h1 ~ p {
-  margin-left: 1rem;
+#content h3::before {
+  position: relative;
+  content: "✦ ";
+  color: #3a93ef;
 }
-
-#content h2 ~ *:has(h2-p) {
-  margin-left: 2rem;
-}
-
-#content h3 ~ *:has(h3-p) {
-  margin-left: 3rem;
-}
-
 /* #endregion */
 
 /* #region  链接 */
@@ -620,40 +676,39 @@ body {
 
 /* #region 块 */
 #content blockquote {
-  display: block;
-  height: auto;
-  width: auto;
-  max-width: max-content;
-  line-break: anywhere;
-  word-wrap: break-word;
-
-  border-radius: 4px;
-  margin: var(--ele-gap) 0px;
-  padding: var(--ele-gap) 0 0 var(--ele-gap);
-  quotes: "\201C""\201D""\2018""\2019";
-  transform: scale(100%);
-  transform-origin: left bottom;
-  background: linear-gradient(
-    135deg,
-    transparent var(--border-radius),
-    #dfe0d500 0
-  );
-}
-
-#content blockquote ::before {
-  content: "";
-  position: absolute;
-
-  top: 50%;
-  left: 0;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: var(--ele-gap) 0;
+  padding: 4px;
+  background-color: var(--main-bg);
 }
 
 #content blockquote p {
+  display: block;
   font-weight: 100;
   font-family: var(--web-family-consolas);
   text-decoration: none;
+  color: #322c289c;
+  line-height: 130%;
 
-  white-space: break-spaces;
+  text-align: left;
+  font-weight: 400;
+  width: max-content;
+
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  overflow-wrap: normal;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 #content blockquote * {
@@ -687,9 +742,9 @@ body {
 /* #endregion */
 
 /* #region  列表*/
-ul,
-ol {
-  padding: 0 1rem;
+#content ul,
+#content ol {
+  padding: 0em 1.5em;
 }
 /* #endregion */
 
