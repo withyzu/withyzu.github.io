@@ -63,13 +63,12 @@ body {
 } /*不可选择*/
 
 /* #region  #options, #note-list, #content pre ,.div-table*/
-#options,
+/* #options,
 #note-list,
 #note-content,
 .div-table {
-  overscroll-behavior: contain;
-  -ms-scroll-chaining: contain;
-} /*让滚动嵌套时父滚动不触发*/
+
+} 让滚动嵌套时父滚动不触发 */
 
 #options::-webkit-scrollbar,
 #note-list::-webkit-scrollbar,

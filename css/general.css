@@ -8,6 +8,9 @@
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-rendering: optimizeLegibility;
+
+  overscroll-behavior: contain;
+  -ms-scroll-chaining: contain; /* 让滚动嵌套时父滚动不触发 */
 }
 
 body {
