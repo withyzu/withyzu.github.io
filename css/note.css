@@ -787,9 +787,5 @@ body {
   #note-content {
     padding: 0;
   }
-
-  body {
-    -webkit-text-size-adjust: none;
-  }
 }
 /* #endregion */
