@@ -20,6 +20,11 @@ body {
 }
 
 :root {
+  --font-family-1: 华文楷体, 华文细黑, 华文行楷, 微软雅黑, 黑体,
+    Hiragino Sans GB, STXinwei, Consolas, STKaiti, STHeiti, STXingkai,
+    Microsoft YaHei, Helvetica, Hiragino Sans GB, STXinwei, Consolas, STKaiti,
+    STHeiti, STXingkai, Arial, sans-serif;
+
   --outline-width: 300px;
   --header-height: 3rem;
   --ele-gap: 0.5rem;
@@ -143,7 +148,7 @@ html {
   transform: translate(0, -50%);
 
   text-decoration: none;
-  font-family: cursive;
+  font-family: var(--font-family-1);
   font-size: 1.2rem;
   line-height: 2rem;
   height: 2rem;
