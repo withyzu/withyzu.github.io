@@ -5,9 +5,10 @@ body {
 :root {
   --table-border: 1px solid #98989849;
   --border-radius: 6px;
-  --web-family-1: "Chinese Quote", "Segoe UI", Roboto, RobotoNum, "PingFang SC",
-    -apple-system, "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
-    Helvetica, Arial, sans-serif;
+  --font-family-1: 华文楷体, 华文细黑, 华文行楷, 微软雅黑, 黑体,
+    Hiragino Sans GB, STXinwei, Consolas, STKaiti, STHeiti, STXingkai,
+    Microsoft YaHei, Helvetica, Hiragino Sans GB, STXinwei, Consolas, STKaiti,
+    STHeiti, STXingkai, Arial, sans-serif;
 
   --web-family-yahei: 微软雅黑, 黑体, Hiragino Sans GB, STXinwei, Consolas,
     -apple-system, STKaiti, STHeiti, STXingkai, Microsoft YaHei, Helvetica,
@@ -167,9 +168,9 @@ body {
 
 #content-title > h1 {
   display: block;
-  font-size: 1.6rem;
-  height: 2.5rem;
-  line-height: 2.5rem;
+  font-size: 2rem;
+  height: 3rem;
+  line-height: 3rem;
   color: var(--fg-0);
   text-align: center;
   margin-top: 1rem;
@@ -560,7 +561,7 @@ body {
 #content ul,
 #content ol {
   font-size: 1rem;
-  font-family: cursive;
+  font-family: var(--font-family-1);
   width: 100%;
   font-weight: normal;
   color: #24251f;
@@ -571,7 +572,7 @@ body {
 #content h1,
 #content h2,
 #content h3 {
-  font-family: cursive;
+  font-family: var(--font-family-1);
   width: max-content;
   font-weight: normal;
   color: #24251f;

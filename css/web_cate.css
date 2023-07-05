@@ -3,10 +3,6 @@
     Hiragino Sans GB, STXinwei, Consolas, STKaiti, STHeiti, STXingkai,
     Microsoft YaHei, Helvetica, Hiragino Sans GB, STXinwei, Consolas, STKaiti,
     STHeiti, STXingkai, Arial, sans-serif;
-  --font-family-2: 华文楷体, 华文细黑, 华文行楷, 微软雅黑, 黑体,
-    Hiragino Sans GB, STXinwei, Consolas, STKaiti, STHeiti, STXingkai,
-    Microsoft YaHei, Helvetica, Hiragino Sans GB, STXinwei, Consolas, STKaiti,
-    STHeiti, STXingkai, Arial, sans-serif;
 
   --border-radius: 4px;
 
@@ -232,7 +228,7 @@ body {
   display: block;
   font-size: 0.8rem;
   color: var(--web-col-1);
-  font-family: cursive;
+  font-family: var(--font-family-1);
   text-decoration: none;
   border: 0px;
 
@@ -244,7 +240,7 @@ body {
   font-size: 0.5rem;
   font-weight: 600;
   line-height: 1rem;
-  font-family: var(--font-family-2);
+  font-family: var(--font-family-1);
 
   margin: 0.5rem;
   text-decoration: none;
@@ -265,7 +261,7 @@ body {
   text-align: center;
   font-size: 1rem;
   font-weight: 700;
-  font-family: cursive;
+  font-family: var(--font-family-1);
 
   border-radius: var(--border-radius);
   background-color: var(--main-bg);
