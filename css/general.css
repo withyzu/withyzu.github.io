@@ -5,9 +5,9 @@
   scroll-behavior: smooth; /*页内标签跳转，滚动条丝滑滚动*/
   -webkit-overflow-scrolling: touch; /*解决IOS设备局部滚动不顺畅(粘手)*/
 
+  text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-feature-settings: "kern" 1;
 }
 
 body {
