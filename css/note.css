@@ -454,6 +454,7 @@ body {
   overflow: auto;
   width: 100%;
   padding: 1px;
+  margin: var(--ele-gap) 0;
 } /*table 父元素*/
 
 #content table {
