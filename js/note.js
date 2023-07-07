@@ -49,6 +49,11 @@ async function load_note_content(url) {
   document.querySelector("#content-title > h1").textContent = n.textContent;
   document.querySelector("#content-title > span").textContent =
     n.dataset.ntDate;
+
+  var load_animat = document.createElement("div");
+  load_animat.setAttribute("id", "load-animat");
+  document.querySelector("#main").appendChild(load_animat);
+
   marked.setOptions({
     highlight: function (code) {
       return hljs.highlightAuto(code).value;
@@ -57,6 +62,10 @@ async function load_note_content(url) {
   marked.use(customHeadingId());
   c.innerHTML = "";
   c.innerHTML = marked.parse(content);
+
+  setTimeout(() => {
+    load_animat.style.display = "none";
+  }, 500);
 } //将md转为内容
 
 async function load_notebook_list(json) {
