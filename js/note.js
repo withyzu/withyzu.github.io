@@ -39,6 +39,10 @@ function note_onclick(e) {
 //向main添加内容
 
 async function load_note_content(url) {
+  var load_animat = document.createElement("div");
+  load_animat.setAttribute("id", "load-animat");
+  document.querySelector("#main").appendChild(load_animat);
+
   let response = await fetch(url);
   let md_str = await response.text();
   let content = md_str.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, ""); //从文件开头删除最常见的零宽度字符,为marked做准备
@@ -49,10 +53,6 @@ async function load_note_content(url) {
   document.querySelector("#content-title > h1").textContent = n.textContent;
   document.querySelector("#content-title > span").textContent =
     n.dataset.ntDate;
-
-  var load_animat = document.createElement("div");
-  load_animat.setAttribute("id", "load-animat");
-  document.querySelector("#main").appendChild(load_animat);
 
   marked.setOptions({
     highlight: function (code) {
