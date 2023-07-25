@@ -1,22 +1,6 @@
 [
     {
-        "id": "o-cg-about",
-        "name": "CG教程、资源、插件",
-        "website": [
-            {
-                "domain": "iiicg.com",
-                "name": "画忆妙妙屋",
-                "introduc": "精品CG场景资源。"
-            },
-            {
-                "domain": "help.autodesk.com/view/ARNOL/CHS",
-                "name": "arnold",
-                "introduc": "Arnold帮助手册。"
-            }
-        ]
-    },
-    {
-        "id": "o-design-nav",
+        "id": "other-design-nav",
         "name": "设计导航",
         "website": [
             {
@@ -52,8 +36,19 @@
         ]
     },
     {
-        "id": "o-have-fun",
-        "name": "小游戏",
+        "id": "other-no-class",
+        "name": "浏览器插件商店",
+        "website": [
+            {
+                "domain": "chrome.zzzmh.cn",
+                "name": "极简插件",
+                "introduc": "极简插件网站是Chrome浏览器扩展插件商店的搬运工。 我们只严选有趣、实用、适合国内用户的Chrome扩展插件。"
+            }
+        ]
+    },
+    {
+        "id": "other-game",
+        "name": "game",
         "website": [
             {
                 "domain": "bezier.method.ac",
@@ -63,8 +58,71 @@
         ]
     },
     {
-        "id": "o-no-free",
-        "name": "免费的午餐",
+        "id": "other-community",
+        "name": "社区",
+        "website": [
+            {
+                "domain": "pixiv.net",
+                "name": "pixiv",
+                "introduc": "pixiv（简称p站）是一个日本的一个以插图、漫画和小说、 艺术为中心的社交网络服务里的虚拟社区网站，二次元小伙伴的最爱。"
+            },
+            {
+                "domain": "cgtrader.com",
+                "name": "cgtrader",
+                "introduc": "CGTrader是世界上最大的可授权库存和定制3D模型的来源。自助服务的CGTrader市场展示了160万个3D模型，包括一个拥有708万用户的托管社区。"
+            },
+            {
+                "domain": "udongman.cn",
+                "name": "udongman",
+                "introduc": "提供分享&学习分享原创作品。"
+            },
+            {
+                "domain": "stackoverflow.com",
+                "name": "stackoverflow",
+                "introduc": "Empowering the world to develop technology through collective knowledge."
+            },
+            {
+                "domain": "myminifactory.com",
+                "name": "myminifactory",
+                "introduc": "帮助创作者、设计师、3D扫描仪、制造商、画家、插画家和讲故事的人与志同道合的非凡人士分享他们非凡的创意内容,拥有自己的店铺。"
+            },
+            {
+                "domain": "nga.cn",
+                "name": "nga",
+                "introduc": "NGA是国内最专业的玩家社区，提供各类游戏评分社区，以及其他热门游戏玩家社区。"
+            }
+        ]
+    },
+    {
+        "id": "other-desk-beautify",
+        "name": "桌面美化",
+        "website": [
+            {
+                "domain": "zhutix.com",
+                "name": "zhutix",
+                "introduc": "致美化 是 国内最大的桌面美化资源分享平台。创办于2014年，是一个集学习交流、作品展示、资源共享的大型视觉美化类网站平台。"
+            }
+        ]
+    },
+    {
+        "id": "other-vpn",
+        "name": "vpn",
+        "website": [
+            {
+                "domain": "knmvd.com",
+                "name": "快柠檬vpn",
+                "introduc": "顷刻加载，快如闪电。专为中国用户优化加速的优质网络中继服务商。"
+            },
+            {
+                "domain": "chainvpn.top",
+                "name": "chainvpn",
+                "introduc": "全网最划算、最稳定、最具性价比的梯子,全面支持ChatGPT,采用目前最稳定V2Ray协议,双向XTLS加密,上网稳定 | 隐蔽 | 安全"
+            }
+        ]
+    },
+    {
+        "id": "other-no-free",
+        "name": "no free lunch",
         "website": [
             {
                 "domain": "todaybing.com",

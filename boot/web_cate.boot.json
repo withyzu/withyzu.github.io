@@ -1,22 +1,22 @@
 [
   {
-    "id": "asset",
-    "name": "资源",
-    "path": "assets/asset.json"
+    "id": "resource",
+    "name": "Resource",
+    "path": "assets/resource.json"
   },
   {
-    "id": "good-tool",
-    "name": "实用工具",
-    "path": "assets/good-tool.json"
+    "id": "tool",
+    "name": "Tool",
+    "path": "assets/tool.json"
   },
   {
-    "id": "community",
-    "name": "社区",
-    "path": "assets/community.json"
+    "id": "cg",
+    "name": "CG",
+    "path": "assets/cg.json"
   },
   {
     "id": "other",
-    "name": "未分类",
+    "name": "Other",
     "path": "assets/other.json"
   }
 ]

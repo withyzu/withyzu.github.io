@@ -100,7 +100,7 @@ body {
 #note-list::-webkit-scrollbar-thumb,
 #content pre::-webkit-scrollbar-thumb,
 .div-table::-webkit-scrollbar-thumb {
-  background: #bac1ff3e;
+  background: #99dd943e;
   border-radius: 2px;
 }
 /* #endregion */
@@ -128,7 +128,7 @@ body {
   width: 8px;
 }
 #content blockquote::-webkit-scrollbar-thumb {
-  background: #a3a3a322;
+  background-color: #a398fa4a;
   border-radius: 2px;
 }
 /* #endregion */
@@ -755,7 +755,6 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   margin: var(--ele-gap) 0;
-  padding: 4px;
   background-color: var(--main-bg);
 }
 
@@ -766,6 +765,8 @@ body {
   text-decoration: none;
   color: #322c289c;
   line-height: 130%;
+  padding: 0.6rem 1rem;
+  border-left: 0.6rem #908e8a1d solid;
 
   text-align: left;
   font-weight: 400;

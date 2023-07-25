@@ -1,0 +1,45 @@
+[
+    {
+        "id": "cg-all",
+        "name": "About Everything",
+        "website": [
+            {
+                "domain": "iiicg.com",
+                "name": "画忆妙妙屋",
+                "introduc": "精品CG场景资源。"
+            },
+            {
+                "domain": "gfxcamp.com",
+                "name": "龋齿一号GFXCamp",
+                "introduc": "网站素材分为免费素材和付费素材两部分"
+            }
+        ]
+    },
+    {
+        "id": "cg-maya",
+        "name": " Maya",
+        "website": [
+            {
+                "domain": "help.autodesk.com/view/ARNOL/CHS",
+                "name": "arnold",
+                "introduc": "Arnold帮助手册。"
+            }
+        ]
+    },
+    {
+        "id": "cg-maya-plugin",
+        "name": " Maya插件",
+        "website": [
+            {
+                "domain": "withyzu.lanzouq.com/iA7jU13hj8hg",
+                "name": "fspy_for_maya",
+                "introduc": "摄像机反求插件fspy"
+            },
+            {
+                "domain": "withyzu.lanzouq.com/igN4g13hih0h",
+                "name": "gs_toolbox_for_maya",
+                "introduc": "硬表面插件：GS Toolbox v1.1.6 "
+            }
+        ]
+    }
+]

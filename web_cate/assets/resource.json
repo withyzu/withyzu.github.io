@@ -1,7 +1,7 @@
 [
     {
-        "id": "a-app",
-        "name": "应用程序",
+        "id": "res-app",
+        "name": "App",
         "website": [
             {
                 "domain": "softonic.com",
@@ -56,8 +56,8 @@
         ]
     },
     {
-        "id": "a-img",
-        "name": "图片、壁纸、Gif动图",
+        "id": "res-img",
+        "name": "Img / Gif / Wallpaper",
         "website": [
             {
                 "domain": "pexels.com",
@@ -107,8 +107,8 @@
         ]
     },
     {
-        "id": "a-font",
-        "name": "可商用字体",
+        "id": "res-font",
+        "name": "Font",
         "website": [
             {
                 "domain": "100font.com",
@@ -123,8 +123,8 @@
         ]
     },
     {
-        "id": "a-icon",
-        "name": "矢量图形",
+        "id": "res-iconfont",
+        "name": "icon",
         "website": [
             {
                 "domain": "iconfont.cn",
@@ -144,8 +144,8 @@
         ]
     },
     {
-        "id": "a-3d-assets",
-        "name": "3D 资产",
+        "id": "res-3d-assets",
+        "name": "3D Asset",
         "website": [
             {
                 "domain": "polyhaven.com",
@@ -180,24 +180,18 @@
         ]
     },
     {
-        "id": "a-music",
-        "name": "音乐",
+        "id": "res-music",
+        "name": "Music",
         "website": [
             {
                 "domain": "luoo.org",
                 "name": "luoow",
                 "introduc": "等待不是为了你能回来，而是找个借口不离开！"
-            }
-        ]
-    },
-    {
-        "id": "a-desk-beautify",
-        "name": "桌面美化",
-        "website": [
+            },
             {
-                "domain": "zhutix.com",
-                "name": "zhutix",
-                "introduc": "致美化 是 国内最大的桌面美化资源分享平台。创办于2014年，是一个集学习交流、作品展示、资源共享的大型视觉美化类网站平台。"
+                "domain": "tool.liumingye.cn/music",
+                "name": "myfreemp3",
+                "introduc": "一个界面简洁的音乐下载软件，不用登录就能下载，可以直接下载到桌面或者指定文件夹"
             }
         ]
     }
