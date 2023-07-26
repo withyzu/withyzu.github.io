@@ -1,18 +1,10 @@
 [
     {
         "name": "网站导航",
-        "url": "/web_cate"
+        "url": "/"
     },
     {
         "name": "我的笔记",
         "url": "/note"
-    },
-    {
-        "name": "About",
-        "url": "/"
-    },
-    {
-        "name": "图片",
-        "url": "/photo"
     }
 ]

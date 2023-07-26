@@ -1,5 +1,5 @@
 window.onload = () => {
-  var url = "/boot/web_cate.boot.json";
+  var url = "/boot/site_map.boot.json";
   load_webcat_boot(url);
   // load_webcat_boot(url).catch ((e) => {
   //   console.log("err: " + e.message);
@@ -48,9 +48,9 @@ async function load_MainContent(json) {
 
       //图片加载
       if (!(site.name == "" || site.name == null || site.name == undefined)) {
-        lb_img.dataset.src = "assets/img/" + site.name + ".png";
+        lb_img.dataset.src = "asset/site_map/img/" + site.name + ".png";
       } else {
-        lb_img.src = "assets/img/" + "here-is-no-img" + ".png";
+        lb_img.src = "asset/site_map/img/" + "here-is-no-img" + ".png";
       }
       lb_img.classList.add("lazyload");
 

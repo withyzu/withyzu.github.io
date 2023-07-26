@@ -2,21 +2,21 @@
   {
     "id": "resource",
     "name": "Resource",
-    "path": "assets/resource.json"
+    "path": "asset/site_map/boot/resource.json"
   },
   {
     "id": "tool",
     "name": "Tool",
-    "path": "assets/tool.json"
+    "path": "asset/site_map/boot/tool.json"
   },
   {
     "id": "cg",
     "name": "CG",
-    "path": "assets/cg.json"
+    "path": "asset/site_map/boot/cg.json"
   },
   {
     "id": "other",
     "name": "Other",
-    "path": "assets/other.json"
+    "path": "asset/site_map/boot/other.json"
   }
 ]
