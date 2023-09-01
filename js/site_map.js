@@ -50,7 +50,7 @@ async function load_MainContent(json) {
       if (!(site.name == "" || site.name == null || site.name == undefined)) {
         lb_img.dataset.src = "asset/site_map/img/" + site.name + ".png";
       } else {
-        lb_img.src = "asset/site_map/img/" + "here-is-no-img" + ".png";
+        lb_img.src = "asset/site_map/img/" + "here-is-no-img.gif";
       }
       lb_img.classList.add("lazyload");
 

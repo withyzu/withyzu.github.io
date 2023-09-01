@@ -176,6 +176,11 @@
                 "domain": "turbosquid.com",
                 "name": "TurboSquid",
                 "introduc": "提供专业版 3D 模型，部分免费。"
+            },
+            {
+                "domain": "3dwhere.com",
+                "name": "3dwhere",
+                "introduc": "迪威模型，一站式优质3D模型交易平台。迪威模型提供海量 3D打印模型、Solidworks模型、CATIA模型、UG模型、PROE模型、Inventor模型、Parasolid模型、SolidEdge模型、AutoCAD模型、Rhino模型、STL模型 等免费模型学习资源。"
             }
         ]
     },
@@ -192,6 +197,22 @@
                 "domain": "tool.liumingye.cn/music",
                 "name": "myfreemp3",
                 "introduc": "一个界面简洁的音乐下载软件，不用登录就能下载，可以直接下载到桌面或者指定文件夹"
+            }
+        ]
+    },
+    {
+        "id": "res-otaku",
+        "name": "宅男的快乐",
+        "website": [
+            {
+                "domain": "e-hentai.org",
+                "name": "",
+                "introduc": "本子，同人，ai绘画等"
+            },
+            {
+                "domain": "cn.pornhub.com",
+                "name": "",
+                "introduc": "成人网站，禁止未满18岁入内"
             }
         ]
     }
