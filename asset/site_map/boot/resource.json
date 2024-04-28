@@ -213,6 +213,16 @@
                 "domain": "cn.pornhub.com",
                 "name": "",
                 "introduc": "成人网站，禁止未满18岁入内"
+            },
+            {
+                "domain": "hanime1.me",
+                "name": "",
+                "introduc": "动画区， 禁止未满18岁入内"
+            }，
+            {
+                "domain": "xvideos.com",
+                "name": "",
+                "introduc": "免费动作片， 禁止未满18岁入内"
             }
         ]
     }
