@@ -5,16 +5,10 @@
     "**/.hg": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "package-lock.json": true,
-    "node_modules": true,
-    ".gitignore": true,
-    ".vscode": true
+    "package-lock.json": true
   },
   "hide-files.files": [
-    "package-lock.json",
-    "node_modules",
-    ".gitignore",
-    ".vscode"
+    "package-lock.json"
   ],
   "explorer.fileNesting.patterns": {
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
