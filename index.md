@@ -15,11 +15,15 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: LiteDB
+    link: /litedb
+    details: Lorem ipsum dolor sit amet
 ---
 
+<iframe
+  src="/1.pdf"
+  width="100%"
+  height="800px"
+  frameborder="0"
+  allowfullscreen
+/>
